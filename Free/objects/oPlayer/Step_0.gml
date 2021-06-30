@@ -19,9 +19,12 @@ if(place_meeting(x,y+1,oWall) and keyJump)
 //Horizontal Collision
 if(place_meeting(x+hsp,y,oWall))
 {
-	while(!place_meeting(x+sign(hsp),y,oWall))
+	if(hsp != 0)
 	{
-		x += sign(hsp);
+		while(!place_meeting(x+sign(hsp),y,oWall))
+		{
+			x += sign(hsp);
+		}
 	}
 	hsp = 0;
 }
@@ -30,7 +33,7 @@ x = x + hsp;
 
 //Vertical Collision
 if(place_meeting(x,y+vsp,oWall)){
-	while(!place_meeting(y+sign(vsp),y,oWall))
+	while(!place_meeting(x,y+sign(vsp),oWall))
 	{
 		y += sign(vsp);
 	}
@@ -38,5 +41,27 @@ if(place_meeting(x,y+vsp,oWall)){
 }
 y = y + vsp;
 
+//Animation
+if(!place_meeting(x,y+1,oWall))
+{
+	if(vsp<=0){
+		sprite_index = sJump;
+	}
+	else{
+		sprite_index = sFall;
+	} 
+}
+else
+{
+	if(hsp == 0)
+	{
+		sprite_index = sIdle;
+	}
+	else
+	{             
+		sprite_index = sWalk;
+		image_xscale = sign(hsp)
+	}
+}
 
 

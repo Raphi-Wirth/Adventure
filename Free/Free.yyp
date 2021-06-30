@@ -5,8 +5,10 @@
     {"id":{"name":"sIdle","path":"sprites/sIdle/sIdle.yy",},"order":1,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":3,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":1,},
+    {"id":{"name":"sFall","path":"sprites/sFall/sFall.yy",},"order":7,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":4,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":3,},
+    {"id":{"name":"sJump","path":"sprites/sJump/sJump.yy",},"order":6,},
     {"id":{"name":"room0","path":"rooms/room0/room0.yy",},"order":1,},
   ],
   "Options": [
