@@ -55,10 +55,11 @@ if(collidingWall != 0){
 		len = sqrt(sqr(xDiff) + sqr(yDiff));
 		moveX = xDiff/len;
 		moveY = yDiff/len;
-		show_debug_message(collidingWall.x);
-		show_debug_message(x);
-		x += moveX;
-		y += moveY;
+		show_debug_message(collidingWall.y);
+		show_debug_message(y);
+		show_debug_message(moveY);
+		x -= moveX;
+		y -= moveY;
 	}
 }
 
@@ -93,13 +94,11 @@ if(keyDash and dashCountTimer == 0){
 
 
 //Horizontal Collision
-var nextHorizontalCollision = instance_place(x+hsp,y,oWall);
-var nextVerticalCollision = instance_place(x,y+vsp,oWall);
 
-if(nextHorizontalCollision)
+if(place_meeting(x + hsp, y, oWall))
 {
 	
-	while(!instance_place(x+sign(hsp),y,nextHorizontalCollision))
+	while(!place_meeting(x + sign(hsp), y, oWall))
 		{
 			x += sign(hsp);
 		}
@@ -137,8 +136,8 @@ else if(holdingLeft and keyJump){
 
 //Vertical Collision
 
-else if(nextVerticalCollision){
-	while(!instance_place(x,y+sign(vsp),nextVerticalCollision))
+else if(place_meeting(x,y+vsp,oWall)){
+	while(!place_meeting(x,y+sign(vsp),oWall))
 	{	
 		
 		y += sign(vsp);
