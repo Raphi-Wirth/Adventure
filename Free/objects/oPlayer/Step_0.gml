@@ -13,53 +13,70 @@ var collidingWall = instance_place(x,y,oWall)
 
 //Calculate movement 
 var move = keyRight - keyLeft;
-
+show_debug_message(dashActive);
+show_debug_message(dashCountTimer);
 //Movement mechanics
-if(dashActive == 1 and dashCountTimer < 10){
-	hsp = hsp;
-	dashCountTimer += 1
-	vsp -= grv;
-}
-else if(dashCountTimer == 10 and dashActive  == 1 and touchingFloor){
-	dashActive = 0;
-	dashCountTimer = 0;
+
+//Checks if flip should still be active
+if(flipCountTimer == 17){
+	flipActive = 0;
 }
 else{
+	flipCountTimer += 1;	
+}
+
+
+//Checks if dash should still be active
+if(dashCountTimer == 10){
+	dashActive = 0;
+}
+else{
+	dashCountTimer += 1;
+}
+
+
+if(dashActive == 1){
+	hsp = hsp;
+	vsp -= grv;
+}
+
+else{
 	if(abs(hsp)<=1 and move == 0){ 
+		hsp = move*walksp;
+	}
+	else if(sign(hsp) != move){
 		hsp = move*walksp;
 	}
 	else if(abs(hsp)<=5 and move != 0){
 		hsp += move*walksp;
 	}
 	else{
-		hsp -= 0.5*sign(hsp);
+		hsp -= 0.4*sign(hsp);
 	}
 }
 
 vsp = vsp+grv;
 
-//Restart player position
-
-if(keyboard_check_pressed(ord("R"))){
-	x = xstart;
-	y = ystart;
-}
-
 //Checks if currently in wall and moves player away via a vector between
 //oWall centre and player centre
-
-if(collidingWall != 0){
-	while(instance_place(x,y,collidingWall)){
+with collidingWall{
+	if(collidingWall != 0){
 		xDiff = collidingWall.x - x;
 		yDiff = collidingWall.y - y;
 		len = sqrt(sqr(xDiff) + sqr(yDiff));
 		moveX = xDiff/len;
 		moveY = yDiff/len;
-		show_debug_message(collidingWall.y);
-		show_debug_message(y);
-		show_debug_message(moveY);
 		x -= moveX;
 		y -= moveY;
+		while(instance_place(x + sign(xDiff), y + sign(yDiff),collidingWall)){
+			x -= moveX;
+			y -= moveY;
+			xDiff = collidingWall.x - x;
+			yDiff = collidingWall.y - y;
+			len = sqrt(sqr(xDiff) + sqr(yDiff));
+			moveX = xDiff/len;
+			moveY = yDiff/len;
+		}
 	}
 }
 
@@ -69,9 +86,13 @@ if(!touchingFloor and keyJump and doubleJmp == 0 and !(touchingRWall or touching
 	doubleJmp = 1; 
 	if(move>0){
 		flipRight = 1;
+		flipCountTimer = 0;
+		flipActive = 1;
 	}
 	else if(move<0){
 		flipLeft = 1;
+		flipCountTimer = 0;
+		flipActive = 1;
 	}
 	else{
 		flipLeft = 0;
@@ -85,10 +106,12 @@ if(touchingFloor and keyJump and !(touchingRWall or touchingLWall))
 	vsp = -10;
 }
 
-if(keyDash and dashCountTimer == 0){
+if(keyDash and canDash == 1){
 	hsp = 10*image_xscale;
 	image_angle = 0;
 	dashActive = 1;
+	canDash = 0;
+	dashCountTimer = 0;
 	vsp = 0;
 }
 
@@ -103,15 +126,19 @@ if(place_meeting(x + hsp, y, oWall))
 			x += sign(hsp);
 		}
 	hsp = 0;
-	if(keyRight and !touchingFloor and touchingRWall){
+	if(keyRight and !touchingFloor and touchingRWall and !collidingWall){
+		image_angle = 0;
 		holdingRight = 1;
 		dashActive = 0;
 		dashCountTimer = 0;
+		canDash = 1;
 	}
-	else if (keyLeft and !touchingFloor and touchingLWall){
+	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall){
+		image_angle = 0;
 		holdingLeft = 1;
 		dashActive = 0;
 		dashCountTimer = 0;
+		canDash = 1;
 	}
 }
 else{
@@ -121,7 +148,7 @@ else{
 x = x + hsp;
 
 if((holdingLeft or holdingRight)){
-	vsp = 0.3;
+	vsp = wallGrabFallSpeed;
 }
 
 if(holdingRight and keyJump){
@@ -143,15 +170,27 @@ else if(place_meeting(x,y+vsp,oWall)){
 		y += sign(vsp);
 	}
 	vsp = 0;
+	flipActive = 0;
+	canDash = 1;
+	doubleJmp = 0;
+	flipRight = 0;
+	dashActive = 0;
+	flipLeft = 0;
 }
  
 y = y + vsp;
 
 
 //Animation
-if(dashActive == 1){
+
+
+//Listed in order of priority within if statements.
+image_speed = 1;
+if(dashActive){
 	sprite_index = sDash;
-	image_xscale = sign(hsp);
+	if(sign(hsp)!=0){
+		image_xscale = sign(hsp);
+	}
 }
 else if(!touchingFloor)
 {
@@ -162,30 +201,31 @@ else if(!touchingFloor)
 		sprite_index = sFall;
 	} 
 	
-	if(flipRight and image_angle > -360){
-		image_angle -= 20;
+	if(flipRight and flipActive){
+		image_angle -= 40;
 	}
-	else if(flipLeft and image_angle < 360){
-		image_angle += 20;
+	else if(flipLeft and flipActive){
+		image_angle += 40;
+	}
+	//Resets angle in case something fucky goes on and not flipping
+	else if(!flipActive){
+		image_angle = 0;
 	}
 }
 else
 {
-	doubleJmp = 0;
-	flipRight = 0;
-	dashActive = 0;
-	flipLeft = 0;
 	image_angle = 0;
 	if(hsp == 0)
 	{	
-		/*if(keyDown){
-			image_yscale*=0.5;
+		/*if (keyDown){
+			image_yscale *= 0.5;
 		}*/
 		sprite_index = sIdle;
 	}
 	else
 	{             
 		sprite_index = sWalk;
+		image_speed = abs(hsp)/2.5;
 	}
 }
 if(move != 0){
@@ -193,9 +233,6 @@ if(move != 0){
 }
 else if(move == 0 and hsp != 0){
 	image_xscale = sign(hsp);
-}
-else{
-	image_xscale = 1;
 }
 
 if(touchingLWall or touchingRWall){
