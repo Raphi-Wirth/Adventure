@@ -10,15 +10,14 @@ flipLeft = 0			//Flipping Left
 grv = 0.5				//Speed of gravity
 holdingRight = 0		//Holding Right Wall
 holdingLeft = 0			//Holding Left Wall
-dashActive = 0			//Dashing	
-dashCountTimer = 10;	//Dash count timer
+dashSpeed = 10;			//Horizontal speed while dashing
+canDash = 1;
 flipActive = 0			//Flipping
 flipCountTimer = 10;    //Flip count timer
 jumped = 0				//Jump used
 wallGrabFallSpeed = 0.5;//Speed at which falling when holding wall 
-canDash = 1;            //Whether or not the player can currently dash
-
-
+attackTimer = 0;
+health = 5;
 state = PLAYERSTATE.FREE;
 hitByAttack = ds_list_create();
 
@@ -29,5 +28,6 @@ enum PLAYERSTATE
 {
 	FREE,
 	ATTACK_SLASH,
-	ATTACK_COMBO	
+	ATTACK_COMBO,
+	DASH
 }
