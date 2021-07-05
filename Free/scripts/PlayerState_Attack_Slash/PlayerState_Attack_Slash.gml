@@ -2,10 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_Attack_Slash(){
 	image_speed = 1;
-	hsp = 0;
-	vsp = 0;
 	//Start of the attack
-
+	
 	if (sprite_index != sAttackSlash)
 	{
 		sprite_index = sAttackSlash;
@@ -15,9 +13,19 @@ function PlayerState_Attack_Slash(){
 	
 	mask_index = sAttackSlashHB;
 	//Use attack hitbox and check for hits
-	
+	if(abs(hsp)<=1 and move == 0){ 
+			hsp = move*walksp;
+	}
+	else if(abs(hsp)<=5 and move != 0){
+		hsp += move*walksp;
+	}	
+	else{
+		hsp -= 0.4*sign(hsp);
+	}
+	x+=hsp;
+		
 	var hitByAttackNow = ds_list_create();
-	var hits =  0//instance_place_list(x, y, oEnemy, hitByAttackNow, false);
+	var hits = instance_place_list(x, y, oEnemy, hitByAttackNow, false);
 	
 	if (hits> 0){
 		for (var i = 0; i<hits; i++){
@@ -26,7 +34,7 @@ function PlayerState_Attack_Slash(){
 			if(ds_list_find_index(hitByAttack, hitID) == -1){
 				ds_list_add(hitByAttack, hitID);
 				with (hitID){
-					show_debug_message("Hit!");
+					EnemyHit(1);
 				}
 			}
 		}

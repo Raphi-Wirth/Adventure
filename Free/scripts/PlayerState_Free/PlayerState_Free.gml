@@ -4,10 +4,7 @@ function PlayerState_Free(){
 	var touchingRWall = instance_place(x+1,y,oWall);
 	var collidingWall = instance_place(x,y,oWall)
 
-	//Calculate movement 
-	var move = keyRight - keyLeft;
-	show_debug_message(dashActive);
-	show_debug_message(dashCountTimer);
+
 	//Movement mechanics
 
 	//Checks if flip should still be active
@@ -20,24 +17,8 @@ function PlayerState_Free(){
 
 
 	//Checks if dash should still be active
-	if(dashCountTimer == 10){
-		dashActive = 0;
-	}
-	else{
-		dashCountTimer += 1;
-	}
-
-
-	if(dashActive == 1){
-		hsp = hsp;
-		vsp -= grv;
-	}
-
-	else{
+	{
 		if(abs(hsp)<=1 and move == 0){ 
-			hsp = move*walksp;
-		}
-		else if(sign(hsp) != move){
 			hsp = move*walksp;
 		}
 		else if(abs(hsp)<=5 and move != 0){
@@ -52,8 +33,8 @@ function PlayerState_Free(){
 
 	//Checks if currently in wall and moves player away via a vector between
 	//oWall centre and player centre
-	with collidingWall{
-		if(collidingWall != 0){
+	if(collidingWall != 0){
+		while(instance_place(x,y,collidingWall)){
 			xDiff = collidingWall.x - x;
 			yDiff = collidingWall.y - y;
 			len = sqrt(sqr(xDiff) + sqr(yDiff));
@@ -61,15 +42,6 @@ function PlayerState_Free(){
 			moveY = yDiff/len;
 			x -= moveX;
 			y -= moveY;
-			while(instance_place(x + sign(xDiff), y + sign(yDiff),collidingWall)){
-				x -= moveX;
-				y -= moveY;
-				xDiff = collidingWall.x - x;
-				yDiff = collidingWall.y - y;
-				len = sqrt(sqr(xDiff) + sqr(yDiff));
-				moveX = xDiff/len;
-				moveY = yDiff/len;
-			}
 		}
 	}
 
@@ -99,13 +71,9 @@ function PlayerState_Free(){
 		vsp = -10;
 	}
 
-	if(keyDash and canDash == 1){
-		hsp = 10*image_xscale;
-		image_angle = 0;
-		dashActive = 1;
+	if(keyDash and canDash){
 		canDash = 0;
-		dashCountTimer = 0;
-		vsp = 0;
+		state = PLAYERSTATE.DASH;
 	}
 
 
@@ -122,15 +90,11 @@ function PlayerState_Free(){
 		if(keyRight and !touchingFloor and touchingRWall and !collidingWall){
 			image_angle = 0;
 			holdingRight = 1;
-			dashActive = 0;
-			dashCountTimer = 0;
 			canDash = 1;
 		}
 		else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall){
 			image_angle = 0;
 			holdingLeft = 1;
-			dashActive = 0;
-			dashCountTimer = 0;
 			canDash = 1;
 		}
 	}
@@ -167,7 +131,6 @@ function PlayerState_Free(){
 		canDash = 1;
 		doubleJmp = 0;
 		flipRight = 0;
-		dashActive = 0;
 		flipLeft = 0;
 	}
  
@@ -179,13 +142,7 @@ function PlayerState_Free(){
 
 	//Listed in order of priority within if statements.
 	image_speed = 1;
-	if(dashActive){
-		sprite_index = sDash;
-		if(sign(hsp)!=0){
-			image_xscale = sign(hsp);
-		}
-	}
-	else if(!touchingFloor)
+	if(!touchingFloor)
 	{
 		if(vsp<=0){
 			sprite_index = sJump;

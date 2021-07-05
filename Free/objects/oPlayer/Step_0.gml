@@ -5,10 +5,13 @@ keyJump = keyboard_check_pressed(vk_space);
 keyDash = keyboard_check_pressed(ord("C"));
 keyDown = keyboard_check(vk_down);
 keyAttack = keyboard_check(ord("X"));
+move = keyRight - keyLeft;
 
 switch (state)
 {
 	case PLAYERSTATE.FREE: PlayerState_Free(); break;
+	
+	case PLAYERSTATE.DASH: PlayerState_Dash(); break;
 		
 	case PLAYERSTATE.ATTACK_SLASH: PlayerState_Attack_Slash(); break;
 	
