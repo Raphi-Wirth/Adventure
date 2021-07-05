@@ -17,7 +17,7 @@ flipCountTimer = 10;    //Flip count timer
 jumped = 0				//Jump used
 wallGrabFallSpeed = 0.5;//Speed at which falling when holding wall 
 canDash = 1;            //Whether or not the player can currently dash
-
+attackTimer = 0;
 
 state = PLAYERSTATE.FREE;
 hitByAttack = ds_list_create();
