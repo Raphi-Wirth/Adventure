@@ -21,13 +21,17 @@ health = 5;
 state = PLAYERSTATE.FREE;
 hitByAttack = ds_list_create();
 
+touchingLWall = 0;
+touchingRWall = 0;
+touchingFloor = 0;
+collidingWall = 0;
+
 
 
 
 enum PLAYERSTATE
 {
 	FREE,
-	ATTACK_SLASH,
-	ATTACK_COMBO,
+	GROUND_ATTACK,
 	DASH
 }

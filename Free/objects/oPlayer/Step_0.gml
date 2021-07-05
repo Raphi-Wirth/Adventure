@@ -11,11 +11,14 @@ switch (state)
 {
 	case PLAYERSTATE.FREE: PlayerState_Free(); break;
 	
-	case PLAYERSTATE.DASH: PlayerState_Dash(); break;
+	case PLAYERSTATE.DASH: PlayerState_Dash(move); break;
+		/*if(move == 0){
+			var dashDirection = image_xscale;
+		}*/
 		
-	case PLAYERSTATE.ATTACK_SLASH: PlayerState_Attack_Slash(); break;
+		
+	case PLAYERSTATE.GROUND_ATTACK: PlayerState_Ground_Attack(); break;
 	
-	case PLAYERSTATE.ATTACK_COMBO: PlayerState_Attack_Combo(); break;
 	
 	
 }

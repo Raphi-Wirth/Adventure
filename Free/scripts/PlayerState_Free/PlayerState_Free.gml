@@ -1,13 +1,7 @@
 function PlayerState_Free(){
-	var touchingFloor = instance_place(x,y+1,oWall);
-	var touchingLWall = instance_place(x-1,y,oWall);
-	var touchingRWall = instance_place(x+1,y,oWall);
-	var collidingWall = instance_place(x,y,oWall)
-
-
 	//Movement mechanics
-
 	//Checks if flip should still be active
+	
 	if(flipCountTimer == 17){
 		flipActive = 0;
 	}
@@ -16,36 +10,22 @@ function PlayerState_Free(){
 	}
 
 
-	//Checks if dash should still be active
-	{
-		if(abs(hsp)<=1 and move == 0){ 
+	//Horizontal Movement
+	
+	if(abs(hsp)<=1 and move == 0){ 
 			hsp = move*walksp;
 		}
-		else if(abs(hsp)<=5 and move != 0){
+	else if(abs(hsp)<=5 and move != 0){
 			hsp += move*walksp;
 		}
-		else{
+	else{
 			hsp -= 0.4*sign(hsp);
-		}
 	}
-
-	vsp = vsp+grv;
-
-	//Checks if currently in wall and moves player away via a vector between
-	//oWall centre and player centre
-	if(collidingWall != 0){
-		while(instance_place(x,y,collidingWall)){
-			xDiff = collidingWall.x - x;
-			yDiff = collidingWall.y - y;
-			len = sqrt(sqr(xDiff) + sqr(yDiff));
-			moveX = xDiff/len;
-			moveY = yDiff/len;
-			x -= moveX;
-			y -= moveY;
-		}
-	}
-
-
+	
+	//This state uses gravity
+	Gravity();
+	CollisionDetection();
+	//If not on the floor and not touching a wall, and you havent double jumped yet.
 	if(!touchingFloor and keyJump and doubleJmp == 0 and !(touchingRWall or touchingLWall)){
 		vsp = -10;
 		doubleJmp = 1; 
@@ -64,46 +44,22 @@ function PlayerState_Free(){
 			flipRight = 0;
 		}
 	}
-
-	//Jump
-	if(touchingFloor and keyJump and !(touchingRWall or touchingLWall))
-	{
-		vsp = -10;
-	}
-
-	if(keyDash and canDash){
-		canDash = 0;
-		state = PLAYERSTATE.DASH;
-	}
-
-
-	//Horizontal Collision
-
-	if(place_meeting(x + hsp, y, oWall))
-	{
 	
-		while(!place_meeting(x + sign(hsp), y, oWall))
-			{
-				x += sign(hsp);
-			}
-		hsp = 0;
-		if(keyRight and !touchingFloor and touchingRWall and !collidingWall){
+	if(keyRight and !touchingFloor and touchingRWall and !collidingWall){
 			image_angle = 0;
 			holdingRight = 1;
 			canDash = 1;
-		}
-		else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall){
+	}
+	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall){
 			image_angle = 0;
 			holdingLeft = 1;
 			canDash = 1;
-		}
 	}
 	else{
 		holdingLeft = 0;
 		holdingRight = 0;
 	}
-	x = x + hsp;
-
+	
 	if((holdingLeft or holdingRight)){
 		vsp = wallGrabFallSpeed;
 	}
@@ -116,26 +72,22 @@ function PlayerState_Free(){
 		hsp = 10;
 		vsp = -10;
 	}
-
-
-	//Vertical Collision
-
-	else if(place_meeting(x,y+vsp,oWall)){
-		while(!place_meeting(x,y+sign(vsp),oWall))
-		{	
-		
-			y += sign(vsp);
-		}
-		vsp = 0;
-		flipActive = 0;
-		canDash = 1;
-		doubleJmp = 0;
-		flipRight = 0;
-		flipLeft = 0;
+	
+	//Jump if on floor and not touching a wall
+	if(touchingFloor and keyJump and (!(touchingRWall and holdingRight) or !(touchingLWall and holdingLeft)))
+	{
+		vsp = -10;
 	}
- 
-	y = y + vsp;
 
+	if(keyDash and canDash){
+		canDash = 0;
+		state = PLAYERSTATE.DASH;
+	}
+
+
+	
+	x+=hsp;
+	y+=vsp;
 
 	//Animation
 
@@ -165,7 +117,7 @@ function PlayerState_Free(){
 	else
 	{
 		image_angle = 0;
-		if(hsp == 0)
+		if(hsp == 0 and move==0)
 		{	
 			/*if (keyDown){
 				image_yscale *= 0.5;
@@ -175,7 +127,7 @@ function PlayerState_Free(){
 		else
 		{             
 			sprite_index = sWalk;
-			image_speed = abs(hsp)/2.5;
+			image_speed = 1;
 		}
 	}
 	if(move != 0){
@@ -185,7 +137,7 @@ function PlayerState_Free(){
 		image_xscale = sign(hsp);
 	}
 
-	if(touchingLWall or touchingRWall){
+	if((touchingLWall or touchingRWall) and !touchingFloor){
 		if(keyLeft){
 			sprite_index = sWallGrab;
 			image_xscale = 1;
@@ -195,8 +147,8 @@ function PlayerState_Free(){
 			image_xscale = -1;
 		}
 	}
-	if(keyAttack){
-		state = PLAYERSTATE.ATTACK_SLASH;
+	if(keyAttack and touchingFloor){
+		state = PLAYERSTATE.GROUND_ATTACK;
 	}
 }
 

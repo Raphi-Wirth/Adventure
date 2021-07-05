@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function PlayerState_Dash(){
+function PlayerState_Dash(dashDirection){
 	image_speed = 1;
 	
 	if (sprite_index != sDash)
@@ -8,13 +8,24 @@ function PlayerState_Dash(){
 		sprite_index = sDash;
 		image_index = 0;
 	}
-	if(hsp != 0){
-		image_xscale = sign(hsp);
+	
+	CollisionDetection();
+	
+	if(dashDirection != 0){
+		hsp = dashSpeed * dashDirection;
+		image_xscale = sign(dashDirection);
 	}
-	hsp = dashSpeed*image_xscale;
+	if((touchingLWall or touchingRWall)){
+		hsp = 0;
+	}
+	else{
+		hsp = dashSpeed*image_xscale;
+	}
 	image_angle = 0;
 	vsp = 0;
 	x += hsp;
+	show_debug_message(hsp);
+	
 	if(animation_end()){
 		state = PLAYERSTATE.FREE;
 	}
