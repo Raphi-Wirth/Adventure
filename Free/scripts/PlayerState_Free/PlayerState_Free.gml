@@ -71,23 +71,30 @@ function PlayerState_Free(){
 	image_speed = 1;
 	if(!touchingFloor)
 	{
-		if(vsp<=0){
+		if(vsp<0){
 			sprite_index = sJump;
+			if(vsp<-5){
+				image_index = 0;
+			}
+			else if (vsp < -1 and vsp >= -5){
+				image_index = 1;
+			} 
+			else if (vsp < 0 and vsp >= -1){
+				image_index = 2;
+			}
 		}
-		else{
-			sprite_index = sFall;
-		} 
-	
-		if(flipRight and flipActive){
-			image_angle -= 40;
+
+		if(vsp>= 0){
+			if (vsp >= 0 and vsp < 2){
+				sprite_index = sFall;
+				image_index = 0;
+			}
+			else if (vsp >= 2){
+				sprite_index = sFall;
+				image_index = 1;
+			}
 		}
-		else if(flipLeft and flipActive){
-			image_angle += 40;
-		}
-		//Resets angle in case something fucky goes on and not flipping
-		else if(!flipActive){
-			image_angle = 0;
-		}
+		
 	}
 	else
 	{

@@ -11,21 +11,22 @@ function PlayerState_Ground_Attack(){
 		image_index = 0;
 		ds_list_clear(hitByAttack);
 	}
-	Gravity();
 
-	CollisionDetection();
-	mask_index = sAttackSlashHB;
 	if(abs(hsp)<=1 and move == 0){ 
-			hsp = move*walksp;
-		}
+		hsp = move*walksp;
+	}
 	else if(abs(hsp)<=5 and move != 0){
 			hsp += move*walksp;
-		}
-	else{
-			hsp -= 0.4*sign(hsp);
 	}
-	x+=hsp;
+	else{
+		hsp -= 0.4*sign(hsp);
+	}
 	
+	Gravity();
+	CollisionDetection();
+	mask_index = sAttackSlashHB;
+
+	x+=hsp;
 	y+=vsp;
 	//Use attack hitbox and check for hits
 	var hitByAttackNow = ds_list_create();
