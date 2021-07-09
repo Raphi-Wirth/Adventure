@@ -3,23 +3,31 @@
 
 vsp = 0					//Vertical Speed
 hsp = 0					//Horizontal Speed
-walksp = 0.25			//Walk speed
+walksp = 1				//Walk speed
 doubleJmp = 0			//Double jump used
 flipRight = 0			//Flipping Right
 flipLeft = 0			//Flipping Left
 grv = 0.5				//Speed of gravity
-holdingRight = 0		//Holding Right Wall
-holdingLeft = 0			//Holding Left Wall
+wallJumpDirection = 0;  //Which wall is currently being held
 dashSpeed = 10;			//Horizontal speed while dashing
-canDash = 1;
+initDashDirection = 0   //Put explanation here later
+dashDirection = 1       //Initial dash direction
+canDash = 1;			//Checks if player can dash
+jumpDirection = 1;      //Initial Jump Direction
 flipActive = 0			//Flipping
 flipCountTimer = 10;    //Flip count timer
-jumped = 0				//Jump used
 wallGrabFallSpeed = 0.5;//Speed at which falling when holding wall 
-attackTimer = 0;
-health = 5;
+fastFall = 0;           //Whether the player is currently in fastfall
+
+
+
 state = PLAYERSTATE.FREE;
 hitByAttack = ds_list_create();
+
+touchingLWall = 0;
+touchingRWall = 0;
+touchingFloor = 0;
+collidingWall = 0;
 
 
 
@@ -27,7 +35,8 @@ hitByAttack = ds_list_create();
 enum PLAYERSTATE
 {
 	FREE,
-	ATTACK_SLASH,
-	ATTACK_COMBO,
-	DASH
+	GROUND_ATTACK,
+	DASH,
+	WALL_GRAB,
+	DOUBLE_JUMP
 }
