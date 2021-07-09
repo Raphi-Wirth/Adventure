@@ -1,13 +1,5 @@
 function PlayerState_Free(){
 	//Movement mechanics
-	//Checks if flip should still be active
-	
-	if(flipCountTimer == 17){
-		flipActive = 0;
-	}
-	else{
-		flipCountTimer += 1;	
-	}
 
 
 	//Horizontal Movement
@@ -25,62 +17,45 @@ function PlayerState_Free(){
 	//This state uses gravity
 	Gravity();
 	CollisionDetection();
+	
+	
+	
+	if(touchingFloor){
+		doubleJmp = 0;
+		canDash = 1;
+	}
+	
 	//If not on the floor and not touching a wall, and you havent double jumped yet.
 	if(!touchingFloor and keyJump and doubleJmp == 0 and !(touchingRWall or touchingLWall)){
-		vsp = -10;
-		doubleJmp = 1; 
-		if(move>0){
-			flipRight = 1;
-			flipCountTimer = 0;
-			flipActive = 1;
-		}
-		else if(move<0){
-			flipLeft = 1;
-			flipCountTimer = 0;
-			flipActive = 1;
-		}
-		else{
-			flipLeft = 0;
-			flipRight = 0;
+		jumpDirection = move;
+		state = PLAYERSTATE.DOUBLE_JUMP;
+	}
+	
+	if(keyRight and !touchingFloor and touchingRWall and !collidingWall and vsp>0){
+		if(instance_place(x+1,y-20,oWall)){
+			state = PLAYERSTATE.WALL_GRAB;
+			wallJumpDirection = -1;
 		}
 	}
 	
-	if(keyRight and !touchingFloor and touchingRWall and !collidingWall){
-			image_angle = 0;
-			holdingRight = 1;
-			canDash = 1;
-	}
-	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall){
-			image_angle = 0;
-			holdingLeft = 1;
-			canDash = 1;
-	}
-	else{
-		holdingLeft = 0;
-		holdingRight = 0;
-	}
-	
-	if((holdingLeft or holdingRight)){
-		vsp = wallGrabFallSpeed;
+	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall and vsp>0){
+		if(instance_place(x-1,y-20,oWall)){
+			state = PLAYERSTATE.WALL_GRAB;
+			wallJumpDirection = 1;
+		}
 	}
 
-	if(holdingRight and keyJump){
-		hsp = -10;
-		vsp = -10;
-	}
-	else if(holdingLeft and keyJump){
-		hsp = 10;
-		vsp = -10;
-	}
 	
+
 	//Jump if on floor and not touching a wall
-	if(touchingFloor and keyJump and (!(touchingRWall and holdingRight) or !(touchingLWall and holdingLeft)))
+	if(touchingFloor and keyJump and (!(touchingRWall and wallJumpDirection) or !(touchingLWall and wallJumpDirection)))
 	{
 		vsp = -10;
 	}
 
 	if(keyDash and canDash){
 		canDash = 0;
+		dashDirection = move;
 		state = PLAYERSTATE.DASH;
 	}
 
@@ -119,9 +94,6 @@ function PlayerState_Free(){
 		image_angle = 0;
 		if(hsp == 0 and move==0)
 		{	
-			/*if (keyDown){
-				image_yscale *= 0.5;
-			}*/
 			sprite_index = sIdle;
 		}
 		else
@@ -137,16 +109,6 @@ function PlayerState_Free(){
 		image_xscale = sign(hsp);
 	}
 
-	if((touchingLWall or touchingRWall) and !touchingFloor){
-		if(keyLeft){
-			sprite_index = sWallGrab;
-			image_xscale = 1;
-		}
-		else if(keyRight){
-			sprite_index = sWallGrab;
-			image_xscale = -1;
-		}
-	}
 	if(keyAttack and touchingFloor){
 		state = PLAYERSTATE.GROUND_ATTACK;
 	}

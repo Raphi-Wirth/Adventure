@@ -1,4 +1,8 @@
 /// @description Reset Coords
 // You can write your code in this editor
-x = xstart;
+
+room_restart();
+/*x = xstart;
 y = ystart;
+hsp = 0;
+vsp = 0;*/

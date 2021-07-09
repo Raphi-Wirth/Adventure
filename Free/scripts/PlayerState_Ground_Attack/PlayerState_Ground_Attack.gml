@@ -2,18 +2,31 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_Ground_Attack(){
 	image_speed = 1;
-	hsp = 0;
+
 	//Start of the attack
-	
+
 	if (sprite_index != sAttackSlash)
 	{
 		sprite_index = sAttackSlash;
 		image_index = 0;
 		ds_list_clear(hitByAttack);
 	}
+	Gravity();
+
 	CollisionDetection();
 	mask_index = sAttackSlashHB;
+	if(abs(hsp)<=1 and move == 0){ 
+			hsp = move*walksp;
+		}
+	else if(abs(hsp)<=5 and move != 0){
+			hsp += move*walksp;
+		}
+	else{
+			hsp -= 0.4*sign(hsp);
+	}
+	x+=hsp;
 	
+	y+=vsp;
 	//Use attack hitbox and check for hits
 	var hitByAttackNow = ds_list_create();
 	var hits = instance_place_list(x, y, oEnemy, hitByAttackNow, false);

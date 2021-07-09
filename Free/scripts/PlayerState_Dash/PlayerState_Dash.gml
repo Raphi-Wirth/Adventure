@@ -9,24 +9,21 @@ function PlayerState_Dash(dashDirection){
 		image_index = 0;
 	}
 	
-	CollisionDetection();
-	
 	if(dashDirection != 0){
 		hsp = dashSpeed * dashDirection;
 		image_xscale = sign(dashDirection);
 	}
-	if((touchingLWall or touchingRWall)){
-		hsp = 0;
-	}
 	else{
 		hsp = dashSpeed*image_xscale;
 	}
-	image_angle = 0;
+	
 	vsp = 0;
+	CollisionDetection();
+	image_angle = 0;
 	x += hsp;
-	show_debug_message(hsp);
 	
 	if(animation_end()){
+		initDashDirection = 0;
 		state = PLAYERSTATE.FREE;
 	}
 }
