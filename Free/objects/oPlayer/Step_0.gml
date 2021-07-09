@@ -34,4 +34,8 @@ switch (state)
 	
 	case PLAYERSTATE.DOUBLE_JUMP: PlayerState_Double_Jump(jumpDirection); break;
 	
+	case PLAYERSTATE.IN_AIR: PlayerState_In_Air(); break;
+	
+	case PLAYERSTATE.AIR_ATTACK: PlayerState_Air_Attack(); break;
+	
 }

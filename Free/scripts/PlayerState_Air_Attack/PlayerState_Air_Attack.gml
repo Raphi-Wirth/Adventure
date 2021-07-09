@@ -1,13 +1,13 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function PlayerState_Ground_Attack(){
-	image_speed = 1;
+function PlayerState_Air_Attack(){
+image_speed = 1;
 
 	//Start of the attack
 
-	if (sprite_index != sGround_Attack_Slash)
+	if (sprite_index != sAerial_Attack_Slash)
 	{
-		sprite_index = sGround_Attack_Slash;
+		sprite_index = sAerial_Attack_Slash;
 		image_index = 0;
 		ds_list_clear(hitByAttack);
 	}
@@ -49,7 +49,12 @@ function PlayerState_Ground_Attack(){
 	mask_index = sIdle;
 	
 	if(animation_end()){
-		sprite_index = sIdle;
-		state = PLAYERSTATE.FREE;
+		if(touchingFloor){
+			state = PLAYERSTATE.FREE;
+		}
+		else{
+			state = PLAYERSTATE.IN_AIR;
+		}
+
 	}
 }

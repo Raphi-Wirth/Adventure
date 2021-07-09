@@ -14,6 +14,7 @@
   ],
   "layers": [
     {"instances":[
+        {"properties":[],"isDnd":false,"objectId":{"name":"oParticleSystem","path":"objects/oParticleSystem/oParticleSystem.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":480.0,"y":320.0,"resourceVersion":"1.0","name":"inst_BF6BB68","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":96.0,"y":480.0,"resourceVersion":"1.0","name":"inst_1806A949","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
@@ -373,6 +374,7 @@
     {"name":"inst_3DB96B22","path":"rooms/room0/room0.yy",},
     {"name":"inst_6C944C00","path":"rooms/room0/room0.yy",},
     {"name":"inst_56BB43C0","path":"rooms/room0/room0.yy",},
+    {"name":"inst_BF6BB68","path":"rooms/room0/room0.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

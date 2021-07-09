@@ -16,7 +16,7 @@ canDash = 1;			//Checks if player can dash
 jumpDirection = 1;      //Initial Jump Direction
 flipActive = 0			//Flipping
 flipCountTimer = 10;    //Flip count timer
-wallGrabFallSpeed = 0.5;//Speed at which falling when holding wall 
+wallGrabFallSpeed = 0.75;//Speed at which falling when holding wall 
 fastFall = 0;           //Whether the player is currently in fastfall
 
 
@@ -38,5 +38,7 @@ enum PLAYERSTATE
 	GROUND_ATTACK,
 	DASH,
 	WALL_GRAB,
-	DOUBLE_JUMP
+	IN_AIR,
+	DOUBLE_JUMP,
+	AIR_ATTACK
 }
