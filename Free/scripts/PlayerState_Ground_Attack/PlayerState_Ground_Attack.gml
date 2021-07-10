@@ -5,9 +5,9 @@ function PlayerState_Ground_Attack(){
 
 	//Start of the attack
 
-	if (sprite_index != sAttackSlash)
+	if (sprite_index != sGround_Attack_Slash)
 	{
-		sprite_index = sAttackSlash;
+		sprite_index = sGround_Attack_Slash;
 		image_index = 0;
 		ds_list_clear(hitByAttack);
 	}
@@ -16,10 +16,10 @@ function PlayerState_Ground_Attack(){
 		hsp = move*walksp;
 	}
 	else if(abs(hsp)<=5 and move != 0){
-			hsp += move*walksp;
+		hsp += move*walksp;
 	}
 	else{
-		hsp -= 0.4*sign(hsp);
+		hsp -= sign(hsp);
 	}
 	
 	Gravity();

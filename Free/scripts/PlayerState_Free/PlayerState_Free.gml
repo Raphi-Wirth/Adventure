@@ -5,13 +5,13 @@ function PlayerState_Free(){
 	//Horizontal Movement
 	
 	if(abs(hsp)<=1 and move == 0){ 
-			hsp = move*walksp;
-		}
+		hsp = move*walksp;
+	}
 	else if(abs(hsp)<=5 and move != 0){
-			hsp += move*walksp;
-		}
+		hsp += move*walksp;
+	}
 	else{
-			hsp -= 0.4*sign(hsp);
+		hsp -= sign(hsp);
 	}
 	
 	//This state uses gravity
@@ -24,22 +24,21 @@ function PlayerState_Free(){
 		doubleJmp = 0;
 		canDash = 1;
 	}
-	
-	//If not on the floor and not touching a wall, and you havent double jumped yet.
-	if(!touchingFloor and keyJump and doubleJmp == 0 and !(touchingRWall or touchingLWall)){
-		jumpDirection = move;
-		state = PLAYERSTATE.DOUBLE_JUMP;
+	else if(!touchingFloor){
+		state = PLAYERSTATE.IN_AIR;
 	}
 	
+	//If not on the floor and not touching a wall, and you havent double jumped yet
+	
 	if(keyRight and !touchingFloor and touchingRWall and !collidingWall and vsp>0){
-		if(instance_place(x+1,y-20,oWall)){
+		if(instance_place(x+1,y-30,oWall)){
 			state = PLAYERSTATE.WALL_GRAB;
 			wallJumpDirection = -1;
 		}
 	}
 	
 	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall and vsp>0){
-		if(instance_place(x-1,y-20,oWall)){
+		if(instance_place(x-1,y-30,oWall)){
 			state = PLAYERSTATE.WALL_GRAB;
 			wallJumpDirection = 1;
 		}
@@ -51,6 +50,8 @@ function PlayerState_Free(){
 	if(touchingFloor and keyJump and (!(touchingRWall and wallJumpDirection) or !(touchingLWall and wallJumpDirection)))
 	{
 		vsp = -10;
+		state = PLAYERSTATE.IN_AIR;
+
 	}
 
 	if(keyDash and canDash){
@@ -69,45 +70,17 @@ function PlayerState_Free(){
 
 	//Listed in order of priority within if statements.
 	image_speed = 1;
-	if(!touchingFloor)
-	{
-		if(vsp<0){
-			sprite_index = sJump;
-			if(vsp<-5){
-				image_index = 0;
-			}
-			else if (vsp < -1 and vsp >= -5){
-				image_index = 1;
-			} 
-			else if (vsp < 0 and vsp >= -1){
-				image_index = 2;
-			}
-		}
+	
 
-		if(vsp>= 0){
-			if (vsp >= 0 and vsp < 2){
-				sprite_index = sFall;
-				image_index = 0;
-			}
-			else if (vsp >= 2){
-				sprite_index = sFall;
-				image_index = 1;
-			}
-		}
-		
+	image_angle = 0;
+	if(hsp == 0 and move==0)
+	{	
+		sprite_index = sIdle;
 	}
 	else
-	{
-		image_angle = 0;
-		if(hsp == 0 and move==0)
-		{	
-			sprite_index = sIdle;
-		}
-		else
-		{             
-			sprite_index = sWalk;
-			image_speed = 1;
-		}
+	{             
+		sprite_index = sWalk;
+		image_speed = 1;
 	}
 	if(move != 0){
 		image_xscale = sign(move);
@@ -119,5 +92,5 @@ function PlayerState_Free(){
 	if(keyAttack and touchingFloor){
 		state = PLAYERSTATE.GROUND_ATTACK;
 	}
-}
 
+}

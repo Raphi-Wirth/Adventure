@@ -7,7 +7,7 @@ function CollisionDetection(){
 	collidingWall = instance_place(x,y,all);
 	
 	if(touchingFloor or touchingLWall or touchingRWall or collidingWall){
-		if(collidingWall != 0 and (hsp or vsp)){
+		if(collidingWall != 0 and (hsp and vsp)){
 			//Checks for any current speed, sends you in the opposite direction
 			if(sign(hsp) != sign(image_xscale)){
 				while(instance_place(x,y, collidingWall)){

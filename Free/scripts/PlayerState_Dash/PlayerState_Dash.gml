@@ -24,6 +24,11 @@ function PlayerState_Dash(dashDirection){
 	
 	if(animation_end()){
 		initDashDirection = 0;
-		state = PLAYERSTATE.FREE;
+		if(touchingFloor){
+			state = PLAYERSTATE.FREE;
+		}
+		else{
+			state = PLAYERSTATE.IN_AIR;
+		}
 	}
 }

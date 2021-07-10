@@ -11,17 +11,6 @@ move = keyRight - keyLeft;
 
 
 
-if(keyDown and vsp>0){
-	fastFall = 1;
-}
-else{
-	grv = 0.5;
-	fastFall = 0;
-}
-if(fastFall = 1){
-	grv = 1.5;
-}
-
 switch (state)
 {
 	case PLAYERSTATE.FREE: PlayerState_Free(); break;
@@ -33,5 +22,9 @@ switch (state)
 	case PLAYERSTATE.WALL_GRAB: PlayerState_Wall_Grab(wallJumpDirection); break;
 	
 	case PLAYERSTATE.DOUBLE_JUMP: PlayerState_Double_Jump(jumpDirection); break;
+	
+	case PLAYERSTATE.IN_AIR: PlayerState_In_Air(); break;
+	
+	case PLAYERSTATE.AIR_ATTACK: PlayerState_Air_Attack(); break;
 	
 }

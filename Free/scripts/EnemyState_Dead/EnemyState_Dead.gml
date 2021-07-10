@@ -4,11 +4,15 @@ function EnemyState_Dead(){
 	if(sprite_index != sEnemyDie){
 		sprite_index = sEnemyDie;
 		image_speed = 1;
+		image_alpha = 1;
+		image_index = 0;
+	}
+	if(image_index>=5){
+		image_alpha -= 0.02;
 	}
 
-	image_alpha -= 0.005;
 	//CollisionDetection();
-	if(animation_end()){
+	if(animation_end() or image_alpha == 0){
 		instance_destroy();
 	}
 }
