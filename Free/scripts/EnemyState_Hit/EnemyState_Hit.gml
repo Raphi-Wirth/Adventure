@@ -5,16 +5,9 @@ function EnemyState_Hit(){
 		flashAlpha -= 0.05;
 	}
 	else if(flashAlpha == 0){
-		state = ENEMYSTATE.FREE;
+		state = ENEMYSTATE.IDLE;
 	}
-	if(touchingLWall){
-		image_xscale = 1;
-		hsp = walksp;
-	}
-	else if(touchingRWall){
-		image_xscale = -1;
-		hsp = -walksp;
-	}
+	Gravity();
 	CollisionDetection();
 	x+=hsp;
 	y+=vsp;

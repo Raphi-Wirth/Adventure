@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_In_Air(){
+
 	if(move!=0){
 		image_xscale = move;
 	}
@@ -11,7 +12,7 @@ function PlayerState_In_Air(){
 		hsp += move*walksp;
 	}
 	else{
-		hsp -= 0.4*sign(hsp);
+		hsp -= sign(hsp);
 	}
 	
 	Gravity();
@@ -37,7 +38,7 @@ function PlayerState_In_Air(){
 		}
 	}
 	
-	if(!touchingFloor and keyJump and doubleJmp == 0 and !(touchingRWall or touchingLWall)){
+	if(!touchingFloor and keyJump and doubleJmp == 0){
 		jumpDirection = move;
 		state = PLAYERSTATE.DOUBLE_JUMP;
 	}

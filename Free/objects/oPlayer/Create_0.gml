@@ -3,11 +3,11 @@
 
 vsp = 0					//Vertical Speed
 hsp = 0					//Horizontal Speed
-walksp = 1				//Walk speed
+walksp = 1;			    //Walk speed
 doubleJmp = 0			//Double jump used
 flipRight = 0			//Flipping Right
 flipLeft = 0			//Flipping Left
-grv = 0.5				//Speed of gravity
+grv = 0.5;				//Speed of gravity
 wallJumpDirection = 0;  //Which wall is currently being held
 dashSpeed = 10;			//Horizontal speed while dashing
 initDashDirection = 0   //Put explanation here later

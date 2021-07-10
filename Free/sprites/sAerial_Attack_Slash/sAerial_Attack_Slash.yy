@@ -41,7 +41,7 @@
     "spriteId": {"name":"sAerial_Attack_Slash","path":"sprites/sAerial_Attack_Slash/sAerial_Attack_Slash.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 15.0,
+    "playbackSpeed": 20.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,

@@ -1,19 +1,15 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function EnemyState_Free(){
+function EnemyState_Idle(){
 	//This state uses gravity
-	
-	sprite_index = sEnemyWalk
-	if(touchingLWall){
-		image_xscale = 1;
-		hsp = walksp;
-	}
-	else if(touchingRWall){
-		image_xscale = -1;
-		hsp = -walksp;
-	}
+	hsp = 0;
+	sprite_index = sEnemyIdle;
 	Gravity();
 	CollisionDetection();
+	
+	if(distance_to_object(oPlayer) < 100){
+		state = ENEMYSTATE.CHASE;
+	}
 	x+=hsp;
 	y+=vsp;
 }

@@ -6,7 +6,7 @@
     "path": "folders/Scripts/EnemyState.yy",
   },
   "resourceVersion": "1.0",
-  "name": "EnemyState_Free",
+  "name": "EnemyState_Idle",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -16,10 +16,10 @@ function PlayerState_Ground_Attack(){
 		hsp = move*walksp;
 	}
 	else if(abs(hsp)<=5 and move != 0){
-			hsp += move*walksp;
+		hsp += move*walksp;
 	}
 	else{
-		hsp -= 0.4*sign(hsp);
+		hsp -= sign(hsp);
 	}
 	
 	Gravity();

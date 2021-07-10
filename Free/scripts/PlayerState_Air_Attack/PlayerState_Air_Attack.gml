@@ -19,7 +19,7 @@ image_speed = 1;
 			hsp += move*walksp;
 	}
 	else{
-		hsp -= 0.4*sign(hsp);
+		hsp -= sign(hsp);
 	}
 	
 	Gravity();
