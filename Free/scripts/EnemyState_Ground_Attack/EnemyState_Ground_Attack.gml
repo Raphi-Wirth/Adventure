@@ -11,7 +11,13 @@ function EnemyState_Ground_Attack(attackDirection){
 		ds_list_clear(hitByAttack);
 
 	}
-	hsp = 0;
+	if(hsp != 0){
+		hsp -= 0.5*sign(hsp);;
+	}
+	if(abs(hsp) <= 1){
+		hsp = 0;
+	}
+
 	Gravity();
 	CollisionDetection();
 	mask_index = sEnemyAttackSlashHB;
@@ -31,11 +37,9 @@ function EnemyState_Ground_Attack(attackDirection){
 				with (hitID){
 					if(hitID.invulnerable != 1){
 						PlayerHit(1);
-						show_debug_message("Hit!");
 						hitID.vsp -= 3;
 						hitID.hsp -= 3*-attackDirection
 					}
-
 				}
 			}
 		}

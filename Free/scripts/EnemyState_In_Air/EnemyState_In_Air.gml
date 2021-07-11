@@ -7,7 +7,10 @@ function EnemyState_In_Air(){
 	else{
 		dir = sign(oPlayer.x - x);
 	}
-	hsp = dir * walksp;
+	hsp += dir*walksp;
+	if(abs(hsp)>maxWalkSpeed){
+		hsp = maxWalkSpeed*sign(hsp);
+	}
 	Gravity();
 	CollisionDetection();
 	

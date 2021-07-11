@@ -89,7 +89,7 @@ function PlayerState_Free(){
 		image_xscale = sign(hsp);
 	}
 
-	if(keyAttack and touchingFloor){
+	if(keyAttack and touchingFloor and !inAttackSwingCooldown){
 		state = PLAYERSTATE.GROUND_ATTACK;
 	}
 

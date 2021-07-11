@@ -8,7 +8,10 @@ function EnemyState_Chase(){
 		dir = sign(oPlayer.x - x);
 	}
 	
-	hsp = dir * walksp;
+	hsp += dir*walksp;
+	if(abs(hsp)>maxWalkSpeed){
+		hsp = maxWalkSpeed*sign(hsp);
+	}
 	if(dir!=0){
 		sprite_index = sEnemyWalk;
 		image_xscale = dir;
@@ -17,7 +20,7 @@ function EnemyState_Chase(){
 	else{
 		sprite_index = sEnemyIdle;
 	}
-	if(distance_to_object(oPlayer) < 50) {
+	if(abs(oPlayer.x - x) < 70 and abs(oPlayer.y-y)<30){
 		state = ENEMYSTATE.ATTACK;
 	}
 	if(distance_to_object(oPlayer) > 160){
