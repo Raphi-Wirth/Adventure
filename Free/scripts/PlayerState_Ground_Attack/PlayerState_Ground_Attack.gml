@@ -25,8 +25,7 @@ function PlayerState_Ground_Attack(){
 
 	mask_index = sAttackSlashHB;
 
-	x+=hsp;
-	y+=vsp;
+
 	//Use attack hitbox and check for hits
 	var hitByAttackNow = ds_list_create();
 	var hits = instance_place_list(x, y, oEnemy, hitByAttackNow, false);
@@ -39,15 +38,18 @@ function PlayerState_Ground_Attack(){
 				ds_list_add(hitByAttack, hitID);
 				with (hitID){
 					EnemyHit(1);
+					oPlayer.hsp = 7*sign(oPlayer.x-hitID.x);
+					
 				}
 			}
 		}
 	}
-	
 	ds_list_destroy(hitByAttackNow);
 	mask_index = sIdle;
 	Gravity();
 	CollisionDetection();
+	x+=hsp;
+	y+=vsp;
 	if(animation_end()){
 		sprite_index = sIdle;
 		state = PLAYERSTATE.FREE;

@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
 invulnerable = 0;
 invulnerableTicks = 2;
 hp = 5;

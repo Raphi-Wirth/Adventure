@@ -8,8 +8,8 @@ keyAttack = keyboard_check(ord("X"));
 
 
 move = keyRight - keyLeft;
-show_debug_message(invulnerable);
-show_debug_message(flashAlpha);
+
+
 if(invulnerable == 1){
 	flashAlpha -= 0.05;
 	if(flashAlpha == 0 and invulnerableTicks > 0){
@@ -21,6 +21,7 @@ if(invulnerable == 1){
 		invulnerableTicks = 2;
 	}
 }
+
 var healthPickup = instance_place(x+hsp,y+vsp,oHealthPickup)
 if(healthPickup){
 	hp = 5;
