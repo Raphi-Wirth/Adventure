@@ -7,7 +7,8 @@ grv = 0.5;
 flashColour = c_white;
 flashAlpha = 0;
 state = ENEMYSTATE.IDLE;
-walksp = 5;
+walksp = 1;
+maxWalkSpeed = 3;
 dir = 0;
 hitByAttack = ds_list_create();
 

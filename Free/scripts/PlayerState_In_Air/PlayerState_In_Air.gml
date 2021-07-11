@@ -43,8 +43,11 @@ function PlayerState_In_Air(){
 		state = PLAYERSTATE.DOUBLE_JUMP;
 	}
 	
-	if(keyAttack){
+	/*if(keyAttack and !inAttackSwingCooldown){
 		state = PLAYERSTATE.AIR_ATTACK
+	}*/
+	if(keyAttack and keyDown and !inAttackSwingCooldown){
+		state = PLAYERSTATE.AIR_DOWN_ATTACK;
 	}
 	
 	if(vsp<0){

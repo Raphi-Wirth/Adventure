@@ -5,6 +5,7 @@ function CollisionDetection(){
 	touchingLWall = instance_place(x-1,y,oWall);
 	touchingRWall = instance_place(x+1,y,oWall);
 	collidingWall = instance_place(x,y,oWall);
+	collidingEnemy = 0;
 	
 	if(touchingFloor or touchingLWall or touchingRWall or collidingWall){
 		if(collidingWall != 0 and (hsp and vsp)){
@@ -63,4 +64,5 @@ function CollisionDetection(){
 		}
 		vsp = 0;
 	}
+
 }

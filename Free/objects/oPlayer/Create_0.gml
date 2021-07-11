@@ -4,6 +4,9 @@
 
 invulnerable = 0;
 invulnerableTicks = 2;
+attackSwingCooldownTime = 10;
+attackSwingTimer = 0;
+inAttackSwingCooldown = 0;
 hp = 5;
 vsp = 0					//Vertical Speed
 hsp = 0					//Horizontal Speed
@@ -18,8 +21,6 @@ initDashDirection = 0   //Put explanation here later
 dashDirection = 1       //Initial dash direction
 canDash = 1;			//Checks if player can dash
 jumpDirection = 1;      //Initial Jump Direction
-flipActive = 0			//Flipping
-flipCountTimer = 10;    //Flip count timer
 wallGrabFallSpeed = 0.75;//Speed at which falling when holding wall 
 fastFall = 0;           //Whether the player is currently in fastfall
 flashAlpha = 0;
@@ -47,5 +48,6 @@ enum PLAYERSTATE
 	DOUBLE_JUMP,
 	AIR_ATTACK,
 	HIT,
-	DEAD
+	DEAD,
+	AIR_DOWN_ATTACK
 }

@@ -8,7 +8,15 @@ keyAttack = keyboard_check(ord("X"));
 
 
 move = keyRight - keyLeft;
-
+show_debug_message(inAttackSwingCooldown);
+show_debug_message(attackSwingTimer);
+if(inAttackSwingCooldown){
+	attackSwingTimer += 1;
+}
+if(attackSwingTimer == attackSwingCooldownTime){
+	inAttackSwingCooldown = 0;
+	attackSwingTimer = 0;
+}
 
 if(invulnerable == 1){
 	flashAlpha -= 0.05;
@@ -47,5 +55,7 @@ switch (state)
 	case PLAYERSTATE.HIT: PlayerState_Hit(); break;
 	
 	case PLAYERSTATE.DEAD: PlayerState_Dead(); break;
+	
+	case PLAYERSTATE.AIR_DOWN_ATTACK(): PlayerState_Aerial_Down_Slash(); break;
 	
 }

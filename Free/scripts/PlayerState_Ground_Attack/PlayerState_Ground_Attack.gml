@@ -38,8 +38,10 @@ function PlayerState_Ground_Attack(){
 				ds_list_add(hitByAttack, hitID);
 				with (hitID){
 					EnemyHit(1);
-					oPlayer.hsp = 7*sign(oPlayer.x-hitID.x);
-					
+					var dir = sign(oPlayer.x - hitID.x);
+					oPlayer.hsp = 7*dir;
+					hitID.vsp -= 3;
+					hitID.hsp -= 10*dir;
 				}
 			}
 		}
@@ -52,6 +54,7 @@ function PlayerState_Ground_Attack(){
 	y+=vsp;
 	if(animation_end()){
 		sprite_index = sIdle;
+		inAttackSwingCooldown = 1;
 		state = PLAYERSTATE.FREE;
 	}
 }
