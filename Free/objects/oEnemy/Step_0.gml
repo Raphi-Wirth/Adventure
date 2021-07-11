@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if(flashAlpha > 0){
+	flashAlpha -= 0.05;
+}
 
 switch (state)
 {
@@ -13,4 +16,6 @@ switch (state)
 	case ENEMYSTATE.CHASE: EnemyState_Chase(); break;
 	
 	case ENEMYSTATE.IN_AIR: EnemyState_In_Air(); break;
+	
+	case ENEMYSTATE.ATTACK: EnemyState_Ground_Attack(dir); break;
 }

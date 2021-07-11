@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+invulnerable = 0;
+invulnerableTicks = 2;
+hp = 5;
 vsp = 0					//Vertical Speed
 hsp = 0					//Horizontal Speed
 walksp = 1;			    //Walk speed
@@ -18,7 +21,8 @@ flipActive = 0			//Flipping
 flipCountTimer = 10;    //Flip count timer
 wallGrabFallSpeed = 0.75;//Speed at which falling when holding wall 
 fastFall = 0;           //Whether the player is currently in fastfall
-
+flashAlpha = 0;
+flashColour = c_white;
 
 
 state = PLAYERSTATE.FREE;
@@ -40,5 +44,7 @@ enum PLAYERSTATE
 	WALL_GRAB,
 	IN_AIR,
 	DOUBLE_JUMP,
-	AIR_ATTACK
+	AIR_ATTACK,
+	HIT,
+	DEAD
 }

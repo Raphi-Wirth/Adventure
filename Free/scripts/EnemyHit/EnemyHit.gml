@@ -6,10 +6,11 @@ function EnemyHit(){
 	
 	if(hp>0){
 		flashAlpha = 1;
-		state = ENEMYSTATE.HIT;
 		hitNow = true;
 	}
 	else{
 		state = ENEMYSTATE.DEAD;
 	}
+	CollisionDetection();
+	Gravity();
 }

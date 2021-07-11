@@ -8,6 +8,9 @@ flashColour = c_white;
 flashAlpha = 0;
 state = ENEMYSTATE.IDLE;
 walksp = 5;
+dir = 0;
+hitByAttack = ds_list_create();
+
 
 touchingLWall = 0;
 touchingRWall = 0;

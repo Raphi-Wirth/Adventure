@@ -8,8 +8,24 @@ keyAttack = keyboard_check(ord("X"));
 
 
 move = keyRight - keyLeft;
-
-
+show_debug_message(invulnerable);
+show_debug_message(flashAlpha);
+if(invulnerable == 1){
+	flashAlpha -= 0.05;
+	if(flashAlpha == 0 and invulnerableTicks > 0){
+		flashAlpha = 1;
+		invulnerableTicks -= 1;
+	}
+	else if (flashAlpha == 0 and invulnerableTicks == 0){
+		invulnerable = 0;
+		invulnerableTicks = 2;
+	}
+}
+var healthPickup = instance_place(x+hsp,y+vsp,oHealthPickup)
+if(healthPickup){
+	hp = 5;
+	instance_destroy(healthPickup);
+}
 
 switch (state)
 {
@@ -26,5 +42,9 @@ switch (state)
 	case PLAYERSTATE.IN_AIR: PlayerState_In_Air(); break;
 	
 	case PLAYERSTATE.AIR_ATTACK: PlayerState_Air_Attack(); break;
+	
+	case PLAYERSTATE.HIT: PlayerState_Hit(); break;
+	
+	case PLAYERSTATE.DEAD: PlayerState_Dead(); break;
 	
 }

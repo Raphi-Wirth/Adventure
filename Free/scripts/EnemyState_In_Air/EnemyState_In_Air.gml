@@ -12,7 +12,7 @@ function EnemyState_In_Air(){
 	CollisionDetection();
 	
 	if(vsp<0){
-		sprite_index = sJump;
+		sprite_index = sEnemyJump;
 		if(vsp<-7){
 			image_index = 0;
 		}
@@ -24,12 +24,11 @@ function EnemyState_In_Air(){
 		}
 	}
 	if(vsp>= 0){
+		sprite_index = sEnemyFall;
 		if (vsp >= 0 and vsp < 2){
-			sprite_index = sFall;
 			image_index = 0;
 		}
 		else if (vsp >= 2){
-			sprite_index = sFall;
 			image_index = 1;
 		}
 	}

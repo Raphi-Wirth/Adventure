@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function EnemyState_Chase(){
-	if(abs(oPlayer.x-x) <= 2){
+	if(abs(oPlayer.x-x) <= 5){
 		dir = 0;
 	}
 	else{
@@ -17,7 +17,10 @@ function EnemyState_Chase(){
 	else{
 		sprite_index = sEnemyIdle;
 	}
-	if(distance_to_object(oPlayer) > 130){
+	if(distance_to_object(oPlayer) < 50) {
+		state = ENEMYSTATE.ATTACK;
+	}
+	if(distance_to_object(oPlayer) > 160){
 		state = ENEMYSTATE.IDLE;
 	}
 	Gravity();

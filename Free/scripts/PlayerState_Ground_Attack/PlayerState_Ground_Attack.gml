@@ -22,8 +22,7 @@ function PlayerState_Ground_Attack(){
 		hsp -= sign(hsp);
 	}
 	
-	Gravity();
-	CollisionDetection();
+
 	mask_index = sAttackSlashHB;
 
 	x+=hsp;
@@ -47,7 +46,8 @@ function PlayerState_Ground_Attack(){
 	
 	ds_list_destroy(hitByAttackNow);
 	mask_index = sIdle;
-	
+	Gravity();
+	CollisionDetection();
 	if(animation_end()){
 		sprite_index = sIdle;
 		state = PLAYERSTATE.FREE;

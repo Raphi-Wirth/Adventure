@@ -7,7 +7,7 @@ function EnemyState_Idle(){
 	Gravity();
 	CollisionDetection();
 	
-	if(distance_to_object(oPlayer) < 100){
+	if(distance_to_object(oPlayer) < 130){
 		state = ENEMYSTATE.CHASE;
 	}
 	x+=hsp;
