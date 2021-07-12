@@ -41,7 +41,7 @@ function PlayerState_Ground_Attack(){
 					var dir = sign(oPlayer.x - hitID.x);
 					oPlayer.hsp = 7*dir;
 					hitID.vsp -= 3;
-					hitID.hsp -= 10*dir;
+					hitID.hsp -= 7*dir;
 				}
 			}
 		}

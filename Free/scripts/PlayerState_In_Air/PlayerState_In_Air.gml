@@ -25,14 +25,14 @@ function PlayerState_In_Air(){
 	}
 	
 	if(keyRight and !touchingFloor and touchingRWall and !collidingWall and vsp>0){
-		if(instance_place(x+1,y-20,oWall)){
+		if(instance_place(x+1,y-10,oWall)){
 			state = PLAYERSTATE.WALL_GRAB;
 			wallJumpDirection = -1;
 		}
 	}
 	
 	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall and vsp>0){
-		if(instance_place(x-1,y-20,oWall)){
+		if(instance_place(x-1,y-10,oWall)){
 			state = PLAYERSTATE.WALL_GRAB;
 			wallJumpDirection = 1;
 		}

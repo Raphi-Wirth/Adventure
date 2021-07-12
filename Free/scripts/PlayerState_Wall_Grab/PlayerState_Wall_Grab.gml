@@ -9,7 +9,7 @@ function PlayerState_Wall_Grab(wallDirection){
 	}
 	vsp = wallGrabFallSpeed;
 	if(keyJump){
-		hsp = wallDirection * 8;
+		hsp = wallDirection * 10;
 		vsp = -10;
 		state = PLAYERSTATE.IN_AIR;
 	}
@@ -41,13 +41,13 @@ function PlayerState_Wall_Grab(wallDirection){
 		state = PLAYERSTATE.FREE;
 	}
 	if(keyRight){
-		if(!instance_place(x+1,y+20,oWall)){
+		if(!instance_place(x+1,y,oWall)){
 			state = PLAYERSTATE.IN_AIR;
 		}
 	}
 	
 	else if (keyLeft) {
-		if(!instance_place(x-1,y+20,oWall)){
+		if(!instance_place(x-1,y,oWall)){
 			state = PLAYERSTATE.IN_AIR;
 		}
 	}

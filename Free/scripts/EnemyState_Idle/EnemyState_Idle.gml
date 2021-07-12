@@ -8,6 +8,8 @@ function EnemyState_Idle(){
 	CollisionDetection();
 	
 	if(distance_to_object(oPlayer) < 130){
+		aggrodAtX = x;
+		aggrodAtY = y;
 		state = ENEMYSTATE.CHASE;
 	}
 	x+=hsp;
