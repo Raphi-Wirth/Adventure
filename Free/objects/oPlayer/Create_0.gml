@@ -8,7 +8,15 @@ attackSwingCooldownTime = 10;
 attackSwingTimer = 0;
 inAttackSwingCooldown = 0;
 intangible = 0;
-hp = 5;
+currentHP = 5;
+maxHP = currentHP;
+healthbar_width = 200;
+healthbar_height = 20;
+healthbar_x = 640/12;
+healthbar_y = 50;
+
+
+
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed
 walksp = 1;					//Walk speed

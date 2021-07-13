@@ -12,15 +12,7 @@ function PlayerState_Ground_Attack(){
 		ds_list_clear(hitByAttack);
 	}
 
-	if(abs(hsp)<=1 and move == 0){ 
-		hsp = move*walksp;
-	}
-	else if(abs(hsp)<=5 and move != 0){
-		hsp += move*walksp;
-	}
-	else{
-		hsp -= sign(hsp);
-	}
+	PlayerHorizontalMovement();
 	
 
 	mask_index = sAttackSlashHB;

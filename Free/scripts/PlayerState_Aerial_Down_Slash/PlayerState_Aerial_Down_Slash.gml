@@ -11,16 +11,7 @@ function PlayerState_Aerial_Down_Slash(){
 		image_index = 0;
 		ds_list_clear(hitByAttack);
 	}
-
-	if(abs(hsp)<=1 and move == 0){ 
-		hsp = move*walksp;
-	}
-	else if(abs(hsp)<=5 and move != 0){
-		hsp += move*walksp;
-	}
-	else{
-		hsp -= sign(hsp);
-	}
+	PlayerHorizontalMovement();
 	
 
 	mask_index = sAerial_Down_SlashHB;
@@ -42,7 +33,11 @@ function PlayerState_Aerial_Down_Slash(){
 					oPlayer.canDash = 1;
 					oPlayer.doubleJmp = 0;
 					oPlayer.vsp = -10;
-					hitID.vsp += 3;
+					show_debug_message(hitID.vsp);
+					if(hitID.vsp != 0){
+						hitID.vsp += 3;
+					}
+
 				}
 			}
 		}
@@ -51,8 +46,13 @@ function PlayerState_Aerial_Down_Slash(){
 	mask_index = sIdle;
 	Gravity();
 	CollisionDetection();
+	
 	x+=hsp;
 	y+=vsp;
+	if(touchingFloor){
+		inAttackSwingCooldown = 1;
+		state = PLAYERSTATE.IN_AIR;
+	}
 	if(animation_end()){
 		sprite_index = sIdle;
 		inAttackSwingCooldown = 1;

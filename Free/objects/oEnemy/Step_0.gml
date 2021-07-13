@@ -5,6 +5,8 @@ if(flashAlpha > 0){
 	flashAlpha -= 0.05;
 }
 
+show_debug_message(vsp);
+
 switch (state)
 {
 	case ENEMYSTATE.IDLE: EnemyState_Idle(); break;

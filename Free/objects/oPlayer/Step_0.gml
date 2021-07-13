@@ -8,8 +8,7 @@ keyAttack = keyboard_check(ord("X"));
 
 
 move = keyRight - keyLeft;
-show_debug_message(inAttackSwingCooldown);
-show_debug_message(attackSwingTimer);
+
 if(inAttackSwingCooldown){
 	attackSwingTimer += 1;
 }
@@ -32,7 +31,7 @@ if(invulnerable == 1){
 
 var healthPickup = instance_place(x+hsp,y+vsp,oHealthPickup)
 if(healthPickup){
-	hp = 5;
+	currentHP = 5;
 	instance_destroy(healthPickup);
 }
 

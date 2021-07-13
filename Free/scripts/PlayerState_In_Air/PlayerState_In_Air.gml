@@ -5,15 +5,8 @@ function PlayerState_In_Air(){
 	if(move!=0){
 		image_xscale = move;
 	}
-	if(abs(hsp)<=1 and move == 0){ 
-		hsp = move*walksp;
-	}
-	else if(abs(hsp)<=5 and move != 0){
-		hsp += move*walksp;
-	}
-	else{
-		hsp -= sign(hsp);
-	}
+	
+	PlayerHorizontalMovement();
 	
 	Gravity();
 	CollisionDetection();

@@ -1,10 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function CollisionDetection(){
-	touchingFloor = instance_place(x,y+1, all);
+	touchingFloor = instance_place(x,y+1, oWall);
 	touchingLWall = instance_place(x-1,y, all);
 	touchingRWall = instance_place(x+1,y, all);
-	collidingWall = instance_place(x,y, all);
+	collidingWall = instance_place(x,y, oWall);
 	
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
