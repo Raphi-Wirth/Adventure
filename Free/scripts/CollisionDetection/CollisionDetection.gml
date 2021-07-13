@@ -1,11 +1,12 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function CollisionDetection(){
-	touchingFloor = instance_place(x,y+1,oWall);
-	touchingLWall = instance_place(x-1,y,oWall);
-	touchingRWall = instance_place(x+1,y,oWall);
-	collidingWall = instance_place(x,y,oWall);
-	collidingEnemy = 0;
+	touchingFloor = instance_place(x,y+1, all);
+	touchingLWall = instance_place(x-1,y, all);
+	touchingRWall = instance_place(x+1,y, all);
+	collidingWall = instance_place(x,y, all);
+	
+	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
 	if(touchingFloor or touchingLWall or touchingRWall or collidingWall){
 		if(collidingWall != 0 and (hsp and vsp)){
@@ -35,28 +36,25 @@ function CollisionDetection(){
 	//Horizontal Colission
 	
 		
-	if(place_meeting(x + hsp, y, oWall))
+	if(place_meeting(x + hsp, y, all))
 	{
-		//if(!(!place_meeting(x + sign(hsp), y-2,oWall) or !place_meeting(x+sign(hsp),y+2,oWall))){
-			while(!place_meeting(x + sign(hsp), y, oWall))
-			{
-				x += sign(hsp);
-			}
+		while(!place_meeting(x + sign(hsp), y, all))
+		{
+			x += sign(hsp);
+		}
 		hsp = 0;
-		//}
 	}
 
 
 	//Vertical Collision
 
-	if(place_meeting(x,y+vsp,oWall)){
-		while(!place_meeting(x,y+sign(vsp),oWall))
+	if(place_meeting(x,y+vsp, all)){
+		while(!place_meeting(x,y+sign(vsp), all))
 		{	
 		
 			y += sign(vsp);
 		}
 		if(vsp > 0){
-			flipActive = 0;
 			canDash = 1;
 			doubleJmp = 0;
 			flipRight = 0;

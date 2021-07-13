@@ -4,6 +4,7 @@ hp = 5;
 hsp = 0;
 vsp = 0;
 grv = 0.5;
+intangible = 0;
 aggrodAtX = xstart;
 aggrodAtY = ystart;
 flashColour = c_white;

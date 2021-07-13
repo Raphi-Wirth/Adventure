@@ -28,7 +28,8 @@ function EnemyState_Chase(){
 	}
 	Gravity();
 	CollisionDetection();
-	if(touchingRWall or touchingLWall){
+	if((touchingRWall and touchingRWall.object_index == oWall)
+	or (touchingLWall and touchingLWall.object_index == oWall)){
 		if(!instance_place(x,y-30,oWall)){
 			vsp = -10
 			state = ENEMYSTATE.IN_AIR;
