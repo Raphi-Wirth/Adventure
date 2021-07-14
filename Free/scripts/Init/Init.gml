@@ -42,6 +42,13 @@ enum ENEMYSTATE {
 	IN_AIR
 }
 
+enum ENEMYBEHAVIOUR {
+	CHASE,
+	IDLE,
+	AGGRESSIVE,
+	WANDER
+}
+
 
 
 

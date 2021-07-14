@@ -14,9 +14,13 @@ walksp = 1;
 maxWalkSpeed = 3;
 dir = 0;
 hitByAttack = ds_list_create();
+wanderRange = 200;
 
 
 touchingLWall = 0;
 touchingRWall = 0;
 touchingFloor = 0;
 collidingWall = 0;
+
+function moveTo(){
+}

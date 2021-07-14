@@ -5,7 +5,7 @@ if(flashAlpha > 0){
 	flashAlpha -= 0.05;
 }
 
-show_debug_message(vsp);
+
 
 switch (state)
 {
@@ -21,3 +21,14 @@ switch (state)
 	
 	case ENEMYSTATE.ATTACK: EnemyState_Ground_Attack(dir); break;
 }
+
+
+
+/*
+enum ENEMYBEHAVIOUR {
+	CHASE,
+	IDLE,
+	AGGRESSIVE,
+	WANDER
+}
+*/

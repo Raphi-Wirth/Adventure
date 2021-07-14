@@ -6,7 +6,7 @@
     "path": "folders/Scripts/PlayerVariableFunctions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "PlayerHit",
+  "name": "PlayerHealthChange",
   "tags": [],
   "resourceType": "GMScript",
 }

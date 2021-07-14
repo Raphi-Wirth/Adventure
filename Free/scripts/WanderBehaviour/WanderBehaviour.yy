@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "PlayerVariableFunctions",
-    "path": "folders/Scripts/PlayerVariableFunctions.yy",
+    "name": "Behaviours",
+    "path": "folders/Scripts/Behaviours.yy",
   },
   "resourceVersion": "1.0",
-  "name": "PlayerHit",
+  "name": "WanderBehaviour",
   "tags": [],
   "resourceType": "GMScript",
 }

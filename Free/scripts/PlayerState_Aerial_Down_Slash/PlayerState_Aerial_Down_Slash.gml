@@ -32,12 +32,8 @@ function PlayerState_Aerial_Down_Slash(){
 					var dir = sign(oPlayer.x - hitID.x);
 					oPlayer.canDash = 1;
 					oPlayer.doubleJmp = 0;
-					oPlayer.vsp = -10;
-					show_debug_message(hitID.vsp);
-					if(hitID.vsp != 0){
-						hitID.vsp += 3;
-					}
-
+					Knockback(oPlayer, oPlayer.hsp, -10, 1);
+					Knockback(hitID, 0, 3, 0);
 				}
 			}
 		}

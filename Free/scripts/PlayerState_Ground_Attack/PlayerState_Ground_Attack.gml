@@ -30,10 +30,9 @@ function PlayerState_Ground_Attack(){
 				ds_list_add(hitByAttack, hitID);
 				with (hitID){
 					EnemyHit(1);
-					var dir = sign(oPlayer.x - hitID.x);
-					oPlayer.hsp = 7*dir;
-					hitID.vsp -= 3;
-					hitID.hsp -= 7*dir;
+					var dir = sign(hitID.x - oPlayer.x);
+					Knockback(oPlayer, 7, 0, -dir);
+					Knockback(hitID, 7, -3, dir);
 				}
 			}
 		}

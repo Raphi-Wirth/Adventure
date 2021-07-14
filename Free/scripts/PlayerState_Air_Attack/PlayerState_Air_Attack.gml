@@ -32,6 +32,9 @@ image_speed = 1;
 				ds_list_add(hitByAttack, hitID);
 				with (hitID){
 					EnemyHit(1);
+					var dir = sign(hitID.x - oPlayer.x);
+					Knockback(oPlayer, 7, 0, -dir);
+					Knockback(hitID, 7, 0, dir);
 				}
 			}
 		}
