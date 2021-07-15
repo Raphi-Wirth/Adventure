@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
+flyingSpeed = 4;
 
 function MoveTo(){
 	if(sprite_index != sFlyingEnemy){
@@ -12,8 +13,8 @@ function MoveTo(){
 	moveX = moveX/len;
 	moveY = moveY/len;
 	
-	hsp = moveX * 2;
-	vsp = moveY * 2;
+	hsp = moveX * flyingSpeed;
+	vsp = moveY * flyingSpeed;
 
 	CollisionDetection();
 	
