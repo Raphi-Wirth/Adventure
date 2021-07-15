@@ -20,15 +20,16 @@ function EnemyState_Chase(){
 	else{
 		sprite_index = sEnemyIdle;
 	}
+	Gravity();
+	CollisionDetection();
 	if(abs(oPlayer.x - x) < 70 and abs(oPlayer.y-y)<30){
 		state = ENEMYSTATE.ATTACK;
 	}
 	if(sqrt(sqr(oPlayer.x - aggrodAtX) + sqr(oPlayer.y - aggrodAtY)) > 800){
 		state = ENEMYSTATE.IDLE;
 	}
-	Gravity();
-	CollisionDetection();
-	if(touchingRWall or touchingLWall){
+	if((touchingRWall and touchingRWall.object_index == oWall)
+	or (touchingLWall and touchingLWall.object_index == oWall)){
 		if(!instance_place(x,y-30,oWall)){
 			vsp = -10
 			state = ENEMYSTATE.IN_AIR;

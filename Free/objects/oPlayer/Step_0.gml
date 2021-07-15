@@ -8,8 +8,7 @@ keyAttack = keyboard_check(ord("X"));
 
 
 move = keyRight - keyLeft;
-show_debug_message(inAttackSwingCooldown);
-show_debug_message(attackSwingTimer);
+
 if(inAttackSwingCooldown){
 	attackSwingTimer += 1;
 }
@@ -19,20 +18,12 @@ if(attackSwingTimer == attackSwingCooldownTime){
 }
 
 if(invulnerable == 1){
-	flashAlpha -= 0.05;
-	if(flashAlpha == 0 and invulnerableTicks > 0){
-		flashAlpha = 1;
-		invulnerableTicks -= 1;
-	}
-	else if (flashAlpha == 0 and invulnerableTicks == 0){
-		invulnerable = 0;
-		invulnerableTicks = 2;
-	}
+	Invulnerable();
 }
 
 var healthPickup = instance_place(x+hsp,y+vsp,oHealthPickup)
 if(healthPickup){
-	hp = 5;
+	PlayerGainsHealth(maxHP);
 	instance_destroy(healthPickup);
 }
 

@@ -2,15 +2,13 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function EnemyHit(){
 	var _damage = argument0;
-	hp -= _damage;
-	
-	if(hp>0){
+	currentHP -= _damage;
+	if(currentHP>0){
 		flashAlpha = 1;
 		hitNow = true;
+		state = ENEMYSTATE.HIT;
 	}
 	else{
 		state = ENEMYSTATE.DEAD;
 	}
-	CollisionDetection();
-	Gravity();
 }

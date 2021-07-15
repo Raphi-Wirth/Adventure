@@ -5,7 +5,7 @@ function EnemyState_Ground_Attack(attackDirection){
 		sprite_index = sEnemy_Ground_Attack_Slash;
 		image_speed = 1;
 		image_index = 0;
-		if(attackDirection!=0){
+		if(attackDirection != 0){
 			image_xscale = attackDirection;
 		}
 		ds_list_clear(hitByAttack);
@@ -37,8 +37,7 @@ function EnemyState_Ground_Attack(attackDirection){
 				with (hitID){
 					if(hitID.invulnerable != 1){
 						PlayerHit(1);
-						hitID.vsp -= 3;
-						hitID.hsp -= 3*-attackDirection
+						Knockback(hitID, 3, -3, attackDirection);
 					}
 				}
 			}

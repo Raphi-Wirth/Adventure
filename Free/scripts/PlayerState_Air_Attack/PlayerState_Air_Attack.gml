@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_Air_Attack(){
-image_speed = 1;
+	image_speed = 1;
 
 	//Start of the attack
 
@@ -12,15 +12,7 @@ image_speed = 1;
 		ds_list_clear(hitByAttack);
 	}
 
-	if(abs(hsp)<=1 and move == 0){ 
-		hsp = move*walksp;
-	}
-	else if(abs(hsp)<=5 and move != 0){
-			hsp += move*walksp;
-	}
-	else{
-		hsp -= sign(hsp);
-	}
+	PlayerHorizontalMovement();
 	
 	Gravity();
 	CollisionDetection();
@@ -40,6 +32,9 @@ image_speed = 1;
 				ds_list_add(hitByAttack, hitID);
 				with (hitID){
 					EnemyHit(1);
+					var dir = sign(hitID.x - oPlayer.x);
+					Knockback(oPlayer, 7, 0, -dir);
+					Knockback(hitID, 7, 0, dir);
 				}
 			}
 		}
@@ -47,14 +42,12 @@ image_speed = 1;
 	
 	ds_list_destroy(hitByAttackNow);
 	mask_index = sIdle;
-	
+	if(touchingFloor){
+		inAttackSwingCooldown = 1;
+		state = PLAYERSTATE.FREE;
+	}
 	if(animation_end()){
-		if(touchingFloor){
-			state = PLAYERSTATE.FREE;
-		}
-		else{
-			state = PLAYERSTATE.IN_AIR;
-		}
-
+		inAttackSwingCooldown = 1;
+		state = PLAYERSTATE.IN_AIR;
 	}
 }

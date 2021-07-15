@@ -3,6 +3,8 @@
 function EnemyState_Dead(){
 	if(sprite_index != sEnemyDie){
 		sprite_index = sEnemyDie;
+		intangible = 1;
+		mask_index = sNoHitBox;
 		image_speed = 1;
 		image_alpha = 1;
 		image_index = 0;
