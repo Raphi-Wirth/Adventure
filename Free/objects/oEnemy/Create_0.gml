@@ -22,5 +22,8 @@ touchingRWall = 0;
 touchingFloor = 0;
 collidingWall = 0;
 
-function moveTo(){
+function MoveTo(){
+}
+
+function Attack(){
 }

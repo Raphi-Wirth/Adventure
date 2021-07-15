@@ -15,20 +15,11 @@ switch (state)
 	
 	case ENEMYSTATE.HIT: EnemyState_Hit(); break;
 	
-	case ENEMYSTATE.CHASE: EnemyState_Chase(); break;
+	case ENEMYSTATE.CHASE: MoveTo(); break;
 	
 	case ENEMYSTATE.IN_AIR: EnemyState_In_Air(); break;
 	
-	case ENEMYSTATE.ATTACK: EnemyState_Ground_Attack(dir); break;
+	case ENEMYSTATE.ATTACK: Attack(); break;
 }
 
 
-
-/*
-enum ENEMYBEHAVIOUR {
-	CHASE,
-	IDLE,
-	AGGRESSIVE,
-	WANDER
-}
-*/

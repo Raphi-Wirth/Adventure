@@ -67,7 +67,7 @@ function PlayerState_In_Air(){
 		}
 	}
 
-	if(vsp>= 0){
+	if(vsp> 0){
 		sprite_index = sFall;
 		if (vsp >= 0 and vsp < 2){
 			image_index = 0;

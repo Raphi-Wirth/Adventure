@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sEnemyIdle",
-    "path": "sprites/sEnemyIdle/sEnemyIdle.yy",
+    "name": "sFlyingEnemy",
+    "path": "sprites/sFlyingEnemy/sFlyingEnemy.yy",
   },
   "solid": false,
   "visible": true,
@@ -34,7 +34,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "enemyMan",
+  "name": "oFlyingEnemy",
   "tags": [],
   "resourceType": "GMObject",
 }

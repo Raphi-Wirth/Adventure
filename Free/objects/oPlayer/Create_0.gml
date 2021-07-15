@@ -17,6 +17,7 @@ healthbar_y = 50;
 
 
 
+
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed
 walksp = 1;					//Walk speed

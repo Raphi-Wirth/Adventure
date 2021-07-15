@@ -5,10 +5,6 @@ function CollisionDetection(){
 	touchingLWall = instance_place(x-1,y, oWall);
 	touchingRWall = instance_place(x+1,y, oWall);
 	collidingWall = instance_place(x,y, oWall);
-	if(object_index == oPlayer and collidingWall){
-		show_debug_message(collidingWall.x);
-		show_debug_message(collidingWall.y);
-	}
 
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
@@ -45,27 +41,24 @@ function CollisionDetection(){
 		vsp = 0;
 	}
 	
-	//if(touchingFloor or touchingLWall or touchingRWall or collidingWall){
-		if(collidingWall != 0 and (hsp and vsp)){
-			//Checks for any current speed, sends you in the opposite direction
-			if(sign(hsp) != sign(image_xscale)){
-				while(instance_place(x,y, collidingWall)){
-					x -= sign(hsp);
-					y -= sign(vsp);
-				}
+	if(collidingWall != 0 and (hsp and vsp)){
+		//Checks for any current speed, sends you in the opposite direction
+		if(sign(hsp) != sign(image_xscale)){
+			while(instance_place(x,y, collidingWall)){
+				x -= sign(hsp);
+				y -= sign(vsp);
 			}
 		}
-		else if (collidingWall !=0){
-			while(instance_place(x,y,collidingWall)){
-				xDiff = collidingWall.x - x;
-				yDiff = collidingWall.y - y;
-				len = sqrt(sqr(xDiff) + sqr(yDiff));
-				moveX = xDiff/len;
-				moveY = yDiff/len;
-				x -= moveX;
-				y -= moveY;
-			}
+	}
+	else if (collidingWall !=0){
+		while(instance_place(x,y,collidingWall)){
+			xDiff = collidingWall.x - x;
+			yDiff = collidingWall.y - y;
+			len = sqrt(sqr(xDiff) + sqr(yDiff));
+			moveX = xDiff/len;
+			moveY = yDiff/len;
+			x -= moveX;
+			y -= moveY;
 		}
-	//}
-	
+	}	
 }
