@@ -3,7 +3,9 @@
 event_inherited();
 
 function MoveTo(){
-	sprite_index = sFlyingEnemy;
+	if(sprite_index != sFlyingEnemy){
+		sprite_index = sFlyingEnemy;
+	}
 	moveX = oPlayer.x - x;
 	moveY = oPlayer.y - y;
 	len = sqrt(sqr(moveX) + sqr(moveY));

@@ -46,7 +46,7 @@ function PlayerState_In_Air(){
 	}
 	
 	if(keyAttack and !inAttackSwingCooldown){
-		state = PLAYERSTATE.AIR_ATTACK
+		state = PLAYERSTATE.AIR_ATTACK;
 	}
 	if(keyAttack and keyDown and !inAttackSwingCooldown){
 		state = PLAYERSTATE.AIR_DOWN_ATTACK;
