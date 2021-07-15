@@ -5,6 +5,14 @@ function CollisionDetection(){
 	touchingLWall = instance_place(x-1,y, oWall);
 	touchingRWall = instance_place(x+1,y, oWall);
 	collidingWall = instance_place(x,y, oWall);
+	
+	
+	// Lava Check
+	if(instance_place(x, y + 1, oLava))
+	{
+		state = PLAYERSTATE.DEAD;
+	}
+	
 
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
