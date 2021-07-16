@@ -14,11 +14,8 @@
     {"id":{"name":"bulletWallDetector","path":"scripts/bulletWallDetector/bulletWallDetector.yy",},"order":16,},
     {"id":{"name":"sBulletChocolate","path":"sprites/sBulletChocolate/sBulletChocolate.yy",},"order":33,},
     {"id":{"name":"sHealthPickup","path":"sprites/sHealthPickup/sHealthPickup.yy",},"order":21,},
-//<<<<<<< inheritance-n-stuff
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},"order":11,},
-// =======
     {"id":{"name":"sLava","path":"sprites/sLava/sLava.yy",},"order":31,},
-//>>>>>>> main
     {"id":{"name":"PlayerState_Attack_Combo","path":"scripts/PlayerState_Attack_Combo/PlayerState_Attack_Combo.yy",},"order":4,},
     {"id":{"name":"oLava","path":"objects/oLava/oLava.yy",},"order":11,},
     {"id":{"name":"sGround_Attack_Slash","path":"sprites/sGround_Attack_Slash/sGround_Attack_Slash.yy",},"order":8,},
