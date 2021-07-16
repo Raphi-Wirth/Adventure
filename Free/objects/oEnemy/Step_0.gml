@@ -15,7 +15,7 @@ switch (state)
 	
 	case ENEMYSTATE.CHASE: Chase(); break;
 	
-	case ENEMYSTATE.HIT: EnemyState_Hit(); break;
+	case ENEMYSTATE.HIT: Hit(); break;
 	
 	case ENEMYSTATE.IN_AIR: EnemyState_In_Air(); break;
 	
