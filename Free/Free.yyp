@@ -14,8 +14,13 @@
     {"id":{"name":"bulletWallDetector","path":"scripts/bulletWallDetector/bulletWallDetector.yy",},"order":16,},
     {"id":{"name":"sBulletChocolate","path":"sprites/sBulletChocolate/sBulletChocolate.yy",},"order":33,},
     {"id":{"name":"sHealthPickup","path":"sprites/sHealthPickup/sHealthPickup.yy",},"order":21,},
+//<<<<<<< inheritance-n-stuff
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},"order":11,},
+// =======
+    {"id":{"name":"sLava","path":"sprites/sLava/sLava.yy",},"order":31,},
+//>>>>>>> main
     {"id":{"name":"PlayerState_Attack_Combo","path":"scripts/PlayerState_Attack_Combo/PlayerState_Attack_Combo.yy",},"order":4,},
+    {"id":{"name":"oLava","path":"objects/oLava/oLava.yy",},"order":11,},
     {"id":{"name":"sGround_Attack_Slash","path":"sprites/sGround_Attack_Slash/sGround_Attack_Slash.yy",},"order":8,},
     {"id":{"name":"PlayerState_Ground_Attack","path":"scripts/PlayerState_Ground_Attack/PlayerState_Ground_Attack.yy",},"order":3,},
     {"id":{"name":"oGroundEnemy","path":"objects/oGroundEnemy/oGroundEnemy.yy",},"order":5,},
@@ -49,6 +54,7 @@
     {"id":{"name":"sEnemyJump","path":"sprites/sEnemyJump/sEnemyJump.yy",},"order":16,},
     {"id":{"name":"sCollision","path":"sprites/sCollision/sCollision.yy",},"order":15,},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},"order":7,},
+    {"id":{"name":"playRoom","path":"rooms/playRoom/playRoom.yy",},"order":2,},
     {"id":{"name":"PlayerState_Dead","path":"scripts/PlayerState_Dead/PlayerState_Dead.yy",},"order":9,},
     {"id":{"name":"VectorTo","path":"scripts/VectorTo/VectorTo.yy",},"order":15,},
     {"id":{"name":"PlayerState_Double_Jump","path":"scripts/PlayerState_Double_Jump/PlayerState_Double_Jump.yy",},"order":5,},
@@ -84,6 +90,7 @@
     {"id":{"name":"sEnemy_Ground_Attack_Slash","path":"sprites/sEnemy_Ground_Attack_Slash/sEnemy_Ground_Attack_Slash.yy",},"order":18,},
     {"id":{"name":"sJump","path":"sprites/sJump/sJump.yy",},"order":4,},
     {"id":{"name":"sPlayerHit","path":"sprites/sPlayerHit/sPlayerHit.yy",},"order":20,},
+    {"id":{"name":"SampleTileset","path":"tilesets/SampleTileset/SampleTileset.yy",},"order":0,},
     {"id":{"name":"oHealthPickup","path":"objects/oHealthPickup/oHealthPickup.yy",},"order":8,},
     {"id":{"name":"CollisionDetection","path":"scripts/CollisionDetection/CollisionDetection.yy",},"order":0,},
     {"id":{"name":"room0","path":"rooms/room0/room0.yy",},"order":1,},
@@ -100,6 +107,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"playRoom","path":"rooms/playRoom/playRoom.yy",},},
     {"roomId":{"name":"room0","path":"rooms/room0/room0.yy",},},
   ],
   "Folders": [
