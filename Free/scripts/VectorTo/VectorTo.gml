@@ -6,8 +6,7 @@ function VectorTo(objID){
 	len = sqrt(sqr(moveX) + sqr(moveY));
 	moveX = moveX/len;
 	moveY = moveY/len;
-	
-	hsp = moveX * flyingSpeed;
-	vsp = moveY * flyingSpeed;
+	hsp = moveX;
+	vsp = moveY;
 	return [hsp, vsp]; 
 }
