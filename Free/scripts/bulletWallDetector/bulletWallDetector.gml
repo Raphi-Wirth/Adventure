@@ -5,7 +5,7 @@ function bulletWallDetector(targetID, xDiff, yDiff){
 	var finalY = targetID.y;
 	var currentX = x;
 	var currentY = y;
-	var vect = VectorTo(targetID);
+	var vect = VectorTo(targetID.x, targetID.y);
 	while(sign(finalX - currentX) == xDiff and sign(finalY - currentY) == yDiff){
 		if(place_meeting(currentX,currentY, oWall)){
 			show_debug_message("Wall in way!");

@@ -27,3 +27,6 @@ function MoveTo(){
 
 function Attack(){
 }
+
+function Idle(){
+}
