@@ -9,13 +9,13 @@ if(flashAlpha > 0){
 
 switch (state)
 {
-	case ENEMYSTATE.IDLE: EnemyState_Idle(); break;
+	case ENEMYSTATE.IDLE: Idle(); break;
 		
 	case ENEMYSTATE.DEAD: EnemyState_Dead(); break;
 	
-	case ENEMYSTATE.HIT: EnemyState_Hit(); break;
+	case ENEMYSTATE.CHASE: Chase(); break;
 	
-	case ENEMYSTATE.CHASE: MoveTo(); break;
+	case ENEMYSTATE.HIT: Hit(); break;
 	
 	case ENEMYSTATE.IN_AIR: EnemyState_In_Air(); break;
 	

@@ -91,4 +91,18 @@ function Attack(){
 		state = ENEMYSTATE.CHASE;
 	}
 }
+
+function Idle(){
+	hsp = 0;
+	sprite_index = sEnemyIdle;
+	Gravity();
+	CollisionDetection();
 	
+	if(distance_to_object(oPlayer) < 300){
+		aggrodAtX = x;
+		aggrodAtY = y;
+		state = ENEMYSTATE.CHASE;
+	}
+	x+=hsp;
+	y+=vsp;
+}
