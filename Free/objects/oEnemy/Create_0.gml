@@ -24,8 +24,8 @@ collidingWall = 0;
 
 function MoveTo(xVal, yVal, _speed){
 	path = path_add();
-	mp_grid_add_instances(path, oWall, false);
-	mp_grid_add_instances(path, oFlyingEnemy, false);
+	mp_grid_add_instances(path, oWall, true);
+	mp_grid_add_instances(path, oFlyingEnemy, true);
 	mp_grid_path(grid, path, x, y, xVal, yVal, 1);
 	path_start(path, _speed, 0 , 1);
 }
