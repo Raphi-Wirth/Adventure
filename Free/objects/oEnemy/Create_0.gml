@@ -17,7 +17,6 @@ hitByAttack = ds_list_create();
 wanderRange = 200;
 
 grid = mp_grid_create(0,0, room_width/32, room_height/32,32,32);
-
 touchingLWall = 0;
 touchingRWall = 0;
 touchingFloor = 0;
@@ -25,7 +24,8 @@ collidingWall = 0;
 
 function MoveTo(xVal, yVal, _speed){
 	path = path_add();
-	mp_grid_add_instances(path, oWall, 1);
+	mp_grid_add_instances(path, oWall, false);
+	mp_grid_add_instances(path, oFlyingEnemy, false);
 	mp_grid_path(grid, path, x, y, xVal, yVal, 1);
 	path_start(path, _speed, 0 , 1);
 }
@@ -38,4 +38,7 @@ function Idle(){
 
 function Hit(){
 
+}
+
+function Die(){
 }

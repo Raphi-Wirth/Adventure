@@ -6,6 +6,7 @@ airSpeed = 1;
 attackCooldownTime = 75;
 attackTimer = 0;
 inAttackCooldown = 0;
+lastAttackIndex = 0;
 randomX = random_range(x-100,x+100);
 randomY = random_range(y-100,y+100);
 MoveTo(randomX, randomY, 1);
@@ -39,19 +40,21 @@ function Attack(){
 		path_end();
 		sprite_index = sFlying_Icecream_Attack;
 		image_speed = 1;
-		image_index = 0;
+		image_index = lastAttackIndex;
 	}
 	if(bulletWallDetector(oPlayer, sign(oPlayer.x - x), sign(oPlayer.y - y)) == 1){
 		state = ENEMYSTATE.CHASE;
 		return;
 	}
-	CollisionDetection();
+	FlyingBuzzEffect(3);
+	lastAttackIndex += 1;
 	if(animation_end()){ 
 		var createdBullet = instance_create_layer(x,y,"Bullets",oBullet);
 		var vect = VectorTo(oPlayer.x, oPlayer.y);
 		createdBullet.hsp = vect[0];
 		createdBullet.vsp = vect[1];
 		createdBullet.image_angle = point_direction(x,y,oPlayer.x,oPlayer.y);
+		lastAttackIndex = 0;
 		inAttackCooldown = 1;
 		attackTimer = 0;
 		state = ENEMYSTATE.CHASE;
@@ -66,7 +69,7 @@ function Idle(){
 		MoveTo(randomX, randomY, 1);
 	}
 	sprite_index = sFlyingEnemy;
-	if(distance_to_object(oPlayer) < 100){
+	if(distance_to_object(oPlayer) < 250){
 		aggrodAtX = x;
 		aggrodAtY = y;
 		state = ENEMYSTATE.CHASE;
@@ -75,7 +78,7 @@ function Idle(){
 	if(touchingFloor or touchingRWall or touchingLWall or touchingRoof){
 		path_end();
 		randomX = random_range(x-100,x+100);
-		randomY = random_range(y-100,y+100);
+		randomY = random_range(y-100,y+100); 
 		MoveTo(randomX, randomY, 1);
 	}
 	image_xscale = DirectionTo(randomX);
@@ -93,12 +96,12 @@ function Chase(){
 		MoveTo(oPlayer.x,oPlayer.y,3);
 	}
 	CollisionDetection();
-	if(distance_to_object(oPlayer) < 200
+	if(distance_to_object(oPlayer) < 400
 	and !bulletWallDetector(oPlayer, sign(oPlayer.x-x), sign(oPlayer.y-y))
 	and !inAttackCooldown){
 		state = ENEMYSTATE.ATTACK;
 	}
-	if(distance_to_object(oPlayer) > 300){
+	if(distance_to_object(oPlayer) > 600){
 		state = ENEMYSTATE.IDLE;
 	}
 }
