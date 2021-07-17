@@ -33,7 +33,7 @@ function PlayerState_Air_Attack(){
 				with (hitID){
 					EnemyHit(1);
 					var dir = sign(hitID.x - oPlayer.x);
-					Knockback(oPlayer, 7, 0, -dir);
+					Knockback(oPlayer, 7, oPlayer.vsp, -dir);
 					Knockback(hitID, 7, 0, dir);
 				}
 			}

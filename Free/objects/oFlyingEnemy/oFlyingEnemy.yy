@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sFlyingEnemy",
+    "path": "sprites/sFlyingEnemy/sFlyingEnemy.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "oEnemy",

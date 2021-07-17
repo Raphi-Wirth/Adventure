@@ -121,8 +121,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "GroundEnemy",
+    "path": "folders/Sprites/Enemies/GroundEnemy.yy",
   },
   "resourceVersion": "1.0",
   "name": "sEnemy_Ground_Attack_Slash",

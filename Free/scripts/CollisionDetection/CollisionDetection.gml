@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function CollisionDetection(){
 	touchingFloor = instance_place(x,y+1, oWall);
+	touchingRoof = instance_place(x,y-1,oWall);
 	touchingLWall = instance_place(x-1,y, oWall);
 	touchingRWall = instance_place(x+1,y, oWall);
 	collidingWall = instance_place(x,y, oWall);
@@ -16,7 +17,8 @@ function CollisionDetection(){
 
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
-
+	
+	
 
 	
 	//Horizontal Colission

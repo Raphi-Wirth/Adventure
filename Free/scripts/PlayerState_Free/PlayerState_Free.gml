@@ -83,6 +83,9 @@ function PlayerState_Free(){
 
 	if(keyAttack and touchingFloor and !inAttackSwingCooldown){
 		state = PLAYERSTATE.GROUND_ATTACK;
+		if(keyUp){
+			state = PLAYERSTATE.GROUND_UP_ATTACK;
+		}
 	}
 
 }
