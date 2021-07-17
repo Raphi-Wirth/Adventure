@@ -17,7 +17,8 @@ function CollisionDetection(){
 
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
-
+	
+	
 
 	
 	//Horizontal Colission

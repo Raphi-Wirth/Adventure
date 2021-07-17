@@ -4,6 +4,7 @@ keyRight = keyboard_check(vk_right);
 keyJump = keyboard_check_pressed(vk_space);
 keyDash = keyboard_check_pressed(ord("C"));
 keyDown = keyboard_check(vk_down);
+keyUp = keyboard_check(vk_up);
 keyAttack = keyboard_check(ord("X"));
 
 
@@ -34,6 +35,8 @@ switch (state)
 	case PLAYERSTATE.DASH: PlayerState_Dash(dashDirection); break;
 		
 	case PLAYERSTATE.GROUND_ATTACK: PlayerState_Ground_Attack(); break;
+	
+	case PLAYERSTATE.GROUND_UP_ATTACK: PlayerState_Ground_Up_Attack(); break;
 	
 	case PLAYERSTATE.WALL_GRAB: PlayerState_Wall_Grab(wallJumpDirection); break;
 	

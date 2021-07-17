@@ -32,18 +32,19 @@ MoveTo(randomX, randomY, 1);
 }*/
 
 function Attack(){
-	image_xscale = DirectionTo(oPlayer.x);
+	if(DirectionTo(oPlayer.x) != 0){
+		image_xscale = DirectionTo(oPlayer.x);
+	}
 	if(sprite_index != sFlying_Icecream_Attack){
 		path_end();
 		sprite_index = sFlying_Icecream_Attack;
-		image_speed = 2;
+		image_speed = 1;
 		image_index = 0;
 	}
 	if(bulletWallDetector(oPlayer, sign(oPlayer.x - x), sign(oPlayer.y - y)) == 1){
 		state = ENEMYSTATE.CHASE;
 		return;
 	}
-	FlyingBuzzEffect(3);
 	CollisionDetection();
 	if(animation_end()){ 
 		var createdBullet = instance_create_layer(x,y,"Bullets",oBullet);
@@ -58,7 +59,6 @@ function Attack(){
 }
  
 function Idle(){
-	
 	if(path_position == 1){
 		path_end();
 		randomX = random_range(x-100,x+100);
@@ -78,12 +78,13 @@ function Idle(){
 		randomY = random_range(y-100,y+100);
 		MoveTo(randomX, randomY, 1);
 	}
-;
 	image_xscale = DirectionTo(randomX);
 }
 
 function Chase(){
-	image_xscale = DirectionTo(oPlayer.x);
+	if(DirectionTo(oPlayer.x) != 0){
+		image_xscale = DirectionTo(oPlayer.x);
+	}
 	if(sprite_index != sFlyingEnemy){
 		sprite_index = sFlyingEnemy;
 	}
