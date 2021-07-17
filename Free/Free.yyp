@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"EnemyState_Hit","path":"scripts/EnemyState_Hit/EnemyState_Hit.yy",},"order":2,},
+    {"id":{"name":"oSmallBrick","path":"objects/oSmallBrick/oSmallBrick.yy",},"order":12,},
     {"id":{"name":"sWalk","path":"sprites/sWalk/sWalk.yy",},"order":1,},
     {"id":{"name":"sEnemyAttackSlashHB","path":"sprites/sEnemyAttackSlashHB/sEnemyAttackSlashHB.yy",},"order":6,},
     {"id":{"name":"sWallGrab","path":"sprites/sWallGrab/sWallGrab.yy",},"order":2,},
@@ -27,6 +28,7 @@
     {"id":{"name":"sIdle","path":"sprites/sIdle/sIdle.yy",},"order":0,},
     {"id":{"name":"animation_end","path":"scripts/animation_end/animation_end.yy",},"order":1,},
     {"id":{"name":"sHealthBar","path":"sprites/sHealthBar/sHealthBar.yy",},"order":25,},
+    {"id":{"name":"sSmallBrick","path":"sprites/sSmallBrick/sSmallBrick.yy",},"order":32,},
     {"id":{"name":"PlayerState_In_Air","path":"scripts/PlayerState_In_Air/PlayerState_In_Air.yy",},"order":6,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":1,},
     {"id":{"name":"sBulletStrawberry","path":"sprites/sBulletStrawberry/sBulletStrawberry.yy",},"order":1,},
@@ -51,6 +53,7 @@
     {"id":{"name":"sFall","path":"sprites/sFall/sFall.yy",},"order":4,},
     {"id":{"name":"sEnemyJump","path":"sprites/sEnemyJump/sEnemyJump.yy",},"order":3,},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},"order":7,},
+    {"id":{"name":"Room3","path":"rooms/Room3/Room3.yy",},"order":3,},
     {"id":{"name":"playRoom","path":"rooms/playRoom/playRoom.yy",},"order":2,},
     {"id":{"name":"PlayerState_Dead","path":"scripts/PlayerState_Dead/PlayerState_Dead.yy",},"order":9,},
     {"id":{"name":"VectorTo","path":"scripts/VectorTo/VectorTo.yy",},"order":15,},
@@ -100,8 +103,9 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"room0","path":"rooms/room0/room0.yy",},},
+    {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
     {"roomId":{"name":"playRoom","path":"rooms/playRoom/playRoom.yy",},},
+    {"roomId":{"name":"room0","path":"rooms/room0/room0.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":12,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
