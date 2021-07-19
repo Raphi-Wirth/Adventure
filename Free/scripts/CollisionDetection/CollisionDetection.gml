@@ -7,18 +7,23 @@ function CollisionDetection(){
 	touchingRWall = instance_place(x+1,y, oWall);
 	collidingWall = instance_place(x,y, oWall);
 	collidingEnemy = instance_place(x,y,oEnemy);
+
 	
 	// Lava Check
 	if(instance_place(x, y + 1, oLava))
 	{
 		state = PLAYERSTATE.DEAD;
 	}
-	if(collidingEnemy and self.object_index == oPlayer){
-		PlayerHit(1);
-		var xDiff = collidingEnemy.x - oPlayer.x;
-		var yDiff = collidingEnemy.y - oPlayer.y;
-		Knockback(oPlayer, 7, -sign(yDiff)*5, -sign(xDiff))
+	
+	if(object_index == oPlayer){
+		if(collidingEnemy and !invulnerable){
+			PlayerHit(1);
+			var xDiff = collidingEnemy.x - oPlayer.x;
+			var yDiff = collidingEnemy.y - oPlayer.y;
+			Knockback(oPlayer, 7, -sign(yDiff)*5, -sign(xDiff))
+		}
 	}
+
 
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	

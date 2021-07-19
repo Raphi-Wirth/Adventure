@@ -21,5 +21,5 @@ switch (state)
 	
 	case ENEMYSTATE.ATTACK: Attack(); break;
 }
-
+polygon = polygon_from_instance(id);
 
