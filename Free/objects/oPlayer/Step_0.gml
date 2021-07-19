@@ -52,4 +52,6 @@ switch (state)
 	
 	case PLAYERSTATE.AIR_DOWN_ATTACK(): PlayerState_Aerial_Down_Slash(); break;
 	
+	case PLAYERSTATE.AIR_UP_ATTACK(): PlayerState_Aerial_Up_Attack(); break;
+	
 }

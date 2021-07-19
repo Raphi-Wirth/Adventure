@@ -1,44 +1,20 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-
-function MoveTo(){
-	if(abs(oPlayer.x-x) <= 10){
-		dir = 0;
+function Hit(){
+	if(sprite_index != sEnemyHit){
+		sprite_index = sEnemyHit;
 	}
-	else{
-		dir = sign(oPlayer.x - x);
+	if(flashAlpha > 0){
+		flashAlpha -= 0.05;
 	}
-	hsp += dir*walksp;
-	if(abs(hsp)>maxWalkSpeed){
-		hsp = maxWalkSpeed*sign(hsp);
-	}
-	if(dir!=0){
-		sprite_index = sEnemyWalk;
-		image_xscale = dir;
-		image_speed = 1;
-	}
-	else{
-		sprite_index = sEnemyIdle;
+	else if(flashAlpha == 0){
+		state = ENEMYSTATE.CHASE;
 	}
 	Gravity();
 	CollisionDetection();
-	
-	if(abs(oPlayer.x - x) < 70 and abs(oPlayer.y-y)<30){
-		state = ENEMYSTATE.ATTACK;
-	}
-	if(sqrt(sqr(oPlayer.x - aggrodAtX) + sqr(oPlayer.y - aggrodAtY)) > 800){
-		state = ENEMYSTATE.IDLE;
-	}
-	if((touchingRWall and touchingRWall.object_index == oWall)
-	or (touchingLWall and touchingLWall.object_index == oWall)){
-		if(!instance_place(x,y-30,oWall)){
-			vsp = -10
-			state = ENEMYSTATE.IN_AIR;
-		}
-	}
-	x += hsp;
-	y += vsp;
+	x+=hsp;
+	y+=vsp;
 }
 
 function Attack(){

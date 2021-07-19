@@ -8,7 +8,7 @@ attackSwingCooldownTime = 10;
 attackSwingTimer = 0;
 inAttackSwingCooldown = 0;
 intangible = 0;
-currentHP = 25;
+currentHP = 5;
 maxHP = currentHP;
 healthbar_width = 200;
 healthbar_height = 20;
@@ -58,6 +58,7 @@ enum PLAYERSTATE
 	IN_AIR,
 	DOUBLE_JUMP,
 	AIR_ATTACK,
+	AIR_UP_ATTACK,
 	HIT,
 	DEAD,
 	AIR_DOWN_ATTACK
