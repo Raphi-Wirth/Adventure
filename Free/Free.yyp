@@ -43,6 +43,7 @@
     {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":3,},
     {"id":{"name":"light_enumerate_extensions","path":"scripts/light_enumerate_extensions/light_enumerate_extensions.yy",},"order":3,},
     {"id":{"name":"sIdle","path":"sprites/sIdle/sIdle.yy",},"order":0,},
+    {"id":{"name":"testLevel1","path":"rooms/testLevel1/testLevel1.yy",},"order":5,},
     {"id":{"name":"animation_end","path":"scripts/animation_end/animation_end.yy",},"order":1,},
     {"id":{"name":"get_next_pot","path":"scripts/get_next_pot/get_next_pot.yy",},"order":1,},
     {"id":{"name":"sHealthBar","path":"sprites/sHealthBar/sHealthBar.yy",},"order":25,},
@@ -169,6 +170,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"testLevel1","path":"rooms/testLevel1/testLevel1.yy",},},
     {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
     {"roomId":{"name":"room04","path":"rooms/room04/room04.yy",},},
     {"roomId":{"name":"room0","path":"rooms/room0/room0.yy",},},
