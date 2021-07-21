@@ -2,6 +2,11 @@
 // You can write your code in this editor
 
 
+
+hasSword = 0;
+
+
+
 invulnerable = 0;
 invulnerableTicks = 2;
 attackSwingCooldownTime = 10;
@@ -15,7 +20,7 @@ healthbar_height = 20;
 healthbar_x = 640/12;
 healthbar_y = 50;
 
-
+hspCarrySpeed = 0;
 
 
 vsp = 0						//Vertical Speed
@@ -38,6 +43,7 @@ flashColour = c_white;
 
 
 state = PLAYERSTATE.FREE;
+lastState = state;
 hitByAttack = ds_list_create();
 
 touchingLWall = 0;

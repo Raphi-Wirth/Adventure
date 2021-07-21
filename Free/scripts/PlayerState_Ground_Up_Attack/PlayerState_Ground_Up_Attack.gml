@@ -41,8 +41,7 @@ function PlayerState_Ground_Up_Attack(){
 	mask_index = sIdle;
 	Gravity();
 	CollisionDetection();
-	x+=hsp;
-	y+=vsp;
+
 	if(animation_end()){
 		sprite_index = sIdle;
 		inAttackSwingCooldown = 1;

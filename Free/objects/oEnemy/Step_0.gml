@@ -11,7 +11,7 @@ switch (state)
 {
 	case ENEMYSTATE.IDLE: Idle(); break;
 		
-	case ENEMYSTATE.DEAD: EnemyState_Dead(); break;
+	case ENEMYSTATE.DEAD: Dead(); break;
 	
 	case ENEMYSTATE.CHASE: Chase(); break;
 	

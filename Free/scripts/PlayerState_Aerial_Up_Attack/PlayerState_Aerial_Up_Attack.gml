@@ -41,8 +41,6 @@ function PlayerState_Aerial_Up_Attack(){
 	Gravity();
 	CollisionDetection();
 	
-	x+=hsp;
-	y+=vsp;
 	if(touchingFloor){
 		inAttackSwingCooldown = 1;
 		state = PLAYERSTATE.IN_AIR;

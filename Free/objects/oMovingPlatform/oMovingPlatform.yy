@@ -1,12 +1,15 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sWall",
+    "path": "sprites/sWall/sWall.yy",
+  },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_light",
-    "path": "objects/obj_light/obj_light.yy",
+    "name": "oWall",
+    "path": "objects/oWall/oWall.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -21,16 +24,17 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Lighting",
-    "path": "folders/Objects/Lighting.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oTestLight",
+  "name": "oMovingPlatform",
   "tags": [],
   "resourceType": "GMObject",
 }

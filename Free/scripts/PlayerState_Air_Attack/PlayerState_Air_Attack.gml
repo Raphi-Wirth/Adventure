@@ -18,8 +18,6 @@ function PlayerState_Air_Attack(){
 	CollisionDetection();
 	mask_index = sAttackSlashHB;
 
-	x+=hsp;
-	y+=vsp;
 	//Use attack hitbox and check for hits
 	var hitByAttackNow = ds_list_create();
 	var hits = instance_place_list(x, y, oEnemy, hitByAttackNow, false);

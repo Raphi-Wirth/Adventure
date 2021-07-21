@@ -1,4 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-light[| eLight.X] = oPlayer.x;
-light[| eLight.Y] = oPlayer.y;
+event_inherited();
+light[| eLight.Intensity] = 1.5;

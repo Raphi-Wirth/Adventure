@@ -14,6 +14,5 @@ function PlayerState_Hit(){
 	}
 	Gravity();
 	CollisionDetection();
-	x+=hsp;
-	y+=vsp;
+
 }

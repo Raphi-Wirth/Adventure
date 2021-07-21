@@ -9,40 +9,31 @@ function PlayerState_In_Air(){
 	PlayerHorizontalMovement();
 	Gravity();
 	CollisionDetection();
-	x+=hsp;
-	y+=vsp;
 	if(touchingFloor){
 		state = PLAYERSTATE.FREE;
-		return;
 	}
 	
 	if(keyDash and canDash){
 		canDash = 0;
 		dashDirection = move;
 		state = PLAYERSTATE.DASH;
-		return;
+	}
+
+	if(keyRight and !touchingFloor and touchingRWall and !collidingWall and vsp>0
+	and touchingRWall.wallGrabbable == 1){
+		state = PLAYERSTATE.WALL_GRAB;
+		wallJumpDirection = -1;
 	}
 	
-	if(keyRight and !touchingFloor and touchingRWall and !collidingWall and vsp>0){
-		if(instance_place(x+1,y-10,oWall)){
-			state = PLAYERSTATE.WALL_GRAB;
-			wallJumpDirection = -1;
-			return;
-		}
-	}
-	
-	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall and vsp>0){
-		if(instance_place(x-1,y-10,oWall)){
-			state = PLAYERSTATE.WALL_GRAB;
-			wallJumpDirection = 1;
-			return;
-		}
+	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall and vsp>0
+	and touchingLWall.wallGrabbable == 1){
+		state = PLAYERSTATE.WALL_GRAB;
+		wallJumpDirection = 1;
 	}
 	
 	if(!touchingFloor and keyJump and doubleJmp == 0){
 		jumpDirection = move;
 		state = PLAYERSTATE.DOUBLE_JUMP;
-		return;
 	}
 	
 	if(keyAttack and !inAttackSwingCooldown){
@@ -77,8 +68,5 @@ function PlayerState_In_Air(){
 		else if (vsp >= 2){
 			image_index = 1;
 		}
-	}
-
-
-		
+	}		
 }

@@ -4,10 +4,10 @@ function PlayerState_Wall_Grab(wallDirection){
 	if(sprite_index != sWallGrab){
 		sprite_index = sWallGrab;
 		image_xscale = wallDirection;
-		hsp = 0;
 		image_speed = 1;
 	}
 	vsp = wallGrabFallSpeed;
+	
 	if(keyJump){
 		hsp = wallDirection * 10;
 		vsp = -10;
@@ -16,8 +16,6 @@ function PlayerState_Wall_Grab(wallDirection){
 	CollisionDetection();
 	doubleJmp = 0;
 	canDash = 1;
-
-	
 	
 	if(keyDash and wallDirection == 1 and keyLeft){
 		dashDirection = wallDirection;
@@ -29,6 +27,7 @@ function PlayerState_Wall_Grab(wallDirection){
 	}
 	if(!((keyRight and wallDirection == -1) or (keyLeft and wallDirection == 1))){
 		if(touchingFloor){
+			show_debug_message("Touching Floor");
 			state = PLAYERSTATE.FREE;
 		}
 		else{
@@ -40,19 +39,20 @@ function PlayerState_Wall_Grab(wallDirection){
 	if(touchingFloor and !collidingWall){
 		state = PLAYERSTATE.FREE;
 	}
+	
 	if(keyRight){
-		if(!instance_place(x+1,y,oWall)){
+		var wall = instance_place(x+1,y,all);
+		if(!wall or wall.wallGrabbable != 1){
+
 			state = PLAYERSTATE.IN_AIR;
 		}
 	}
 	
 	else if (keyLeft) {
-		if(!instance_place(x-1,y,oWall)){
+		var wall = instance_place(x-1,y,all);
+		if(!wall or wall.wallGrabbable != 1){
 			state = PLAYERSTATE.IN_AIR;
 		}
 	}
-	
-	x+=hsp;
-	y+=vsp;
 	
 }

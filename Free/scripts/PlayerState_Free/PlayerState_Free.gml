@@ -5,12 +5,9 @@ function PlayerState_Free(){
 	//Horizontal Movement
 	
 	PlayerHorizontalMovement();
-	
 	//This state uses gravity
 	Gravity();
 	CollisionDetection();
-	
-	
 	
 	if(touchingFloor){
 		doubleJmp = 0;
@@ -22,14 +19,16 @@ function PlayerState_Free(){
 	
 	//If not on the floor and not touching a wall, and you havent double jumped yet
 	
-	if(keyRight and !touchingFloor and touchingRWall and !collidingWall and vsp>0){
+	if(keyRight and !touchingFloor and touchingRWall and !collidingWall and vsp>0
+	and touchingRWall.wallGrabbable){
 		if(instance_place(x+1,y-30,oWall)){
 			state = PLAYERSTATE.WALL_GRAB;
 			wallJumpDirection = -1;
 		}
 	}
 	
-	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall and vsp>0){
+	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall and vsp>0
+	and touchingLWall.wallGrabbable){
 		if(instance_place(x-1,y-30,oWall)){
 			state = PLAYERSTATE.WALL_GRAB;
 			wallJumpDirection = 1;
@@ -53,9 +52,6 @@ function PlayerState_Free(){
 	}
 
 
-	
-	x+=hsp;
-	y+=vsp;
 
 	//Animation
 

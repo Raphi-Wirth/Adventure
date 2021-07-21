@@ -2,8 +2,10 @@
 // You can write your code in this editor
 event_inherited();
 
+wallGrabbable = 0;
 currentHP = 5;
 hsp = 0;
+hspCarrySpeed = 0;
 vsp = 0;
 grv = 0.5;
 intangible = 0;
@@ -28,7 +30,6 @@ collidingWall = 0;
 
 function MoveTo(xVal, yVal, _speed){
 	path = path_add();
-	show_debug_message("Following a path");
 	mp_grid_path(grid, path, x, y, xVal, yVal, 1);
 	path_start(path, _speed, 0 , 1);
 }

@@ -1,49 +1,32 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function CollisionDetection(){
-	touchingFloor = instance_place(x,y+1, oWall);
-	touchingRoof = instance_place(x,y-1,all);
-	touchingLWall = instance_place(x-1,y, oWall);
-	touchingRWall = instance_place(x+1,y, oWall);
-	collidingWall = instance_place(x,y, oWall);
-	collidingEnemy = instance_place(x,y,oEnemy);
-
+	touchingFloor = false;
+	touchingRoof = false;
+	touchingLWall = false;
+	touchingRWall = false;
+	collidingWall = false;
+	collidingEnemy = false;
 	
-	// Lava Check
-	if(instance_place(x, y + 1, oLava))
-	{
-		state = PLAYERSTATE.DEAD;
-	}
-	
-	if(object_index == oPlayer){
-		if(collidingEnemy and !invulnerable){
-			PlayerHit(1);
-			var xDiff = collidingEnemy.x - oPlayer.x;
-			var yDiff = collidingEnemy.y - oPlayer.y;
-			Knockback(oPlayer, 7, -sign(yDiff)*5, -sign(xDiff))
-		}
-	}
-
-
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
 	
-	
 
-	
-	//Horizontal Colission
-	
+	var hsp_final = hsp + hspCarrySpeed;
+	hspCarrySpeed = 0;
+	//Horizontal Collision
 		
-	if(place_meeting(x + hsp, y, oWall))
+	if(place_meeting(x + hsp_final, y, oWall))
 	{
-		while(!place_meeting(x + sign(hsp), y, oWall))
+		while(!place_meeting(x + sign(hsp_final), y, oWall))
 		{
-			x += sign(hsp);
+			x += sign(hsp_final);
 		}
 		hsp = 0;
+		hsp_final = 0;
 	}
 
-
+	x+=hsp_final;
 	//Vertical Collision
 
 	if(place_meeting(x,y+vsp, oWall)){
@@ -61,17 +44,36 @@ function CollisionDetection(){
 		vsp = 0;
 	}
 	
-	if(collidingWall != 0 and (hsp and vsp)){
+	y+=vsp;
+	
+	touchingFloor = instance_place(x,y+1, oWall);
+	touchingRoof = instance_place(x,y-1, oWall);
+	touchingLWall = instance_place(x-1,y, oWall);
+	touchingRWall = instance_place(x+1, y, oWall);
+	collidingWall = instance_place(x,y, oWall);
+	collidingEnemy = instance_place(x,y,oEnemy);
+
+	if(object_index == oPlayer){
+		if(collidingEnemy and !invulnerable){
+			PlayerHit(1);
+			var xDiff = collidingEnemy.x - oPlayer.x;
+			var yDiff = collidingEnemy.y - oPlayer.y;
+			Knockback(oPlayer, 7 + hsp, -sign(yDiff)*5 + vsp, -sign(xDiff))
+		}
+	}
+	
+	
+	if(collidingWall and (hsp and vsp)){
 		//Checks for any current speed, sends you in the opposite direction
 		if(sign(hsp) != sign(image_xscale)){
-			while(instance_place(x,y, collidingWall)){
+			while(instance_place(x,y, oWall)){
 				x -= sign(hsp);
 				y -= sign(vsp);
 			}
 		}
 	}
-	else if (collidingWall !=0){
-		while(instance_place(x,y,collidingWall)){
+	else if (collidingWall){
+		while(instance_place(x,y,oWall)){
 			xDiff = collidingWall.x - x;
 			yDiff = collidingWall.y - y;
 			len = sqrt(sqr(xDiff) + sqr(yDiff));
@@ -80,5 +82,5 @@ function CollisionDetection(){
 			x -= moveX;
 			y -= moveY;
 		}
-	}	
+	}
 }
