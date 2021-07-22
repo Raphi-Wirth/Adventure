@@ -1,12 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function CollisionDetection(){
-	touchingFloor = false;
-	touchingRoof = false;
-	touchingLWall = false;
-	touchingRWall = false;
-	collidingWall = false;
-	collidingEnemy = false;
 	
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	

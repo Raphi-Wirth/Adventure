@@ -7,7 +7,7 @@ function PlayerState_Wall_Grab(wallDirection){
 		image_speed = 1;
 	}
 	vsp = wallGrabFallSpeed;
-	
+	show_debug_message("In wallgrab")
 	if(keyJump){
 		hsp = wallDirection * 10;
 		vsp = -10;
@@ -27,7 +27,7 @@ function PlayerState_Wall_Grab(wallDirection){
 	}
 	if(!((keyRight and wallDirection == -1) or (keyLeft and wallDirection == 1))){
 		if(touchingFloor){
-			show_debug_message("Touching Floor");
+			//show_debug_message("Touching Floor");
 			state = PLAYERSTATE.FREE;
 		}
 		else{

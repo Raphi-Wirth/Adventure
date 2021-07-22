@@ -36,7 +36,7 @@ switch (state)
 		
 	case PLAYERSTATE.GROUND_ATTACK: PlayerState_Ground_Attack(); break;
 	
-	case PLAYERSTATE.GROUND_UP_ATTACK: if(hasSword){ PlayerState_Ground_Up_Attack(); break;}
+	case PLAYERSTATE.GROUND_UP_ATTACK: PlayerState_Ground_Up_Attack(); break;
 	
 	case PLAYERSTATE.WALL_GRAB: PlayerState_Wall_Grab(wallJumpDirection); break;
 	
