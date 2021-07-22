@@ -4,16 +4,16 @@ function PlayerState_Wall_Grab(wallDirection){
 	if(sprite_index != sWallGrab){
 		sprite_index = sWallGrab;
 		image_xscale = wallDirection;
+		hsp = 0;
 		image_speed = 1;
 	}
 	vsp = wallGrabFallSpeed;
-	show_debug_message("In wallgrab")
+	CollisionDetection();
 	if(keyJump){
 		hsp = wallDirection * 10;
 		vsp = -10;
 		state = PLAYERSTATE.IN_AIR;
 	}
-	CollisionDetection();
 	doubleJmp = 0;
 	canDash = 1;
 	
@@ -27,8 +27,13 @@ function PlayerState_Wall_Grab(wallDirection){
 	}
 	if(!((keyRight and wallDirection == -1) or (keyLeft and wallDirection == 1))){
 		if(touchingFloor){
-			//show_debug_message("Touching Floor");
-			state = PLAYERSTATE.FREE;
+			if(vsp==0){
+				//show_debug_message("Touching Floor");
+				state = PLAYERSTATE.FREE;
+			}
+			else{
+				state = PLAYERSTATE.IN_AIR;
+			}
 		}
 		else{
 			state = PLAYERSTATE.IN_AIR;

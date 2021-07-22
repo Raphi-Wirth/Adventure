@@ -4,6 +4,6 @@ polygon = polygon_from_instance(id);
 /*if(place_meeting(x,y,oWall)){
 	path_speed = -path_speed;
 }*/
-if(place_meeting(x,y-1,oPlayer) or place_meeting(x+5,y,oPlayer) or place_meeting(x-5,y,oPlayer)){
+if(place_meeting(x,y-1,oPlayer) or place_meeting(x+2,y,oPlayer) or place_meeting(x-2,y,oPlayer)){
 	oPlayer.hspCarrySpeed = path_speed;
- }
+}

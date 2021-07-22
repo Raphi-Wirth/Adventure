@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sWall",
-    "path": "sprites/sWall/sWall.yy",
+    "name": "sGrassMovingPlatform",
+    "path": "sprites/sGrassMovingPlatform/sGrassMovingPlatform.yy",
   },
   "solid": false,
   "visible": true,
