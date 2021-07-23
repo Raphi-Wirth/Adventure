@@ -21,10 +21,9 @@ if(attackSwingTimer == attackSwingCooldownTime){
 if(invulnerable == 1){
 	Invulnerable();
 }
-if(touchingFloor){
-	show_debug_message("TouchingFloor");
+if(state = PLAYERSTATE.WALL_GRAB){
+	show_debug_message("In Wallgrab");
 }
-
 var healthPickup = instance_place(x+hsp,y+vsp,oHealthPickup)
 if(healthPickup){
 	PlayerGainsHealth(maxHP);

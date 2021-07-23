@@ -10,7 +10,7 @@ function PlayerState_In_Air(){
 	Gravity();
 	CollisionDetection();
 	
-	if(touchingFloor){
+	if(touchingFloor) {
 		state = PLAYERSTATE.FREE;
 	}
 	
@@ -20,12 +20,12 @@ function PlayerState_In_Air(){
 		state = PLAYERSTATE.DASH;
 	}
 
-	if(keyRight and !touchingFloor and touchingRWall and !collidingWall and vsp>=0
+	if(keyRight and !touchingFloor and touchingRWall and vsp>=0
 	and touchingRWall.wallGrabbable == 1){
 		state = PLAYERSTATE.WALL_GRAB;
 	}
 	
-	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall and vsp>=0
+	else if(keyLeft and !touchingFloor and touchingLWall and vsp>=0
 	and touchingLWall.wallGrabbable == 1){
 		state = PLAYERSTATE.WALL_GRAB;
 	}

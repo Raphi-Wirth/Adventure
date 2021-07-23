@@ -30,7 +30,7 @@ function CollisionDetection(){
 	y+=vsp;
 	
 	var hsp_final = hsp + hspCarrySpeed;
-	hspCarrySpeed = 0;
+
 		
 	if(place_meeting(x + hsp_final, y, oWall))
 	{
@@ -66,24 +66,9 @@ function CollisionDetection(){
 		while(place_meeting(x,y,oWall)){
 			x += sign(xDiff);
 		}
-		/*if(abs(xDiff)>=abs(yDiff)){
-			while(place_meeting(x, y, oWall)){
-				x += sign(xDiff);
-				show_debug_message("XDiff");
-				show_debug_message(xDiff);
-				show_debug_message(x);
-			}
-		}
-		else{
-			while(place_meeting(x, y, oWall)){
-				y += sign(yDiff);
-				show_debug_message("YDiff");
-				show_debug_message(yDiff);
-				show_debug_message(y);
-			}
-		}*/
 	}
 
+	hspCarrySpeed = 0;
 	touchingFloor = instance_place(x,y+1, oWall);
 	touchingRoof = instance_place(x,y-1, oWall);
 	touchingLWall = instance_place(x-1,y, oWall);
