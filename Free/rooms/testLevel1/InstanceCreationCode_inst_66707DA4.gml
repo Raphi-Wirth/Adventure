@@ -1,1 +1,2 @@
-path_position = 0.3;
+path_position = 0.5;
+path_speed = 2.5

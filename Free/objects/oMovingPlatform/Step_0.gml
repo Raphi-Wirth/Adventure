@@ -12,5 +12,4 @@ if(place_meeting(x,y,oPlayer)){
 	while(place_meeting(x+path_speed,y,oPlayer)){
 		oPlayer.x += sign(dir);
 	}
-	
 }

@@ -16,26 +16,6 @@ function PlayerState_Free(){
 	else if(!touchingFloor){
 		state = PLAYERSTATE.IN_AIR;
 	}
-	
-	//If not on the floor and not touching a wall, and you havent double jumped yet
-	
-	if(keyRight and !touchingFloor and touchingRWall and !collidingWall and vsp>0
-	and touchingRWall.wallGrabbable){
-		if(instance_place(x+1,y-30,oWall)){
-			state = PLAYERSTATE.WALL_GRAB;
-			wallJumpDirection = -1;
-		}
-	}
-	
-	else if(keyLeft and !touchingFloor and touchingLWall and !collidingWall and vsp>0
-	and touchingLWall.wallGrabbable){
-		if(instance_place(x-1,y-30,oWall)){
-			state = PLAYERSTATE.WALL_GRAB;
-			wallJumpDirection = 1;
-		}
-	}
-
-	
 
 	//Jump if on floor and not touching a wall
 	if(touchingFloor and keyJump and (!(touchingRWall and wallJumpDirection) or !(touchingLWall and wallJumpDirection)))
@@ -45,7 +25,7 @@ function PlayerState_Free(){
 
 	}
 
-	if(keyDash and canDash){
+	if(keyDash and canDash and hasDash){
 		canDash = 0;
 		dashDirection = move;
 		state = PLAYERSTATE.DASH;
@@ -77,7 +57,7 @@ function PlayerState_Free(){
 		image_xscale = sign(hsp);
 	}
 
-	if(keyAttack and touchingFloor and !inAttackSwingCooldown){
+	if(keyAttack and touchingFloor and !inAttackSwingCooldown and hasSword){
 		state = PLAYERSTATE.GROUND_ATTACK;
 		if(keyUp){
 			state = PLAYERSTATE.GROUND_UP_ATTACK;

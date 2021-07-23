@@ -14,28 +14,29 @@ function PlayerState_In_Air(){
 		state = PLAYERSTATE.FREE;
 	}
 	
-	if(keyDash and canDash){
+	if(keyDash and canDash and hasDash){
 		canDash = 0;
 		dashDirection = move;
 		state = PLAYERSTATE.DASH;
 	}
-
-	if(keyRight and !touchingFloor and touchingRWall and vsp>=0
-	and touchingRWall.wallGrabbable == 1){
-		state = PLAYERSTATE.WALL_GRAB;
+	if(hasWallGrab){
+		if(keyRight and !touchingFloor and touchingRWall and vsp>=0
+		and touchingRWall.wallGrabbable == 1){
+			state = PLAYERSTATE.WALL_GRAB;
+		}
+	
+		else if(keyLeft and !touchingFloor and touchingLWall and vsp>=0
+		and touchingLWall.wallGrabbable == 1){
+			state = PLAYERSTATE.WALL_GRAB;
+		}
 	}
 	
-	else if(keyLeft and !touchingFloor and touchingLWall and vsp>=0
-	and touchingLWall.wallGrabbable == 1){
-		state = PLAYERSTATE.WALL_GRAB;
-	}
-	
-	if(!touchingFloor and keyJump and doubleJmp == 0){
+	if(!touchingFloor and keyJump and doubleJmp == 0 and hasDoubleJump){
 		jumpDirection = move;
 		state = PLAYERSTATE.DOUBLE_JUMP;
 	}
 	
-	if(keyAttack and !inAttackSwingCooldown){
+	if(keyAttack and !inAttackSwingCooldown and hasSword){
 		state = PLAYERSTATE.AIR_ATTACK;
 		if(keyDown){
 			state = PLAYERSTATE.AIR_DOWN_ATTACK;

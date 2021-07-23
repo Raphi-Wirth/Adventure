@@ -20,15 +20,17 @@ function PlayerState_Wall_Grab(){
 	}
 	doubleJmp = 0;
 	canDash = 1;
-	
-	if(keyDash and image_xscale == 1 and keyLeft){
-		dashDirection = image_xscale;
-		state = PLAYERSTATE.DASH;
-	}
+	if(hasDash){
+		if(keyDash and image_xscale == 1 and keyLeft){
+			dashDirection = image_xscale;
+			state = PLAYERSTATE.DASH;
+		}
 	else if (keyDash and image_xscale == -1 and keyRight){
 		dashDirection = image_xscale;
 		state = PLAYERSTATE.DASH;
+		}
 	}
+
 	if(!((keyRight and image_xscale == -1) or (keyLeft and image_xscale == 1))){
 		if(touchingFloor){
 			state = PLAYERSTATE.FREE;

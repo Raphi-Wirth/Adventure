@@ -10,8 +10,6 @@ function CollisionDetection(){
 
 
 
-	
-	
 	if(place_meeting(x,y+vsp, oWall)){
 		while(!place_meeting(x,y+sign(vsp), oWall))
 		{	
@@ -30,7 +28,7 @@ function CollisionDetection(){
 	y+=vsp;
 	
 	var hsp_final = hsp + hspCarrySpeed;
-
+	
 		
 	if(place_meeting(x + hsp_final, y, oWall))
 	{
@@ -57,16 +55,6 @@ function CollisionDetection(){
 		}
 	}
 	
-	
-	if(collidingWall != noone){
-		show_debug_message("Collided");
-		with(instance_place(x,y,oWall)){
-			xDiff = oPlayer.x - x;
-		}
-		while(place_meeting(x,y,oWall)){
-			x += sign(xDiff);
-		}
-	}
 
 	hspCarrySpeed = 0;
 	touchingFloor = instance_place(x,y+1, oWall);

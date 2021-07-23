@@ -4,8 +4,9 @@
 
 
 hasSword = 0;
-
-
+hasDash = 0;
+hasWallGrab = 0;
+hasDoubleJump = 0;
 
 invulnerable = 0;
 invulnerableTicks = 2;
