@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mLevel01.mp3",
-  "duration": 48.0130234,
+  "duration": 28.8130245,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

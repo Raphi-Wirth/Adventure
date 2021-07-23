@@ -5,24 +5,13 @@ function CollisionDetection(){
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
 	
+	var xDiff;
+	var yDiff;
 
-	var hsp_final = hsp + hspCarrySpeed;
-	hspCarrySpeed = 0;
-	//Horizontal Collision
-		
-	if(place_meeting(x + hsp_final, y, oWall))
-	{
-		while(!place_meeting(x + sign(hsp_final), y, oWall))
-		{
-			x += sign(hsp_final);
-		}
-		hsp = 0;
-		hsp_final = 0;
-	}
 
-	x+=hsp_final;
-	//Vertical Collision
 
+	
+	
 	if(place_meeting(x,y+vsp, oWall)){
 		while(!place_meeting(x,y+sign(vsp), oWall))
 		{	
@@ -40,41 +29,66 @@ function CollisionDetection(){
 	
 	y+=vsp;
 	
-	touchingFloor = instance_place(x,y+1, oWall);
-	touchingRoof = instance_place(x,y-1, oWall);
-	touchingLWall = instance_place(x-1,y, oWall);
-	touchingRWall = instance_place(x+1, y, oWall);
+	var hsp_final = hsp + hspCarrySpeed;
+	hspCarrySpeed = 0;
+		
+	if(place_meeting(x + hsp_final, y, oWall))
+	{
+		while(!place_meeting(x + sign(hsp_final), y, oWall))
+		{
+			x += sign(hsp_final);
+		}
+		hsp = 0;
+		hsp_final = 0;
+	}
+
+
+	x+=hsp_final;
+	
 	collidingWall = instance_place(x,y, oWall);
 	collidingEnemy = instance_place(x,y,oEnemy);
-
+	
 	if(object_index == oPlayer){
 		if(collidingEnemy and !invulnerable){
 			PlayerHit(1);
-			var xDiff = collidingEnemy.x - oPlayer.x;
-			var yDiff = collidingEnemy.y - oPlayer.y;
+			xDiff = collidingEnemy.x - oPlayer.x;
+			yDiff = collidingEnemy.y - oPlayer.y;
 			Knockback(oPlayer, 7 + hsp, -sign(yDiff)*5 + vsp, -sign(xDiff))
 		}
 	}
 	
 	
-	if(collidingWall and (hsp and vsp)){
-		//Checks for any current speed, sends you in the opposite direction
-		if(sign(hsp) != sign(image_xscale)){
-			while(instance_place(x,y, oWall)){
-				x -= sign(hsp);
-				y -= sign(vsp);
+	if(collidingWall != noone){
+		show_debug_message("Collided");
+		with(instance_place(x,y,oWall)){
+			xDiff = oPlayer.x - x;
+		}
+		while(place_meeting(x,y,oWall)){
+			x += sign(xDiff);
+		}
+		/*if(abs(xDiff)>=abs(yDiff)){
+			while(place_meeting(x, y, oWall)){
+				x += sign(xDiff);
+				show_debug_message("XDiff");
+				show_debug_message(xDiff);
+				show_debug_message(x);
 			}
 		}
+		else{
+			while(place_meeting(x, y, oWall)){
+				y += sign(yDiff);
+				show_debug_message("YDiff");
+				show_debug_message(yDiff);
+				show_debug_message(y);
+			}
+		}*/
 	}
-	else if (collidingWall){
-		while(instance_place(x,y,oWall)){
-			xDiff = collidingWall.x - x;
-			yDiff = collidingWall.y - y;
-			len = sqrt(sqr(xDiff) + sqr(yDiff));
-			moveX = xDiff/len;
-			moveY = yDiff/len;
-			x -= moveX;
-			y -= moveY;
-		}
-	}
+
+	touchingFloor = instance_place(x,y+1, oWall);
+	touchingRoof = instance_place(x,y-1, oWall);
+	touchingLWall = instance_place(x-1,y, oWall);
+	touchingRWall = instance_place(x+1, y, oWall);
+	
+	//Vertical Collision
+
 }

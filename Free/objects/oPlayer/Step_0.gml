@@ -21,6 +21,9 @@ if(attackSwingTimer == attackSwingCooldownTime){
 if(invulnerable == 1){
 	Invulnerable();
 }
+if(touchingFloor){
+	show_debug_message("TouchingFloor");
+}
 
 var healthPickup = instance_place(x+hsp,y+vsp,oHealthPickup)
 if(healthPickup){
@@ -38,7 +41,7 @@ switch (state)
 	
 	case PLAYERSTATE.GROUND_UP_ATTACK: PlayerState_Ground_Up_Attack(); break;
 	
-	case PLAYERSTATE.WALL_GRAB: PlayerState_Wall_Grab(wallJumpDirection); break;
+	case PLAYERSTATE.WALL_GRAB: PlayerState_Wall_Grab(); break;
 	
 	case PLAYERSTATE.DOUBLE_JUMP: PlayerState_Double_Jump(jumpDirection); break;
 	

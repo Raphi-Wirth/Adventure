@@ -40,7 +40,7 @@ function PlayerState_Free(){
 	//Jump if on floor and not touching a wall
 	if(touchingFloor and keyJump and (!(touchingRWall and wallJumpDirection) or !(touchingLWall and wallJumpDirection)))
 	{
-		vsp = -10;
+		vsp = -jumpHeight;
 		state = PLAYERSTATE.IN_AIR;
 
 	}
