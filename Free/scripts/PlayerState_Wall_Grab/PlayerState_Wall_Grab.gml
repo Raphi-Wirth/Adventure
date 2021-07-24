@@ -25,9 +25,9 @@ function PlayerState_Wall_Grab(){
 			dashDirection = image_xscale;
 			state = PLAYERSTATE.DASH;
 		}
-	else if (keyDash and image_xscale == -1 and keyRight){
-		dashDirection = image_xscale;
-		state = PLAYERSTATE.DASH;
+		else if (keyDash and image_xscale == -1 and keyRight){
+			dashDirection = image_xscale;
+			state = PLAYERSTATE.DASH;
 		}
 	}
 

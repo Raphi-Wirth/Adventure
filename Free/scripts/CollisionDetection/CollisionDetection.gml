@@ -4,10 +4,22 @@ function CollisionDetection(){
 	
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
+	show_debug_message(x);
+	var hsp_final = hsp + hspCarrySpeed;
+	hspCarrySpeed = 0;
 	
-	var xDiff;
-	var yDiff;
+	if(place_meeting(x + hsp_final, y, oWall))
+	{
+		while(!place_meeting(x + sign(hsp_final), y, oWall))
+		{
+			x += sign(hsp_final);
+		}
+		hsp = 0;
+		x -= 0.5*sign(hsp_final);
+		hsp_final = 0;
+	}
 
+	x += hsp_final;
 
 
 	if(place_meeting(x,y+vsp, oWall)){
@@ -27,25 +39,10 @@ function CollisionDetection(){
 	
 	y+=vsp;
 	
-	var hsp_final = hsp + hspCarrySpeed;
-	
-		
-	if(place_meeting(x + hsp_final, y, oWall))
-	{
-		while(!place_meeting(x + sign(hsp_final), y, oWall))
-		{
-			x += sign(hsp_final);
-		}
-		hsp = 0;
-		hsp_final = 0;
-	}
-
-
-	x+=hsp_final;
 	
 	collidingWall = instance_place(x,y, oWall);
 	collidingEnemy = instance_place(x,y,oEnemy);
-	
+
 	if(object_index == oPlayer){
 		if(collidingEnemy and !invulnerable){
 			PlayerHit(1);
@@ -56,12 +53,11 @@ function CollisionDetection(){
 	}
 	
 
-	hspCarrySpeed = 0;
+
 	touchingFloor = instance_place(x,y+1, oWall);
 	touchingRoof = instance_place(x,y-1, oWall);
 	touchingLWall = instance_place(x-1,y, oWall);
 	touchingRWall = instance_place(x+1, y, oWall);
 	
-	//Vertical Collision
 
 }

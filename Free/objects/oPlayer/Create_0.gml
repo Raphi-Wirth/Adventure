@@ -5,7 +5,7 @@
 
 hasSword = 0;
 hasDash = 0;
-hasWallGrab = 0;
+hasWallGrab = 1;
 hasDoubleJump = 0;
 
 invulnerable = 0;
@@ -39,13 +39,11 @@ dashDirection = 1			//Initial dash direction
 canDash = 1;				//Checks if player can dash
 jumpDirection = 1;			//Initial Jump Direction
 wallGrabFallSpeed = 1;	    //Speed at which falling when holding wall 
-fastFall = 0;				//Whether the player is currently in fastfall
 flashAlpha = 0;
 flashColour = c_white;
 
 
 state = PLAYERSTATE.FREE;
-lastState = state;
 hitByAttack = ds_list_create();
 
 touchingLWall = 0;

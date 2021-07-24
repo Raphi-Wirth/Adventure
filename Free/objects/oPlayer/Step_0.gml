@@ -6,12 +6,7 @@ keyDash = keyboard_check_pressed(ord("C"));
 keyDown = keyboard_check(vk_down);
 keyUp = keyboard_check(vk_up);
 keyAttack = keyboard_check(ord("X"));
-if(touchingFloor){
-	show_debug_message("Touching Floor");
-}
-else{
-	show_debug_message("Not touching floor");
-}
+
 
 move = keyRight - keyLeft;
 if(inAttackSwingCooldown){

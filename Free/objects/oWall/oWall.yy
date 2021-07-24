@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": false,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sWall",
+    "path": "sprites/sWall/sWall.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "obj_shadow_caster",
