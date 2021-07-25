@@ -10,6 +10,17 @@ if(keyboard_check_pressed(vk_space)){
 	var _messageLength = string_length(message);
 	if(textProgress >= _messageLength){
 		instance_destroy();
+		if(instance_exists(oTextQueued)){
+			//Reduce the ticket number of all queued text boxes by one
+			with (oTextQueued){
+				ticket -= 1;
+			}
+		}
+		else{
+			with(oPlayer){
+				state = lastState;
+			}
+		}
 	}
 	else{
 		if(textProgress>2){

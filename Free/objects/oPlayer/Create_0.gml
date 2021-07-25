@@ -48,6 +48,7 @@ flashColour = c_white;
 
 
 state = PLAYERSTATE.FREE;
+lastState = state;
 hitByAttack = ds_list_create();
 
 touchingLWall = 0;
@@ -71,5 +72,6 @@ enum PLAYERSTATE
 	AIR_UP_ATTACK,
 	HIT,
 	DEAD,
-	AIR_DOWN_ATTACK
+	AIR_DOWN_ATTACK,
+	LOCKED
 }

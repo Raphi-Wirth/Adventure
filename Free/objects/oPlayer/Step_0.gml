@@ -51,9 +51,11 @@ if(!global.gamePaused){
 	
 		case PLAYERSTATE.DEAD: PlayerState_Dead(); break;
 	
-		case PLAYERSTATE.AIR_DOWN_ATTACK(): PlayerState_Aerial_Down_Slash(); break;
+		case PLAYERSTATE.AIR_DOWN_ATTACK: PlayerState_Aerial_Down_Slash(); break;
 	
-		case PLAYERSTATE.AIR_UP_ATTACK(): PlayerState_Aerial_Up_Attack(); break;
+		case PLAYERSTATE.AIR_UP_ATTACK: PlayerState_Aerial_Up_Attack(); break;
+		
+		case PLAYERSTATE.LOCKED: PlayerState_Locked(); break;
 	}
 	
 }
