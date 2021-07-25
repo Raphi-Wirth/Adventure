@@ -8,7 +8,7 @@ if(follow != noone){
 x += (xTo-x)/10;
 y += (yTo-y)/10;
 
-x = clamp(x, 500, room_width - 500);
-y = clamp(y, 300, room_height - 300);
-var vm = matrix_build_lookat(x,y,-10,x,y,0,0,1,0);
-camera_set_view_mat(camera,vm);
+x = clamp(x, view_w_half, room_width - view_w_half);
+y = clamp(y,view_h_half, room_height - view_h_half);
+
+camera_set_view_pos(camera, x - view_w_half , y - view_h_half);

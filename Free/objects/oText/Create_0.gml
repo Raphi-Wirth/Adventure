@@ -11,5 +11,5 @@ x2Target = RESOLUTION_W;
 lerpProgress = 0;
 textProgress = 0;
 
-message = "Default message text";
+message = "Hey kayte how are ya doing, I'm doing okay. I ate the rest of the garlic bread and now my breath tastes like garlic";
 background = 0;

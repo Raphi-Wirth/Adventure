@@ -18,10 +18,14 @@ currentHP = 5;
 maxHP = currentHP;
 healthbar_width = 200;
 healthbar_height = 20;
-healthbar_x = 640/12;
-healthbar_y = 50;
+healthbar_x = RESOLUTION_W/12;
+healthbar_y = RESOLUTION_H/12;
 
 hspCarrySpeed = 0;
+instance_create_layer(x, y, "Player", oCamera);
+instance_create_layer(x,y, "Player", oMusic);
+instance_create_layer(x,y, "Player", oPlayerLight);
+instance_create_layer(x,y, "Player" ,oParticleSystem);
 
 
 vsp = 0						//Vertical Speed
