@@ -1,5 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+//@arg Message
+//@arg Background
+//@arg [Responses]
+
+
 function NewTextBox(){
 	var _obj;
 	if (instance_exists(oText)){
@@ -9,7 +15,7 @@ function NewTextBox(){
 		_obj = oText;
 	}
 	//Create text object
-	with (instance_create_layer(0,0, "Text", _obj)) {
+	with (instance_create_layer(0,0, "Instances", _obj)) {
 		message = argument[0];
 		//If being called by an object get their ID
 		if (instance_exists(other)){
@@ -25,6 +31,21 @@ function NewTextBox(){
 		}
 		else{
 			background = 1;
+		}
+		
+		
+		if(argument_count > 2){
+			//Trim markers from responses
+			responses = argument[2];
+			for(var i = 0; i < array_length_1d(responses); i++){
+				var _markerPosition = string_pos(":", responses[i]);
+				responseScripts[i] = string_copy(responses[i], 1, _markerPosition - 1);
+				responses[i] = string_delete(responses[i], 1, _markerPosition);
+			}
+		}
+		else{
+			responses = [-1];
+			responseScripts = [-1];
 		}
 	}
 

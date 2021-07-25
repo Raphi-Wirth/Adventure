@@ -7,7 +7,6 @@ hasSword = 1;
 hasDash = 1;
 hasWallGrab = 1;
 hasDoubleJump = 1;
-
 invulnerable = 0;
 invulnerableTicks = 2;
 attackSwingCooldownTime = 10;
@@ -22,10 +21,10 @@ healthbar_x = RESOLUTION_W/12;
 healthbar_y = RESOLUTION_H/12;
 
 hspCarrySpeed = 0;
-instance_create_layer(x, y, "Player", oCamera);
-instance_create_layer(x,y, "Player", oMusic);
-instance_create_layer(x,y, "Player", oPlayerLight);
-instance_create_layer(x,y, "Player" ,oParticleSystem);
+instance_create_layer(x, y, "Instances", oCamera);
+instance_create_layer(x,y, "Instances", oMusic);
+instance_create_layer(x,y, "Instances", oPlayerLight);
+instance_create_layer(x,y, "Instances" ,oParticleSystem);
 
 
 vsp = 0						//Vertical Speed
@@ -75,3 +74,5 @@ enum PLAYERSTATE
 	AIR_DOWN_ATTACK,
 	LOCKED
 }
+
+

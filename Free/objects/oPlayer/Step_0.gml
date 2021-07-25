@@ -6,6 +6,7 @@ keyDash = keyboard_check_pressed(ord("C"));
 keyDown = keyboard_check(vk_down);
 keyUp = keyboard_check(vk_up);
 keyAttack = keyboard_check(ord("X"));
+keyInteract = keyboard_check_pressed(ord("Z"));
 
 
 move = keyRight - keyLeft;
@@ -57,5 +58,6 @@ if(!global.gamePaused){
 		
 		case PLAYERSTATE.LOCKED: PlayerState_Locked(); break;
 	}
-	
 }
+
+depth = -1000;

@@ -12,35 +12,14 @@ function PlayerState_Ground_Attack(){
 		ds_list_clear(hitByAttack);
 	}
 
+
+	CalcAttack(sAttackSlashHB);
 	PlayerHorizontalMovement();
-	
-
-	mask_index = sAttackSlashHB;
-
-
-	//Use attack hitbox and check for hits
-	var hitByAttackNow = ds_list_create();
-	var hits = instance_place_list(x, y, oEnemy, hitByAttackNow, false);
-	
-	if (hits> 0){
-		for (var i = 0; i<hits; i++){
-			//If this instance has not yet been hit by this attack
-			var hitID = hitByAttackNow[| i]; 
-			if(ds_list_find_index(hitByAttack, hitID) == -1){
-				ds_list_add(hitByAttack, hitID);
-				with (hitID){
-					EnemyHit(1);
-					var dir = sign(hitID.x - oPlayer.x);
-					Knockback(oPlayer, 7, 0, -dir);
-					Knockback(hitID, 4, -2, dir);
-				}
-			}
-		}
-	}
-	ds_list_destroy(hitByAttackNow);
-	mask_index = sIdle;
 	Gravity();
 	CollisionDetection();
+	
+
+	
 	if(animation_end()){
 		sprite_index = sIdle;
 		inAttackSwingCooldown = 1;

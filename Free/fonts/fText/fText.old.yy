@@ -193,7 +193,7 @@
   ],
   "ranges": [
     {"lower":32,"upper":127,},
-    {"lower":9647,"upper":9647,},
+    {"lower":65533,"upper":65533,},
   ],
   "regenerateBitmap": false,
   "canGenerateBitmap": true,
