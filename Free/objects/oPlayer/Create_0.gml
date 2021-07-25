@@ -3,10 +3,10 @@
 
 
 
-hasSword = 0;
-hasDash = 0;
-hasWallGrab = 0;
-hasDoubleJump = 0;
+hasSword = 1;
+hasDash = 1;
+hasWallGrab = 1;
+hasDoubleJump = 1;
 
 invulnerable = 0;
 invulnerableTicks = 2;
