@@ -55,7 +55,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 34,
-    "yorigin": 57,
+    "yorigin": 58,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSignPost","path":"sprites/sSignPost/sSignPost.yy",},

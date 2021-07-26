@@ -32,7 +32,7 @@ function Attack(){
 	CollisionDetection();
 	lastAttackIndex += 1;
 	if(animation_end()){ 
-		var createdBullet = instance_create_layer(x,y,"Bullets",oBullet)
+		var createdBullet = instance_create_layer(x,y,"Instances",oBullet)
 		createdBullet.bulletSpeed = bulletSpeed;
 		var timeToPlayer = abs(point_distance(x,y, oPlayer.x, oPlayer.y))/bulletSpeed;
 		var vect = VectorTo(oPlayer.x + timeToPlayer*oPlayer.hsp, oPlayer.y + timeToPlayer*oPlayer.vsp);

@@ -16,12 +16,11 @@ function PlayerState_Ground_Attack(){
 	CalcAttack(sAttackSlashHB);
 	PlayerHorizontalMovement();
 	Gravity();
-	CollisionDetection();
+	PlayerCollision();
 	
 
 	
 	if(animation_end()){
-		sprite_index = sIdle;
 		inAttackSwingCooldown = 1;
 		state = PLAYERSTATE.FREE;
 	}

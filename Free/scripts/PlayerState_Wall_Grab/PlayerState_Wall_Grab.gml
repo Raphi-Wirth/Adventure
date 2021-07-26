@@ -6,7 +6,7 @@ function PlayerState_Wall_Grab(){
 		image_speed = 1;
 	}
 	vsp = wallGrabFallSpeed;
-	CollisionDetection();
+	PlayerCollision();
 	if(touchingRWall){
 		image_xscale = -1;
 	}
@@ -43,20 +43,6 @@ function PlayerState_Wall_Grab(){
 	
 	if(touchingFloor and !collidingWall){
 		state = PLAYERSTATE.FREE;
-	}
-	
-	if(keyRight){
-		var wall = instance_place(x+1,y,oWall);
-		if(!wall or wall.wallGrabbable != 1){
-			state = PLAYERSTATE.IN_AIR;
-		}
-	}
-	
-	else if (keyLeft) {
-		var wall = instance_place(x-1,y,oWall);
-		if(!wall or wall.wallGrabbable != 1){
-			state = PLAYERSTATE.IN_AIR;
-		}
 	}
 	
 }

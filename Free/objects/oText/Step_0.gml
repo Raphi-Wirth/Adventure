@@ -9,6 +9,7 @@ x2 = lerp(x2, x2Target, lerpProgress);
 //Cycle through responses
 keyUp = keyboard_check_pressed(vk_up);
 keyDown = keyboard_check_pressed(vk_down);
+keyInteract = keyboard_check_pressed(vk_space);
 
 responseSelected += (keyDown - keyUp);
 var _max = array_length_1d(responses) - 1
@@ -22,7 +23,7 @@ if (responseSelected < _min) {
 
 
 
-if(keyboard_check_pressed(vk_space)){
+if(keyInteract){
 	var _messageLength = string_length(message);
 	if(textProgress >= _messageLength){
 		//If there are responses to be selected

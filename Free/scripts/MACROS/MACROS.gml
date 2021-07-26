@@ -4,3 +4,4 @@
 #macro RESOLUTION_H 960
 #macro CARDINAL_DIR round(direction/180);
 #macro ROOM_START rLevel1
+#macro TILE_SIZE 32

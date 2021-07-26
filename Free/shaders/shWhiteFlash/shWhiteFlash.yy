@@ -5,7 +5,7 @@
     "path": "folders/Shaders.yy",
   },
   "resourceVersion": "1.0",
-  "name": "shFlash",
+  "name": "shWhiteFlash",
   "tags": [],
   "resourceType": "GMShader",
 }

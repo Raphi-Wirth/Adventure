@@ -7,7 +7,7 @@ function PlayerState_Free(){
 	PlayerHorizontalMovement();
 	//This state uses gravity
 	Gravity();
-	CollisionDetection();
+	PlayerCollision();
 	
 	if(keyInteract){
 		//1. Check for an entity to actiave

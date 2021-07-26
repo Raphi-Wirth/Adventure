@@ -3,7 +3,7 @@
 function PlayerState_Double_Jump(){
 	vsp = -jumpHeight;
 	PlayerHorizontalMovement();
-	CollisionDetection();
+	PlayerCollision();
 	doubleJmp = 1;
 	state = PLAYERSTATE.IN_AIR;
 }
