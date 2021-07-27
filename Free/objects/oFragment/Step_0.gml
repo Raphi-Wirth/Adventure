@@ -19,11 +19,11 @@ if(!global.gamePaused){
 		}
 	}
 	//Friction
-	
-	fric = 0.025;
-	if (y<=initY) fric = 0.05; Gravity();
+	fric = 0.075;
+	Gravity();
 	x += lengthdir_x(speed, direction);
-	if (tilemap_get_at_pixel(collisionMap, x, y) > 0) vsp = 0;
+	if (tilemap_get_at_pixel(collisionMap, x, y+2) > 0) vsp = 0;
+	if (tilemap_get_at_pixel(collisionMap, x-2, y) > 0 or tilemap_get_at_pixel(collisionMap,x+2,y)> 0) speed = 0;
 	y += vsp;
 	speed = max(speed - fric, 0);
 }

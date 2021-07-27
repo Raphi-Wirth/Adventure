@@ -9,11 +9,12 @@ function DropItems(){
 	var max_angle = 180
 	if(argument_count>3){
 		if(argument3 == 1){
-			max_angle = 65
+			min_angle = 90;
+			max_angle = 30;
 		}
 		else if(argument3 == -1){
-			max_angle = 180;
-			min_angle = 115;
+			max_angle = 150;
+			min_angle = 90;
 		}
 	}
 	var _items = array_length_1d(argument2);
@@ -23,7 +24,7 @@ function DropItems(){
 		for (var i = 0; i < _items; i++){
 			with (instance_create_layer(argument0, argument1, "Instances", argument2[i])){
 				direction = _angle;
-				speed = (_items * 0.1) + random(2.5);
+				speed = 1.5 + (_items * 0.1) + random(1);
 			}
 			_angle += _anglePerItem;
 		}
