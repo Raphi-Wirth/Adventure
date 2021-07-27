@@ -18,9 +18,8 @@ function PlayerState_Dash(dashDirection){
 	}
 	
 	vsp = 0;
-	CollisionDetection();
+	PlayerCollision();
 	image_angle = 0;
-	x += hsp;
 	
 	if(animation_end()){
 		initDashDirection = 0;

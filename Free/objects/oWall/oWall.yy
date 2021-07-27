@@ -4,8 +4,11 @@
     "path": "sprites/sWall/sWall.yy",
   },
   "solid": false,
-  "visible": true,
-  "spriteMaskId": null,
+  "visible": false,
+  "spriteMaskId": {
+    "name": "sWall",
+    "path": "sprites/sWall/sWall.yy",
+  },
   "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,

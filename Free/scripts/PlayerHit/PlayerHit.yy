@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "PlayerVariableFunctions",
-    "path": "folders/Scripts/PlayerVariableFunctions.yy",
+    "name": "PlayerFunctions",
+    "path": "folders/Scripts/PlayerFunctions.yy",
   },
   "resourceVersion": "1.0",
   "name": "PlayerHit",

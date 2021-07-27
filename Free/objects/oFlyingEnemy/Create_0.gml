@@ -27,13 +27,12 @@ function Attack(){
 	}
 	if(bulletWallDetector(oPlayer, sign(oPlayer.x - x), sign(oPlayer.y - y)) == 1){
 		state = ENEMYSTATE.CHASE;
-		return;
 	}
 	FlyingBuzzEffect(3);
 	CollisionDetection();
 	lastAttackIndex += 1;
 	if(animation_end()){ 
-		var createdBullet = instance_create_layer(x,y,"Bullets",oBullet)
+		var createdBullet = instance_create_layer(x,y,"Instances",oBullet)
 		createdBullet.bulletSpeed = bulletSpeed;
 		var timeToPlayer = abs(point_distance(x,y, oPlayer.x, oPlayer.y))/bulletSpeed;
 		var vect = VectorTo(oPlayer.x + timeToPlayer*oPlayer.hsp, oPlayer.y + timeToPlayer*oPlayer.vsp);
@@ -96,12 +95,27 @@ function Hit(){
 	path_end();
 	CollisionDetection();
 	if(sprite_index != sFlyingEnemy){
+
 		sprite_index = sFlyingEnemy;
+		image_index = 0;
+		image_speed = 0;
 	}
 	if(flashAlpha > 0){
 		flashAlpha -= 0.05;
 	}
 	else if(flashAlpha == 0){
 		state = ENEMYSTATE.CHASE;
+	}
+}
+
+function Dead(){
+	if(sprite_index != sEnemyDie){
+		sprite_index = sEnemyDie;
+		path_end();
+	}
+	CollisionDetection();
+	Gravity();
+	if(animation_end()){
+		instance_destroy();
 	}
 }

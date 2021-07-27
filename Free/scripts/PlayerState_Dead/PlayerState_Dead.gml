@@ -2,6 +2,6 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_Dead(){
 	image_xscale = 0;
-	//instance_destroy();
+	audio_stop_sound(mLevel01);
 	room_restart();
 }

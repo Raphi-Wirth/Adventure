@@ -11,7 +11,7 @@ switch (state)
 {
 	case ENEMYSTATE.IDLE: Idle(); break;
 		
-	case ENEMYSTATE.DEAD: EnemyState_Dead(); break;
+	case ENEMYSTATE.DEAD: Dead(); break;
 	
 	case ENEMYSTATE.CHASE: Chase(); break;
 	
@@ -21,5 +21,5 @@ switch (state)
 	
 	case ENEMYSTATE.ATTACK: Attack(); break;
 }
-
+polygon = polygon_from_instance(id);
 

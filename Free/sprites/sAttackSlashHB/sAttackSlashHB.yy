@@ -81,7 +81,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 65,
-    "yorigin": 47,
+    "yorigin": 87,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sAttackSlashHB","path":"sprites/sAttackSlashHB/sAttackSlashHB.yy",},

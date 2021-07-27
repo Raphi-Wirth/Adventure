@@ -1,7 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
 
-
+hasSword = 1;
+hasDash = 1;
+hasWallGrab = 1;
+hasDoubleJump = 1;
 invulnerable = 0;
 invulnerableTicks = 2;
 attackSwingCooldownTime = 10;
@@ -12,10 +16,11 @@ currentHP = 5;
 maxHP = currentHP;
 healthbar_width = 200;
 healthbar_height = 20;
-healthbar_x = 640/12;
-healthbar_y = 50;
+healthbar_x = RESOLUTION_W/12;
+healthbar_y = RESOLUTION_H/12;
 
-
+hspCarrySpeed = 0;
+instance_create_layer(x,y, "Instances" ,oParticleSystem);
 
 
 vsp = 0						//Vertical Speed
@@ -27,23 +32,30 @@ flipLeft = 0				//Flipping Left
 grv = 0.5;					//Speed of gravity
 wallJumpDirection = 0;		//Which wall is currently being held
 dashSpeed = 10;				//Horizontal speed while dashing
+jumpHeight = 12;
 initDashDirection = 0		//Put explanation here later
 dashDirection = 1			//Initial dash direction
 canDash = 1;				//Checks if player can dash
 jumpDirection = 1;			//Initial Jump Direction
-wallGrabFallSpeed = 0.75;	//Speed at which falling when holding wall 
-fastFall = 0;				//Whether the player is currently in fastfall
+wallGrabFallSpeed = 1;	    //Speed at which falling when holding wall 
 flashAlpha = 0;
 flashColour = c_white;
 
 
 state = PLAYERSTATE.FREE;
+lastState = state;
 hitByAttack = ds_list_create();
 
 touchingLWall = 0;
 touchingRWall = 0;
 touchingFloor = 0;
 collidingWall = 0;
+
+if(global.targetX != -1){
+	x = global.targetX;
+	y = global.targetY;
+	direction = global.targetDirection;
+}
 
 
 
@@ -61,5 +73,8 @@ enum PLAYERSTATE
 	AIR_UP_ATTACK,
 	HIT,
 	DEAD,
-	AIR_DOWN_ATTACK
+	AIR_DOWN_ATTACK,
+	LOCKED
 }
+
+
