@@ -19,7 +19,6 @@ if(!global.gamePaused){
 		}
 	}
 	//Friction
-	fric = 0.075;
 	Gravity();
 	x += lengthdir_x(speed, direction);
 	if (tilemap_get_at_pixel(collisionMap, x, y+2) > 0) vsp = 0;
