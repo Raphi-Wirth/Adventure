@@ -4,7 +4,7 @@ function PlayerHorizontalMovement(){
 	if(abs(hsp)< 1 and move == 0){
 		hsp = 0;
 	}
-	else if(abs(hsp)<=5 and move != 0){
+	else if(abs(hsp)<=maxSpeed and move != 0){
 		hsp += move*walksp;
 	}
 	else{

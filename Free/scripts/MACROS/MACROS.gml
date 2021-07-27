@@ -5,3 +5,7 @@
 #macro CARDINAL_DIR round(direction/180);
 #macro ROOM_START rLevel1
 #macro TILE_SIZE 32
+
+#macro TRANSITION_SPEED 0.02
+#macro OUT 0
+#macro IN 1

@@ -26,6 +26,7 @@ instance_create_layer(x,y, "Instances" ,oParticleSystem);
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed
 walksp = 1;					//Walk speed
+maxSpeed = 5;
 doubleJmp = 0				//Double jump used
 flipRight = 0				//Flipping Right
 flipLeft = 0				//Flipping Left
@@ -74,7 +75,8 @@ enum PLAYERSTATE
 	HIT,
 	DEAD,
 	AIR_DOWN_ATTACK,
-	LOCKED
+	LOCKED,
+	TRANSITION
 }
 
 
