@@ -3,16 +3,17 @@
 ///@arg x
 ///@arg y
 ///@arg [Items] array of items to drop
+///@arg Fragment speed
 ///@arg DirectionHit
 function DropItems(){
 	var min_angle = 0
 	var max_angle = 180
-	if(argument_count>3){
-		if(argument3 == 1){
+	if(argument_count>4){
+		if(argument4 == 1){
 			min_angle = 90;
 			max_angle = 30;
 		}
-		else if(argument3 == -1){
+		else if(argument4 == -1){
 			max_angle = 150;
 			min_angle = 90;
 		}
@@ -24,7 +25,7 @@ function DropItems(){
 		for (var i = 0; i < _items; i++){
 			with (instance_create_layer(argument0, argument1, "Instances", argument2[i])){
 				direction = _angle;
-				speed = 1.5 + (_items * 0.1) + random(1);
+				speed = random_range(argument3/3,argument3) + (_items * 0.1);
 			}
 			_angle += _anglePerItem;
 		}

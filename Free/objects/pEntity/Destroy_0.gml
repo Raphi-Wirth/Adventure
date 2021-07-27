@@ -8,5 +8,5 @@ if (entityFragmentCount > 0){
 	else{
 		dirHit = sign(x-oPlayer.x);
 	}
-	DropItems(x,y,fragmentArray, dirHit);
+	DropItems(x,y,fragmentArray, entityFragmentSpeed, dirHit);
 }
