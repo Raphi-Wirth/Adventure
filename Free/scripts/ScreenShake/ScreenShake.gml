@@ -4,7 +4,7 @@
 ///@arg Magnitude
 ///@Arg Frames
 function ScreenShake(){
-	with (oCamera) {
+	with (global.iCamera) {
 		if(argument0 > shakeRemain){
 			shakeMagnitude = argument0;
 			shakeRemain = shakeMagnitude;

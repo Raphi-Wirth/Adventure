@@ -5,8 +5,18 @@ if(follow != noone){
 	xTo = follow.x;
 	yTo = follow.y;
 }
-x += (xTo-x)/10;
-y += (yTo-y)/10;
+if(abs((xTo-x)/10) > 0.05){
+	x += (xTo-x)/10;
+}
+else{
+	x = follow.x;
+}
+if(abs((yTo-y)/10) > 0.05){
+	y += (yTo-y)/10;
+}
+else{
+	y = follow.y;
+}
 
 
 x = clamp(x, view_w_half, room_width - view_w_half);
@@ -19,4 +29,4 @@ y += random_range(-shakeRemain, shakeRemain);
 
 shakeRemain = max(0, shakeRemain - ((1/shakeLength) * shakeMagnitude));
 
-camera_set_view_pos(camera, x - view_w_half , y - view_h_half);
+camera_set_view_pos(camera, floor(x - view_w_half) , floor(y - view_h_half));
