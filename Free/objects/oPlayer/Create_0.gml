@@ -25,15 +25,15 @@ instance_create_layer(x,y, "Instances" ,oParticleSystem);
 
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed
-walksp = 1;					//Walk speed
-maxSpeed = 5;
+walksp = 2;					//Walk speed
+maxSpeed = 10;
 doubleJmp = 0				//Double jump used
 flipRight = 0				//Flipping Right
 flipLeft = 0				//Flipping Left
-grv = 0.5;					//Speed of gravity
+grv = 1;					//Speed of gravity
 wallJumpDirection = 0;		//Which wall is currently being held
-dashSpeed = 10;				//Horizontal speed while dashing
-jumpHeight = 12;
+dashSpeed = maxSpeed*2;		//Horizontal speed while dashing
+jumpHeight = 24;
 initDashDirection = 0		//Put explanation here later
 dashDirection = 1			//Initial dash direction
 canDash = 1;				//Checks if player can dash

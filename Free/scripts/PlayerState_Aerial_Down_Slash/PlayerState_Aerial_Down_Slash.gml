@@ -19,11 +19,10 @@ function PlayerState_Aerial_Down_Slash(){
 	
 	if(touchingFloor){
 		inAttackSwingCooldown = 1;
-		state = PLAYERSTATE.IN_AIR;
+		state = PLAYERSTATE.FREE;
 	}
 	
 	if(animation_end()){
-		sprite_index = sIdle;
 		inAttackSwingCooldown = 1;
 		state = PLAYERSTATE.IN_AIR;
 	}

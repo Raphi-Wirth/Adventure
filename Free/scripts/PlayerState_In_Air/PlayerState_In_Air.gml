@@ -47,23 +47,23 @@ function PlayerState_In_Air(){
 	
 	if(vsp<0){
 		sprite_index = sJump;
-		if(vsp<-7){
+		if(vsp<-15){
 			image_index = 0;
 		}
-		else if (vsp < -3 and vsp >= -7){
+		else if (vsp < -8 and vsp >= -15){
 			image_index = 1;
 		} 
-		else if (vsp < 0 and vsp >= -3){
+		else if (vsp < 0 and vsp >= -8){
 			image_index = 2;
 		}
 	}
 
 	if(vsp >= 0){
 		sprite_index = sFall;
-		if (vsp >= 0 and vsp < 2){
+		if (vsp >= 0 and vsp < 5){
 			image_index = 0;
 		}
-		else if (vsp >= 2){
+		else if (vsp >= 5){
 			image_index = 1;
 		}
 	}		
