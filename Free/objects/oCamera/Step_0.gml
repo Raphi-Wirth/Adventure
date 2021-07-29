@@ -3,8 +3,9 @@
 
 if(follow != noone){
 	xTo = follow.x;
-	yTo = follow.y;
+	yTo = follow.y -  follow.sprite_height/2;
 }
+
 if(abs((xTo-x)/10) > 0.05){
 	x += (xTo-x)/10;
 }
@@ -15,12 +16,12 @@ if(abs((yTo-y)/10) > 0.05){
 	y += (yTo-y)/10;
 }
 else{
-	y = follow.y;
+	y = follow.y - follow.sprite_height/2;
 }
 
 
-//x = clamp(x, view_w_half, room_width - view_w_half);
-//y = clamp(y,view_h_half, room_height - view_h_half);
+x = clamp(x, view_w_half, room_width - view_w_half);
+y = clamp(y,view_h_half, room_height - view_h_half);
 
 
 //Screenshake
