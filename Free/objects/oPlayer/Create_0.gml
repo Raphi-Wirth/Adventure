@@ -14,10 +14,10 @@ inAttackSwingCooldown = 0;
 intangible = 0;
 currentHP = 5;
 maxHP = currentHP;
-healthbar_width = 200;
-healthbar_height = 20;
-healthbar_x = RESOLUTION_W/12;
-healthbar_y = RESOLUTION_H/12;
+healthbar_width = 400;
+healthbar_height = 40;
+healthbar_x = RESOLUTION_W/16;
+healthbar_y = RESOLUTION_H/16;
 
 hspCarrySpeed = 0;
 instance_create_layer(x,y, "Instances" ,oParticleSystem);
@@ -61,8 +61,8 @@ if(global.targetX != -1){
 	x = global.targetX;
 	y = global.targetY;
 	direction = global.targetDirection;
+	currentHP = global.currentHP;
 }
-
 
 
 

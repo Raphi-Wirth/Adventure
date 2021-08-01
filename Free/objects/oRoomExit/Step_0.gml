@@ -6,6 +6,7 @@ if(instance_exists(oPlayer)) and (position_meeting(oPlayer.x, oPlayer.y, oRoomEx
 		global.targetX = targetX;
 		global.targetY = targetY;
 		global.targetDirection = oPlayer.image_xscale;
+		global.currentHP = oPlayer.currentHP;
 		with (oPlayer) {
 			state = PLAYERSTATE.TRANSITION;
 		}
