@@ -32,7 +32,7 @@ function PlayerState_Free(){
 		doubleJmp = 0;
 		canDash = 1;
 	}
-	else if(touchingFloor == noone){
+	else if(!touchingFloor){
 		state = PLAYERSTATE.IN_AIR;
 	}
 
