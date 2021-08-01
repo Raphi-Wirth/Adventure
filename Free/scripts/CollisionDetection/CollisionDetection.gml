@@ -4,7 +4,6 @@ function CollisionDetection(){
 	
 	//IntangibilityCheck(touchingRWall,touchingLWall,touchingFloor,collidingWall);
 	
-	show_debug_message(x);
 	var hsp_final = hsp + hspCarrySpeed;
 	hspCarrySpeed = 0;
 	

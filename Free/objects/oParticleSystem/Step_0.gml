@@ -6,6 +6,3 @@ if (oPlayer and oPlayer.state == PLAYERSTATE.WALL_GRAB){
 if (oPlayer and oPlayer.state == PLAYERSTATE.DASH){
 	part_particles_create(global.partSystem, oPlayer.x - oPlayer.initDashDirection*10, oPlayer.y, global.ptBasic, 1);
 }
-if (oPlayer and oPlayer.state == PLAYERSTATE.DOUBLE_JUMP){
-	part_particles_create(global.partSystem, oPlayer.x, oPlayer.y+10, global.ptJump, 5);
-}

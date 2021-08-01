@@ -2,6 +2,13 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_In_Air(){
 	
+	if(sprite_index = sJump and animation_end()){
+		image_speed = 0;
+	}
+	if(vsp >= 0 and sprite_index != sFall){
+		sprite_index = sFall;
+		image_speed = 1;
+	}
 	if(move!=0){
 		image_xscale = move;
 	}
@@ -9,7 +16,7 @@ function PlayerState_In_Air(){
 	PlayerHorizontalMovement();
 	Gravity();
 	PlayerCollision();
-	
+
 	if(touchingFloor) {
 		state = PLAYERSTATE.FREE;
 	}
@@ -29,9 +36,15 @@ function PlayerState_In_Air(){
 		}
 	}
 	
-	if(!touchingFloor and keyJump and doubleJmp == 0 and hasDoubleJump){
+	if(!touchingFloor and keyboard_check_pressed(vk_space) and doubleJmp == 0 and hasDoubleJump){
 		jumpDirection = move;
-		state = PLAYERSTATE.DOUBLE_JUMP;
+		doubleJmp = 1;
+		vsp = -25;
+		sprite_index = sJump;
+		image_index = 0;
+		image_speed = 1;
+		inJump = 1;
+		heightJumped = 0;
 	}
 	
 	if(keyAttack and !inAttackSwingCooldown and hasSword){
@@ -44,27 +57,4 @@ function PlayerState_In_Air(){
 		}
 	}
 
-	
-	if(vsp<0){
-		sprite_index = sJump;
-		if(vsp<-15){
-			image_index = 0;
-		}
-		else if (vsp < -8 and vsp >= -15){
-			image_index = 1;
-		} 
-		else if (vsp < 0 and vsp >= -8){
-			image_index = 2;
-		}
-	}
-
-	if(vsp >= 0){
-		sprite_index = sFall;
-		if (vsp >= 0 and vsp < 5){
-			image_index = 0;
-		}
-		else if (vsp >= 5){
-			image_index = 1;
-		}
-	}		
 }

@@ -86,7 +86,16 @@ function PlayerCollision(){
 	
 	//Vertical move commit
 	y += vsp;
-	touchingFloor = tilemap_get_at_pixel(collisionMap, x, y+1) or position_meeting(x,y+1,pEntity);
+	
+	if(instance_position(x,y+1, pEntity)){
+		with(instance_position(x,y+1,pEntity)){
+			if(entityCollision == true){
+				touchingFloor = true;
+			}
+		}
+	}
+	
+	touchingFloor = tilemap_get_at_pixel(collisionMap, x, y+1);
 	touchingRoof = tilemap_get_at_pixel(collisionMap, x, y-1) or position_meeting(x,y-1,pEntity);
 	touchingRWall = tilemap_get_at_pixel(collisionMap, x+1, y) or position_meeting(x+1,y,pEntity);
 	touchingLWall = tilemap_get_at_pixel(collisionMap, x-1, y) or position_meeting(x-1,y,pEntity);

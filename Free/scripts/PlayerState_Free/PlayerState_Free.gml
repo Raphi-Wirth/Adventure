@@ -1,7 +1,5 @@
 function PlayerState_Free(){
 	//Movement mechanics
-
-
 	//Horizontal Movement
 	
 	PlayerHorizontalMovement();
@@ -34,16 +32,14 @@ function PlayerState_Free(){
 		doubleJmp = 0;
 		canDash = 1;
 	}
-	else if(!touchingFloor){
+	else if(touchingFloor == noone){
 		state = PLAYERSTATE.IN_AIR;
 	}
 
 	//Jump if on floor and not touching a wall
 	if(touchingFloor and keyJump and (!(touchingRWall and wallJumpDirection) or !(touchingLWall and wallJumpDirection)))
 	{
-		vsp = -jumpHeight;
-		state = PLAYERSTATE.IN_AIR;
-
+		state = PLAYERSTATE.JUMP_SQUAT;
 	}
 
 	if(keyDash and canDash and hasDash){

@@ -11,7 +11,9 @@ polygon = polygon_from_instance(id);
 
 move = keyRight - keyLeft;
 if(!global.gamePaused){
-	
+	if(touchingFloor){
+		show_debug_message("touchingFloor");
+	}
 	if(inAttackSwingCooldown){
 	attackSwingTimer += 1;
 	}
@@ -42,7 +44,6 @@ if(!global.gamePaused){
 	
 		case PLAYERSTATE.WALL_GRAB: PlayerState_Wall_Grab(); break;
 	
-		case PLAYERSTATE.DOUBLE_JUMP: PlayerState_Double_Jump(jumpDirection); break;
 	
 		case PLAYERSTATE.IN_AIR: PlayerState_In_Air(); break;
 	
@@ -59,6 +60,8 @@ if(!global.gamePaused){
 		case PLAYERSTATE.LOCKED: PlayerState_Locked(); break;
 		
 		case PLAYERSTATE.TRANSITION: PlayerState_Transition(); break;
+		
+		case PLAYERSTATE.JUMP_SQUAT: PlayerState_Jump_Squat(); break;
 	}
 }
 

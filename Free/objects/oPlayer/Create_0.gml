@@ -3,8 +3,8 @@
 event_inherited();
 
 hasSword = 1;
-hasDash = 1;
-hasWallGrab = 1;
+hasDash = 0;
+hasWallGrab = 0;
 hasDoubleJump = 1;
 invulnerable = 0;
 invulnerableTicks = 2;
@@ -33,7 +33,10 @@ flipLeft = 0				//Flipping Left
 grv = 1;					//Speed of gravity
 wallJumpDirection = 0;		//Which wall is currently being held
 dashSpeed = maxSpeed*2;		//Horizontal speed while dashing
-jumpHeight = 24;
+heightJumped = 0;
+maxJumpHeight = 200;
+jumpSpeed = 20;
+inJump = 0;
 initDashDirection = 0		//Put explanation here later
 dashDirection = 1			//Initial dash direction
 canDash = 1;				//Checks if player can dash
@@ -69,14 +72,14 @@ enum PLAYERSTATE
 	DASH,
 	WALL_GRAB,
 	IN_AIR,
-	DOUBLE_JUMP,
 	AIR_ATTACK,
 	AIR_UP_ATTACK,
 	HIT,
 	DEAD,
 	AIR_DOWN_ATTACK,
 	LOCKED,
-	TRANSITION
+	TRANSITION,
+	JUMP_SQUAT
 }
 
 
