@@ -39,6 +39,7 @@ function PlayerState_In_Air(){
 	if(!touchingFloor and keyboard_check_pressed(vk_space) and doubleJmp == 0 and hasDoubleJump){
 		jumpDirection = move;
 		doubleJmp = 1;
+		part_particles_create(global.partSystem, oPlayer.x, oPlayer.y+5, global.ptJump, 1);
 		vsp = -jumpHeight;
 		sprite_index = sJump;
 		image_index = 0;

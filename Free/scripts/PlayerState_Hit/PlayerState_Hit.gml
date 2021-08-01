@@ -8,10 +8,10 @@ function PlayerState_Hit(){
 		flash = 0.75
 		sprite_index = sPlayerHit;
 	}
-	if(count < 15){
+	if(count < hitStun){
 		count+=1;
 	}
-	else if(count == 15){
+	else if(count >= hitStun){
 		state = PLAYERSTATE.FREE;
 	}
 	Gravity();

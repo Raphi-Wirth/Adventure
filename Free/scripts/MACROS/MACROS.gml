@@ -25,8 +25,8 @@ var _j = part_type_create();
 
 part_type_shape(_j, pt_shape_cloud);
 part_type_life(_j,15,40);
-part_type_size(_j,0.3,0.8,0,0.05);
-part_type_speed(_j,0.5,1,0,0);
+part_type_size(_j,1,2,0,0.05);
+part_type_speed(_j,2,3,0,0);
 part_type_direction(_j, 250, 300, 0,0);
 
 global.ptJump = _j;

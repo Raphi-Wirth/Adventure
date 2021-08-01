@@ -46,7 +46,7 @@ jumpDirection = 1;			//Initial Jump Direction
 wallGrabFallSpeed = 1;	    //Speed at which falling when holding wall 
 flashAlpha = 0;
 flashColour = c_white;
-
+hitStun = 15;
 
 state = PLAYERSTATE.FREE;
 lastState = state;
