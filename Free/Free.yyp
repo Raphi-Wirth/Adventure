@@ -28,6 +28,7 @@
     {"id":{"name":"light_create_extension","path":"scripts/light_create_extension/light_create_extension.yy",},"order":2,},
     {"id":{"name":"sAerial_Down_SlashHB","path":"sprites/sAerial_Down_SlashHB/sAerial_Down_SlashHB.yy",},"order":9,},
     {"id":{"name":"light_update","path":"scripts/light_update/light_update.yy",},"order":4,},
+    {"id":{"name":"sOutside","path":"sprites/sOutside/sOutside.yy",},"order":0,},
     {"id":{"name":"PlayerState_Wall_Grab","path":"scripts/PlayerState_Wall_Grab/PlayerState_Wall_Grab.yy",},"order":2,},
     {"id":{"name":"lighting_update_camera","path":"scripts/lighting_update_camera/lighting_update_camera.yy",},"order":3,},
     {"id":{"name":"bulletWallDetector","path":"scripts/bulletWallDetector/bulletWallDetector.yy",},"order":1,},
@@ -89,7 +90,7 @@
     {"id":{"name":"lighting_post_composite","path":"scripts/lighting_post_composite/lighting_post_composite.yy",},"order":3,},
     {"id":{"name":"polygon_create","path":"scripts/polygon_create/polygon_create.yy",},"order":4,},
     {"id":{"name":"EnemyState_Idle","path":"scripts/EnemyState_Idle/EnemyState_Idle.yy",},"order":0,},
-    {"id":{"name":"rLevel3","path":"rooms/rLevel3/rLevel3.yy",},"order":4,},
+    {"id":{"name":"rOutside","path":"rooms/rOutside/rOutside.yy",},"order":4,},
     {"id":{"name":"oPlant","path":"objects/oPlant/oPlant.yy",},"order":2,},
     {"id":{"name":"EnemyState_Chase","path":"scripts/EnemyState_Chase/EnemyState_Chase.yy",},"order":3,},
     {"id":{"name":"light_static_get_array","path":"scripts/light_static_get_array/light_static_get_array.yy",},"order":0,},
@@ -194,7 +195,7 @@
     {"roomId":{"name":"rParent","path":"rooms/rParent/rParent.yy",},},
     {"roomId":{"name":"rLevel1","path":"rooms/rLevel1/rLevel1.yy",},},
     {"roomId":{"name":"rLevel2","path":"rooms/rLevel2/rLevel2.yy",},},
-    {"roomId":{"name":"rLevel3","path":"rooms/rLevel3/rLevel3.yy",},},
+    {"roomId":{"name":"rOutside","path":"rooms/rOutside/rOutside.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":13,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -236,6 +237,7 @@
     {"folderPath":"folders/Objects/Managers.yy","order":17,"resourceVersion":"1.0","name":"Managers","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/NPCs.yy","order":22,"resourceVersion":"1.0","name":"NPCs","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/NPCs.yy","order":20,"resourceVersion":"1.0","name":"NPCs","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Outside.yy","order":23,"resourceVersion":"1.0","name":"Outside","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

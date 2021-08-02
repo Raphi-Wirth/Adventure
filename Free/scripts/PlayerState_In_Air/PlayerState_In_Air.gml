@@ -20,7 +20,7 @@ function PlayerState_In_Air(){
 	if(heightJumped >= 64*2 and inJump){
 		if(!keyJump){
 			inJump = 0;
-			vsp = 0;
+			vsp = -heightJumped/100;
 		}
 		if(keyJump and heightJumped < maxJumpHeight){
 			y -= ((maxJumpHeight - heightJumped)/maxJumpHeight) * 20 + 10;
