@@ -1,7 +1,7 @@
 //Get player input
 keyLeft = keyboard_check(vk_left);
 keyRight = keyboard_check(vk_right);
-keyJump = keyboard_check_pressed(vk_space);
+keyJump = keyboard_check(vk_space);
 keyDash = keyboard_check_pressed(ord("C"));
 keyDown = keyboard_check(vk_down);
 keyUp = keyboard_check(vk_up);
@@ -9,11 +9,11 @@ keyAttack = keyboard_check(ord("X"));
 keyInteract = keyboard_check_pressed(ord("Z"));
 polygon = polygon_from_instance(id);
 
+
+
 move = keyRight - keyLeft;
 if(!global.gamePaused){
-	if(touchingFloor){
-		show_debug_message("touchingFloor");
-	}
+	show_debug_message(touchingRoof);
 	if(inAttackSwingCooldown){
 	attackSwingTimer += 1;
 	}
@@ -65,4 +65,4 @@ if(!global.gamePaused){
 	}
 }
 
-depth = -1000;
+depth = -9000;

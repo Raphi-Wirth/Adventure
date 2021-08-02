@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_In_Air(){
+	
+	
 	if(sprite_index != sJump and sprite_index != sFall){
 		image_index = savedJumpIndex;
 		sprite_index = sFall;
@@ -12,12 +14,45 @@ function PlayerState_In_Air(){
 	if(move!=0){
 		image_xscale = move;
 	}
+	if(touchingRoof){
+		inJump = 0;
+	}
+	if(heightJumped >= 64*2 and inJump){
+		if(!keyJump){
+			inJump = 0;
+			vsp = 0;
+		}
+		if(keyJump and heightJumped < maxJumpHeight){
+			y -= ((maxJumpHeight - heightJumped)/maxJumpHeight) * 20 + 10;
+			vsp = 0;
+			heightJumped += ((maxJumpHeight - heightJumped)/maxJumpHeight) * 20 + 10;
+		}
+		if(keyJump and heightJumped >= maxJumpHeight){
+			vsp = -5;
+			inJump = 0;
+		}
+	}
+	if(!touchingFloor and keyboard_check_pressed(vk_space) and doubleJmp == 0 and hasDoubleJump){
+		jumpDirection = move;
+		doubleJmp = 1;
+		part_particles_create(global.partSystem, oPlayer.x, oPlayer.y+5, global.ptJump, 1);
+		sprite_index = sJump;
+		image_index = 0;
+		image_speed = 1;
+		vsp = -30;
+		inJump = 1;
+		heightJumped = 30;
+	}
 	
-	PlayerHorizontalMovement();
 	Gravity();
+	PlayerHorizontalMovement();
 	PlayerCollision();
-
-	if(touchingFloor) {
+	
+	heightJumped -= vsp;
+	
+	
+	
+	if(touchingFloor){
 		state = PLAYERSTATE.FREE;
 	}
 	
@@ -36,17 +71,7 @@ function PlayerState_In_Air(){
 		}
 	}
 	
-	if(!touchingFloor and keyboard_check_pressed(vk_space) and doubleJmp == 0 and hasDoubleJump){
-		jumpDirection = move;
-		doubleJmp = 1;
-		part_particles_create(global.partSystem, oPlayer.x, oPlayer.y+5, global.ptJump, 1);
-		vsp = -jumpHeight;
-		sprite_index = sJump;
-		image_index = 0;
-		image_speed = 1;
-		inJump = 1;
-		heightJumped = 0;
-	}
+
 	
 	if(keyAttack and !inAttackSwingCooldown and hasSword){
 		savedJumpIndex = image_index;

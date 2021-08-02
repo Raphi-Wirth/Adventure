@@ -11,7 +11,10 @@ function PlayerState_Jump_Squat(){
 		sprite_index = sJump;
 		image_speed = 1;
 		image_index = 0;
-		vsp = -jumpHeight;
+		heightJumped = 30;
+		savedJumpIndex = 0;
+		vsp = -30;
+		inJump = 1;
 		state = PLAYERSTATE.IN_AIR;
 	}
 	PlayerCollision();
