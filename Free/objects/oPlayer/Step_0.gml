@@ -9,9 +9,11 @@ keyAttack = keyboard_check(ord("X"));
 keyInteract = keyboard_check_pressed(ord("Z"));
 polygon = polygon_from_instance(id);
 
+
+
 move = keyRight - keyLeft;
 if(!global.gamePaused){
-
+	show_debug_message(touchingRoof);
 	if(inAttackSwingCooldown){
 	attackSwingTimer += 1;
 	}

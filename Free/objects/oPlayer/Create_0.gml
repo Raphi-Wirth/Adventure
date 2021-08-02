@@ -34,7 +34,7 @@ grv = 1;					//Speed of gravity
 wallJumpDirection = 0;		//Which wall is currently being held
 dashSpeed = maxSpeed*2;		//Horizontal speed while dashing
 heightJumped = 0;
-maxJumpHeight = 400;
+maxJumpHeight = 64*7;
 jumpHeight = 35;
 jumpSpeed = 20;
 savedJumpIndex = 0;
@@ -52,6 +52,7 @@ state = PLAYERSTATE.FREE;
 lastState = state;
 hitByAttack = ds_list_create();
 
+touchingRoof = 0;
 touchingLWall = 0;
 touchingRWall = 0;
 touchingFloor = 0;

@@ -89,6 +89,7 @@
     {"id":{"name":"lighting_post_composite","path":"scripts/lighting_post_composite/lighting_post_composite.yy",},"order":3,},
     {"id":{"name":"polygon_create","path":"scripts/polygon_create/polygon_create.yy",},"order":4,},
     {"id":{"name":"EnemyState_Idle","path":"scripts/EnemyState_Idle/EnemyState_Idle.yy",},"order":0,},
+    {"id":{"name":"rLevel3","path":"rooms/rLevel3/rLevel3.yy",},"order":4,},
     {"id":{"name":"oPlant","path":"objects/oPlant/oPlant.yy",},"order":2,},
     {"id":{"name":"EnemyState_Chase","path":"scripts/EnemyState_Chase/EnemyState_Chase.yy",},"order":3,},
     {"id":{"name":"light_static_get_array","path":"scripts/light_static_get_array/light_static_get_array.yy",},"order":0,},
@@ -193,6 +194,7 @@
     {"roomId":{"name":"rParent","path":"rooms/rParent/rParent.yy",},},
     {"roomId":{"name":"rLevel1","path":"rooms/rLevel1/rLevel1.yy",},},
     {"roomId":{"name":"rLevel2","path":"rooms/rLevel2/rLevel2.yy",},},
+    {"roomId":{"name":"rLevel3","path":"rooms/rLevel3/rLevel3.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":13,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

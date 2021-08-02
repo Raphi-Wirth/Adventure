@@ -94,12 +94,10 @@ function PlayerCollision(){
 			}
 		}
 	}
-	
 	touchingFloor = tilemap_get_at_pixel(collisionMap, x, y+1);
-	touchingRoof = tilemap_get_at_pixel(collisionMap, x, y-1) or position_meeting(x,y-1,pEntity);
+	touchingRoof = tilemap_get_at_pixel(collisionMap, x, y-1);
 	touchingRWall = tilemap_get_at_pixel(collisionMap, x+1, y) or position_meeting(x+1,y,pEntity);
 	touchingLWall = tilemap_get_at_pixel(collisionMap, x-1, y) or position_meeting(x-1,y,pEntity);
-	
 	ds_list_destroy(_entityList);
 	
 	return _collision;
