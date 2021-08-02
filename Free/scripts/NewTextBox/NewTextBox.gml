@@ -7,6 +7,7 @@
 
 
 function NewTextBox(){
+	show_debug_message("Being called");
 	var _obj;
 	if (instance_exists(oText)){
 		_obj = oTextQueued;

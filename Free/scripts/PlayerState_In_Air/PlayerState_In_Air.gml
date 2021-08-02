@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_In_Air(){
+	
+	
 	if(sprite_index != sJump and sprite_index != sFall){
 		image_index = savedJumpIndex;
 		sprite_index = sFall;
@@ -13,11 +15,31 @@ function PlayerState_In_Air(){
 		image_xscale = move;
 	}
 	
-	PlayerHorizontalMovement();
+	if(heightJumped >= 100 and inJump){
+		if(!keyJump){
+			inJump = 0;
+			vsp = 0;
+		}
+		if(keyJump and heightJumped < maxJumpHeight){
+			y -= 30;
+			vsp = 0;
+			heightJumped += 30;
+		}
+		if(keyJump and heightJumped >= maxJumpHeight){
+			vsp = -10;
+			inJump = 0;
+		}
+	}
+	
 	Gravity();
+	PlayerHorizontalMovement();
 	PlayerCollision();
-
-	if(touchingFloor) {
+	
+	heightJumped -= vsp;
+	
+	
+	
+	if(touchingFloor){
 		state = PLAYERSTATE.FREE;
 	}
 	
@@ -40,12 +62,12 @@ function PlayerState_In_Air(){
 		jumpDirection = move;
 		doubleJmp = 1;
 		part_particles_create(global.partSystem, oPlayer.x, oPlayer.y+5, global.ptJump, 1);
-		vsp = -jumpHeight;
 		sprite_index = sJump;
 		image_index = 0;
 		image_speed = 1;
+		vsp = -30;
 		inJump = 1;
-		heightJumped = 0;
+		heightJumped = 30;
 	}
 	
 	if(keyAttack and !inAttackSwingCooldown and hasSword){

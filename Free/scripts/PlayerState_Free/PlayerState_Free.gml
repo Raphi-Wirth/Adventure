@@ -12,11 +12,12 @@ function PlayerState_Free(){
 		//2. If there is nothing, or there is something with no script - do nothing
 		//3. Otherwise, activate script
 		//4. If the thing we activate is an NPC, make it face towards us
-		var _activateX = lengthdir_x(10, direction);
-		var _activateY = lengthdir_y(10, direction);
+		var _activateX = lengthdir_x(40, direction);
+		var _activateY = lengthdir_y(40, direction);
 		activate = instance_position(x + _activateX, y + _activateY, pEntity);
 		if(activate != noone and activate.entityActivateScript != -1){
 			//Activate that entities specifc scripts with its specific arguments
+			show_debug_message("Has script");
 			ScriptExecuteArray(activate.entityActivateScript, activate.entityActivateArgs);
 			if(activate.entityNPC){
 				with(activate){
