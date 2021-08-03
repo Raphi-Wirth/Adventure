@@ -3,5 +3,4 @@
 function FlyingBuzzEffect(intensity){
 	hsp = random_range(intensity,-intensity);
 	vsp = random_range(intensity,-intensity);
-	CollisionDetection();
 }

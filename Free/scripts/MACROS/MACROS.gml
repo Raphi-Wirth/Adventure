@@ -47,21 +47,13 @@ global.ptWallGrab = _wallGrab;
 
 enum ENEMYSTATE {
 	CHASE,
+	WANDER,
 	ATTACK,
 	IDLE,
-	DEAD,
-	HIT,
-	IN_AIR
+	DIE,
+	HURT,
+	WAIT
 }
-
-enum ENEMYBEHAVIOUR {
-	CHASE,
-	IDLE,
-	AGGRESSIVE,
-	WANDER
-}
-
-
 
 
 
