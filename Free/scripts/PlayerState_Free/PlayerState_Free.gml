@@ -67,7 +67,7 @@ function PlayerState_Free(){
 	else
 	{             
 		sprite_index = sWalk;
-		image_speed = abs((hsp)/maxSpeed);
+		image_speed = 1;
 	}
 	if(move != 0){
 		image_xscale = sign(move);

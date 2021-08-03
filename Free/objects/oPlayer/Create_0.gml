@@ -4,7 +4,7 @@ event_inherited();
 
 hasSword = 1;
 hasDash = 1;
-hasWallGrab = 0;
+hasWallGrab = 1;
 hasDoubleJump = 1;
 invulnerable = 0;
 invulnerableTicks = 2;
@@ -25,7 +25,7 @@ instance_create_layer(x,y, "Instances" ,oParticleSystem);
 
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed
-walksp = 1;					//Walk speed
+walksp = 2;					//Walk speed
 maxSpeed = 10;
 doubleJmp = 0				//Double jump used
 flipRight = 0				//Flipping Right

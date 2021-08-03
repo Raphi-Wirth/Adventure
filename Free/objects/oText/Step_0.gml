@@ -23,7 +23,7 @@ if (responseSelected < _min) {
 
 
 
-if(keyInteract){
+if(oPlayer.keyInteract){
 	var _messageLength = string_length(message);
 	if(textProgress >= _messageLength){
 		//If there are responses to be selected

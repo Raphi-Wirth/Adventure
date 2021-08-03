@@ -6,6 +6,8 @@ function PlayerState_Wall_Grab(){
 		image_speed = 1;
 	}
 	vsp = wallGrabFallSpeed;
+	doubleJmp = 0;
+	canDash = 1;
 	PlayerCollision();
 	if(touchingRWall){
 		image_xscale = -1;
@@ -14,12 +16,12 @@ function PlayerState_Wall_Grab(){
 		image_xscale = 1;
 	}
 	if(keyJump){
-		hsp = image_xscale * 10;
-		vsp = -jumpHeight;
+		hsp = image_xscale * 20;
+		vsp = -25;
 		state = PLAYERSTATE.IN_AIR;
+		sprite_index = sJump;
 	}
-	doubleJmp = 0;
-	canDash = 1;
+
 	if(hasDash){
 		if(keyDash and image_xscale == 1 and keyLeft){
 			dashDirection = image_xscale;
@@ -37,6 +39,7 @@ function PlayerState_Wall_Grab(){
 		}
 		else{
 			state = PLAYERSTATE.IN_AIR;
+			sprite_index = sFall;
 		}
 		
 	}

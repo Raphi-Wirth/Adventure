@@ -8,13 +8,13 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 2599,
-  "bbox_top": 46,
-  "bbox_bottom": 1462,
+  "bbox_right": 5190,
+  "bbox_top": 138,
+  "bbox_bottom": 1260,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 2600,
+  "width": 5200,
   "height": 1463,
   "textureGroupId": {
     "name": "Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"be1844b5-a102-4abd-bdec-9dc8500406ad","path":"sprites/sOutsideFG/sOutsideFG.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"be1844b5-a102-4abd-bdec-9dc8500406ad","path":"sprites/sOutsideFG/sOutsideFG.yy",},"LayerId":{"name":"0e04990e-6510-43e9-8c52-49f6c43198ce","path":"sprites/sOutsideFG/sOutsideFG.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sOutsideFG","path":"sprites/sOutsideFG/sOutsideFG.yy",},"resourceVersion":"1.0","name":"be1844b5-a102-4abd-bdec-9dc8500406ad","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"8c1f0205-4c3d-49ab-b83f-a44dd4f22926","path":"sprites/sOutsideLargeBG/sOutsideLargeBG.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"8c1f0205-4c3d-49ab-b83f-a44dd4f22926","path":"sprites/sOutsideLargeBG/sOutsideLargeBG.yy",},"LayerId":{"name":"148fa94a-960e-4d09-854c-a6de014d1d96","path":"sprites/sOutsideLargeBG/sOutsideLargeBG.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sOutsideLargeBG","path":"sprites/sOutsideLargeBG/sOutsideLargeBG.yy",},"resourceVersion":"1.0","name":"8c1f0205-4c3d-49ab-b83f-a44dd4f22926","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sOutsideFG","path":"sprites/sOutsideFG/sOutsideFG.yy",},
+    "spriteId": {"name":"sOutsideLargeBG","path":"sprites/sOutsideLargeBG/sOutsideLargeBG.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"aa3230ae-28b4-46c7-a648-7346f87422d1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"be1844b5-a102-4abd-bdec-9dc8500406ad","path":"sprites/sOutsideFG/sOutsideFG.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b4c89d98-730f-4cd5-a480-e52812a0aa46","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8c1f0205-4c3d-49ab-b83f-a44dd4f22926","path":"sprites/sOutsideLargeBG/sOutsideLargeBG.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sOutsideFG","path":"sprites/sOutsideFG/sOutsideFG.yy",},
+    "parent": {"name":"sOutsideLargeBG","path":"sprites/sOutsideLargeBG/sOutsideLargeBG.yy",},
     "resourceVersion": "1.3",
-    "name": "sOutsideFG",
+    "name": "sOutsideLargeBG",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0e04990e-6510-43e9-8c52-49f6c43198ce","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"148fa94a-960e-4d09-854c-a6de014d1d96","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Outside.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sOutsideFG",
+  "name": "sOutsideLargeBG",
   "tags": [],
   "resourceType": "GMSprite",
 }
