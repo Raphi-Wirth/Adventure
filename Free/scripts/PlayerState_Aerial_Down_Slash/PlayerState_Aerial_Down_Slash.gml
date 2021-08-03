@@ -13,9 +13,11 @@ function PlayerState_Aerial_Down_Slash(){
 	}
 
 	CalcAttack(sAerial_Down_SlashHB);
-	PlayerHorizontalMovement();
+	PlayerAerialMovement();
 	Gravity();
+	PlayerHorizontalMovement();
 	PlayerCollision();
+	
 	
 	if(touchingFloor){
 		inAttackSwingCooldown = 1;
@@ -24,6 +26,7 @@ function PlayerState_Aerial_Down_Slash(){
 	
 	if(animation_end()){
 		inAttackSwingCooldown = 1;
+		sprite_index = sFall;
 		state = PLAYERSTATE.IN_AIR;
 	}
 }

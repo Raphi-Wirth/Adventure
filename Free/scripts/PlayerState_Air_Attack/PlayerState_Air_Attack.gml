@@ -13,6 +13,7 @@ function PlayerState_Air_Attack(){
 	}
 	
 	CalcAttack(sAttackSlashHB);
+	PlayerAerialMovement();
 	PlayerHorizontalMovement();
 	Gravity();
 	PlayerCollision();
@@ -24,6 +25,7 @@ function PlayerState_Air_Attack(){
 	}
 	if(animation_end()){
 		inAttackSwingCooldown = 1;
+		sprite_index = sFall;
 		state = PLAYERSTATE.IN_AIR;
 	}
 }

@@ -13,6 +13,8 @@ function DialogueResponses(){
 		case "Yes": NewTextBox("Wow.\nSad.",0); break;
 		
 		case "No": break;
+		
+		case "ForestExplanation": NewTextBox("Pollen count is really high this time of year.",0); break;
 	
 	}
 	

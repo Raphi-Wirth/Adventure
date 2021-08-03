@@ -20,6 +20,7 @@ if(!global.gamePaused){
 	}
 	//Friction
 	Gravity();
+	vsp = min(maxFallSpeed, vsp);
 	x += lengthdir_x(speed, direction);
 	if (tilemap_get_at_pixel(collisionMap, x, y+2) > 0) vsp = 0;
 	if (tilemap_get_at_pixel(collisionMap, x-2, y) > 0 or tilemap_get_at_pixel(collisionMap,x+2,y)> 0) speed = 0;

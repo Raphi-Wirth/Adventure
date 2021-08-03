@@ -3,7 +3,7 @@
 event_inherited();
 
 hasSword = 1;
-hasDash = 0;
+hasDash = 1;
 hasWallGrab = 0;
 hasDoubleJump = 1;
 invulnerable = 0;
@@ -25,7 +25,7 @@ instance_create_layer(x,y, "Instances" ,oParticleSystem);
 
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed
-walksp = 2;					//Walk speed
+walksp = 1;					//Walk speed
 maxSpeed = 10;
 doubleJmp = 0				//Double jump used
 flipRight = 0				//Flipping Right
@@ -34,7 +34,7 @@ grv = 1;					//Speed of gravity
 wallJumpDirection = 0;		//Which wall is currently being held
 dashSpeed = maxSpeed*2;		//Horizontal speed while dashing
 heightJumped = 0;
-maxJumpHeight = 32*12;
+maxJumpHeight = 32*13;
 jumpHeight = 35;
 jumpSpeed = 20;
 savedJumpIndex = 0;
@@ -61,7 +61,7 @@ collidingWall = 0;
 if(global.targetX != -1){
 	x = global.targetX;
 	y = global.targetY;
-	direction = global.targetDirection;
+	image_xscale = global.targetDirection;
 	currentHP = global.currentHP;
 }
 

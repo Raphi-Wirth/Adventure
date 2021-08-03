@@ -60,6 +60,7 @@
     {"id":{"name":"PlayerState_In_Air","path":"scripts/PlayerState_In_Air/PlayerState_In_Air.yy",},"order":6,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":1,},
     {"id":{"name":"sBulletStrawberry","path":"sprites/sBulletStrawberry/sBulletStrawberry.yy",},"order":1,},
+    {"id":{"name":"PlayerAerialMovement","path":"scripts/PlayerAerialMovement/PlayerAerialMovement.yy",},"order":5,},
     {"id":{"name":"lighting_global","path":"scripts/lighting_global/lighting_global.yy",},"order":7,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"lighting_set_dirty","path":"scripts/lighting_set_dirty/lighting_set_dirty.yy",},"order":8,},

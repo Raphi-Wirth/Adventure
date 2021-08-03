@@ -27,6 +27,7 @@ function PlayerState_Dash(dashDirection){
 			state = PLAYERSTATE.FREE;
 		}
 		else{
+			sprite_index = sFall;
 			state = PLAYERSTATE.IN_AIR;
 		}
 	}

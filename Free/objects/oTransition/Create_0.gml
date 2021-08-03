@@ -1,4 +1,4 @@
-/// @description Enums + Setup
+ /// @description Enums + Setup
 // You can write your code in this editor
 
 enum TRANS_TYPE {

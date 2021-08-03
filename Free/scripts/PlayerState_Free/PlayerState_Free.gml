@@ -55,18 +55,19 @@ function PlayerState_Free(){
 
 
 	//Listed in order of priority within if statements.
-	image_speed = 1;
+
 	
 
 	image_angle = 0;
 	if(hsp == 0 and move==0)
 	{	
 		sprite_index = sIdle;
+		image_speed = 1;
 	}
 	else
 	{             
 		sprite_index = sWalk;
-		image_speed = 1;
+		image_speed = abs((hsp)/maxSpeed);
 	}
 	if(move != 0){
 		image_xscale = sign(move);
