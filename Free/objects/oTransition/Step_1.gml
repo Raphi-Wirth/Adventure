@@ -3,7 +3,7 @@
 if(instance_exists(oPlayer)){
 	with(oPlayer) {
 		state = PLAYERSTATE.TRANSITION;
-		if(other.leading == IN){
+		if(other.leading == OUT){
 			if(!touchingFloor and vsp != 0){
 				hsp = 0;
 				sprite_index = sFall;
