@@ -26,5 +26,4 @@ if(!global.gamePaused){
 	if (tilemap_get_at_pixel(collisionMap, x-2, y) > 0 or tilemap_get_at_pixel(collisionMap,x+2,y)> 0) speed = 0;
 	y += vsp;
 	speed = max(speed - fric, 0);
-
 }

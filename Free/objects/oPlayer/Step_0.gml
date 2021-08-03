@@ -10,7 +10,6 @@ keyAttack = keyboard_check(ord("X"));
 keyInteract = keyboard_check_pressed(vk_space);
 polygon = polygon_from_instance(id);
 
-depth = -9000;
 
 
 move = keyRight - keyLeft;
@@ -65,4 +64,6 @@ if(!global.gamePaused){
 		case PLAYERSTATE.JUMP_SQUAT: PlayerState_Jump_Squat(); break;
 	}
 }
+
+depth = -bbox_bottom;
 

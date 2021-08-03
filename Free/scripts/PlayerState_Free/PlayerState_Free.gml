@@ -14,7 +14,7 @@ function PlayerState_Free(){
 		//4. If the thing we activate is an NPC, make it face towards us
 		var _activateX = lengthdir_x(40, direction) + x;
 		var _activateY = lengthdir_y(40, direction) + y;
-		var _activateSize = 20;
+		var _activateSize = 40;
 		var _activateList = ds_list_create();
 		activate = noone;
 		
