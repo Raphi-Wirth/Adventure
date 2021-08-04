@@ -2,8 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 #macro RESOLUTION_W 1920
 #macro RESOLUTION_H 1080
-#macro CARDINAL_DIR round(direction/180);
-#macro ROOM_START rLevel1
+#macro CARDINAL_DIR round(direction/180)
+#macro ROOM_START rForestR1
 #macro TILE_SIZE 32
 
 #macro TRANSITION_SPEED 0.035

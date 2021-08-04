@@ -34,8 +34,9 @@ camera_set_view_pos(camera, floor(x - view_w_half) , floor(y - view_h_half));
 
 if (layer_exists("Mountains")){
 	layer_x("Mountains",x/1.5);
-	layer_y("Mountains",y/1 -500);
+	layer_y("Mountains", y/1.1-400);
 }
 if (layer_exists("Forest")){
 	layer_x("Forest", x/3 - 600);
+	layer_y("Forest", y/1.2-600);
 }
