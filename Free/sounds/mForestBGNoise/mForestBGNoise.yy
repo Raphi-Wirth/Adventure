@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mForestBGNoise.wav",
-  "duration": 193.208328,
+  "duration": 193.208374,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

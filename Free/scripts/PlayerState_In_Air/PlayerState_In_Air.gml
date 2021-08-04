@@ -17,7 +17,7 @@ function PlayerState_In_Air(){
 		image_speed = 1;
 		vsp = -30;
 		inJump = 1;
-		heightJumped = 30;
+		heightJumped = -vsp;
 	}
 	
 	
@@ -30,12 +30,12 @@ function PlayerState_In_Air(){
 		dashDirection = move;
 		state = PLAYERSTATE.DASH;
 	}
-	if(hasWallGrab){
-		if(keyRight and !touchingFloor and touchingRWall and vsp>=0){
+	if(hasWallGrab and !inJump){
+		if(keyRight and !touchingFloor and touchingRWall){
 			state = PLAYERSTATE.WALL_GRAB;
 		}
 	
-		else if(keyLeft and !touchingFloor and touchingLWall and vsp>=0){
+		else if(keyLeft and !touchingFloor and touchingLWall){
 			state = PLAYERSTATE.WALL_GRAB;
 		}
 	}
