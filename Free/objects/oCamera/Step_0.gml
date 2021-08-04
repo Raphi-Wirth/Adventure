@@ -33,5 +33,8 @@ shakeRemain = max(0, shakeRemain - ((1/shakeLength) * shakeMagnitude));
 camera_set_view_pos(camera, floor(x - view_w_half) , floor(y - view_h_half));
 
 if (layer_exists("Mountains")){
-	layer_x("Mountains",x/1.25);
+	layer_x("Mountains",x/1.5);
+}
+if (layer_exists("Forest")){
+	layer_x("Forest", x/3 - 600);
 }
