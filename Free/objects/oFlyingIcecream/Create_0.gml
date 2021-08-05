@@ -9,12 +9,16 @@ image_speed = 3;
 
 
 //Enemy Sprites
-sprMove = sFlyingEnemy;
-sprIdle = sFlyingEnemy;
+sprMove = sFlyingIcecream;
+sprIdle = sFlyingIcecream;
 sprAttack = sFlying_Icecream_Attack;
+sprDie = sFlyingIcecreamDie;
+sprHurt = sFlyingIcecream;
 
 
 
-enemyScript[ENEMYSTATE.WANDER] = FlyingWander;
-enemyScript[ENEMYSTATE.CHASE] = FlyingChase;
-enemyScript[ENEMYSTATE.ATTACK] = FlyingAttack;
+enemyScript[ENEMYSTATE.WANDER] = FlyingIcecreamWander;
+enemyScript[ENEMYSTATE.CHASE] = FlyingIcecreamChase;
+enemyScript[ENEMYSTATE.ATTACK] = FlyingIcecreamAttack;
+enemyScript[ENEMYSTATE.HURT] = FlyingIcecreamHurt;
+enemyScript[ENEMYSTATE.DIE] = FlyingIcecreamDie;

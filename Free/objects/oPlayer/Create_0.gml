@@ -26,6 +26,7 @@ instance_create_layer(x,y, "Instances" ,oParticleSystem);
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed
 walksp = 2;					//Walk speed
+playerFriction = 1;
 maxSpeed = 10;
 doubleJmp = 0				//Double jump used
 flipRight = 0				//Flipping Right

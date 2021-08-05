@@ -31,5 +31,8 @@ enemyScript[ENEMYSTATE.DIE] = -1;
 enemyScript[ENEMYSTATE.WAIT] = EnemyWait;
 enemyScript[ENEMYSTATE.HURT] = -1;
 
-sprMove = sFlyingEnemy;
+sprMove = 0;
 sprIdle = 0;
+sprHurt = 0;
+sprDie = 0;
+sprAttack = 0;

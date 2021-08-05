@@ -11,6 +11,6 @@ function PlayerHorizontalMovement(){
 		hsp += move*walksp;
 	}
 	else{
-		hsp -= sign(hsp);
+		hsp -= sign(hsp)*playerFriction;
 	}
 }

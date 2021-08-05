@@ -5,7 +5,7 @@ function PlayerState_Hit(){
 		ScreenShake(10,10);
 		count = 0;
 		invulnerable = 1;
-		flash = 0.75
+		flash = 1;
 		sprite_index = sPlayerHit;
 	}
 	if(count < hitStun){
@@ -15,6 +15,12 @@ function PlayerState_Hit(){
 		state = PLAYERSTATE.FREE;
 	}
 	Gravity();
+	if(abs(hsp)<= playerFriction){
+		hsp = 0;
+	}
+	else{
+		hsp -= sign(hsp)*playerFriction/2;
+	}
 	PlayerCollision();
 
 }

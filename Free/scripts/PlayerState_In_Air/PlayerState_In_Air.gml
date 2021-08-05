@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_In_Air(){
 
-	
+	show_debug_message(vsp);
 	PlayerAerialMovement();
 	Gravity();
 	PlayerHorizontalMovement();
@@ -11,7 +11,7 @@ function PlayerState_In_Air(){
 	if(!touchingFloor and keyJump and doubleJmp == 0 and hasDoubleJump){
 		jumpDirection = move;
 		doubleJmp = 1;
-		part_particles_create(global.partSystem, oPlayer.x, oPlayer.y+5, global.ptJump, 1);
+		part_particles_create(global.partSystem, x, y+5, global.ptJump, 1);
 		sprite_index = sJump;
 		image_index = 0;
 		image_speed = 1;

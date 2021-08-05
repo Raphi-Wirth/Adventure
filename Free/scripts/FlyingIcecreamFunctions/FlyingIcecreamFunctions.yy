@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Enemy Behaviour",
-    "path": "folders/Scripts/Enemy Behaviour.yy",
+    "name": "FlyingEnemies",
+    "path": "folders/Scripts/Enemy Behaviour/FlyingEnemies.yy",
   },
   "resourceVersion": "1.0",
-  "name": "FlyingWander",
+  "name": "FlyingIcecreamFunctions",
   "tags": [],
   "resourceType": "GMScript",
 }

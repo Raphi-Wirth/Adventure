@@ -5,7 +5,7 @@ if(instance_exists(oMusic)){
 		}
 
 		if(_bgMusic != 0){
-			audio_stop_sound(_bgMusic);
+			audio_sound_gain(_bgMusic, 0, 100);
 		}
 	}
 }

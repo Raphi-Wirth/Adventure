@@ -6,6 +6,4 @@ if(!global.gamePaused){
 		script_execute(enemyScript[state]);
 		depth = -bbox_bottom;
 	}
-	show_debug_message(xTo);
-	show_debug_message(yTo); 
 }

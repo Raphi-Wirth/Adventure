@@ -3,7 +3,7 @@
 #macro RESOLUTION_W 1920
 #macro RESOLUTION_H 1080
 #macro CARDINAL_DIR round(direction/180)
-#macro ROOM_START rForestR1
+#macro ROOM_START rLevel1
 #macro TILE_SIZE 32
 
 #macro TRANSITION_SPEED 0.035
@@ -16,8 +16,8 @@
 var _p = part_type_create();
 
 part_type_shape(_p, pt_shape_cloud);
-part_type_life(_p, 10, 20);
-part_type_size(_p,0.3,0.5,0,0.01);
+part_type_life(_p, 12, 22);
+part_type_size(_p,1,1.5,-0.05,0.01);
 
 global.ptBasic = _p;
 
