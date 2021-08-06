@@ -14,14 +14,12 @@ function PlayerAerialMovement(){
 	if(heightJumped >= 64*2 and inJump){
 		if(!keyHoldJump){
 			inJump = 0;
-			vsp = 0;
+			vsp = -(((heightJumped)/maxJumpHeight))*5;
 		}
 		if(keyHoldJump and heightJumped < maxJumpHeight){
-			vsp += grv/2;
-			heightJumped -= vsp;
+			vsp = -(((maxJumpHeight-heightJumped)/maxJumpHeight))*50-5;
 		}
 		if(keyHoldJump and heightJumped >= maxJumpHeight){
-			vsp = -10;
 			inJump = 0;
 		}
 	}

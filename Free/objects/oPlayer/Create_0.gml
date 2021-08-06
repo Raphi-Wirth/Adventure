@@ -1,19 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
-event_inherited();
-
-hasSword = 1;
-hasDash = 1;
-hasWallGrab = 1;
-hasDoubleJump = 1;
-invulnerable = 0;
-invulnerableTicks = 2;
+collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
+hasSword = 0;
+hasDash = 0;
+hasWallGrab = 0;
+hasDoubleJump = 0;
 attackSwingCooldownTime = 10;
 attackSwingTimer = 0;
 inAttackSwingCooldown = 0;
-intangible = 0;
-currentHP = 5;
-maxHP = currentHP;
+playerHP = 5;
+maxHP = playerHP;
 healthbar_width = 400;
 healthbar_height = 40;
 healthbar_x = RESOLUTION_W/16;
@@ -35,7 +31,7 @@ grv = 1;					//Speed of gravity
 wallJumpDirection = 0;		//Which wall is currently being held
 dashSpeed = maxSpeed*2;		//Horizontal speed while dashing
 heightJumped = 0;
-maxJumpHeight = 32*13;
+maxJumpHeight = 32*14;
 jumpHeight = 35;
 jumpSpeed = 20;
 savedJumpIndex = 0;
@@ -45,8 +41,11 @@ dashDirection = 1			//Initial dash direction
 canDash = 1;				//Checks if player can dash
 jumpDirection = 1;			//Initial Jump Direction
 wallGrabFallSpeed = 1;	    //Speed at which falling when holding wall 
-flashAlpha = 0;
+flash = 0;
+invulnerable = 0;
 flashColour = c_white;
+flashShader = shWhiteFlash;
+animationEndScript = -1;
 hitStun = 15;
 
 state = PLAYERSTATE.FREE;
@@ -63,7 +62,7 @@ if(global.targetX != -1){
 	x = global.targetX;
 	y = global.targetY;
 	image_xscale = global.targetDirection;
-	currentHP = global.currentHP;
+	playerHP = global.playerHP;
 }
 
 

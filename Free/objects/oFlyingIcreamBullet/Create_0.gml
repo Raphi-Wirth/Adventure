@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 bulletSpeed = 0;
-_knockBack = 0
+force = 0
+damage = 0;
 bulletColour = irandom_range(1,2);
 collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
 dir = 0;

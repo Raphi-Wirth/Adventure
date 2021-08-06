@@ -3,11 +3,11 @@
 function PlayerGainsHealth(){
 	
 	var _healing = argument0;
-	var _originalHP = currentHP;
-	currentHP += _healing;
-	if (currentHP > maxHP) {
-		currentHP = maxHP;
+	var _originalHP = playerHP;
+	playerHP += _healing;
+	if (playerHP > maxHP) {
+		playerHP = maxHP;
 	}
 	show_debug_message("Received healing. Now on hp:");
-	show_debug_message(currentHP);
+	show_debug_message(playerHP);
 }

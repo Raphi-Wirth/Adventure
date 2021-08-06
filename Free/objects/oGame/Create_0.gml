@@ -9,7 +9,8 @@ global.targetX = -1;
 global.targetY = -1;
 global.targetDirection = 0;
 global.iCamera = instance_create_layer(0,0, layer, oCamera);
-global.currentHP = 5;
+global.playerMaxHP = 5;
+global.playerHP = global.playerMaxHP
 
 
 surface_resize(application_surface, RESOLUTION_W, RESOLUTION_H);

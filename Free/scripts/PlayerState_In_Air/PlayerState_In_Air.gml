@@ -2,7 +2,6 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_In_Air(){
 
-	show_debug_message(vsp);
 	PlayerAerialMovement();
 	Gravity();
 	PlayerHorizontalMovement();

@@ -3,7 +3,7 @@
 function PlayerTakesDamage(){
 	
 	var _damage = argument0;
-	currentHP -= _damage;
+	playerHP -= _damage;
 	show_debug_message("Received damage. Now on hp:");
-	show_debug_message(currentHP);
+	show_debug_message(playerHP);
 }

@@ -51,7 +51,7 @@ function FlyingIcecreamChase(){
 		xTo = target.x;
 		yTo = target.y - target.sprite_height/2;
 		var _distanceToGo = point_distance(x,y,xTo,yTo);
-		image_speed = 0;
+		image_speed = 1;
 		dir = point_direction(x,y,xTo,yTo);
 		if(_distanceToGo > enemySpeed){
 			hsp = lengthdir_x(enemySpeed, dir);
@@ -82,20 +82,44 @@ function FlyingIcecreamChase(){
 
 function FlyingIcecreamAttack(){
 	var _spd = enemySpeed;
-	show_debug_message("Attacking");
-	with(instance_create_layer(x,y,"Instances", oFlyingIcreamBullet)){
-		xTo = oPlayer.x;
-		yTo = oPlayer.y;
-		if(other.enemyProjectileSpeed != 0){
-			bulletSpeed = other.enemyProjectileSpeed;
-		}
-		_knockback = other.enemyProjectileKnockback;
+	
+	if(instance_exists(target)){
+		xTo = target.x;
+		yTo = target.y - target.sprite_height/2;
+		var _distanceToGo = point_distance(x,y,xTo,yTo);
+		image_speed = 1;
 		dir = point_direction(x,y,xTo,yTo);
-		image_angle = dir;
+		if(_distanceToGo > enemySpeed){
+			hsp = lengthdir_x(enemySpeed, dir);
+			vsp = lengthdir_y(enemySpeed , dir);
+		}
+		else{
+			hsp = lengthdir_x(enemySpeed, dir);
+			vsp = lengthdir_y(enemySpeed, dir);
+		}
+		if(hsp != 0){
+			image_xscale = sign(hsp);
+		}
+		//Collide and move
+		EnemyTileCollision();
 	}
-	stateTarget = ENEMYSTATE.CHASE;
-	stateWaitDuration = 60;
-	state = ENEMYSTATE.WAIT;
+
+	if(animation_end()){	
+		with(instance_create_layer(x,y,"Instances", oFlyingIcreamBullet)){
+			xTo = oPlayer.x;
+			yTo = oPlayer.y;
+			if(other.enemyProjectileSpeed != 0){
+				bulletSpeed = other.enemyProjectileSpeed;
+			}
+			force = other.enemyProjectileKnockback;
+			damage = other.enemyProjectileDamage;
+			dir = point_direction(x,y,xTo,yTo);
+			image_angle = dir;
+		}
+		stateTarget = ENEMYSTATE.CHASE;
+		stateWaitDuration = 60;
+		state = ENEMYSTATE.WAIT;
+	}
 }
 	
 function FlyingIcecreamHurt(){

@@ -6,7 +6,7 @@
     "path": "folders/Scripts/PlayerFunctions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "PlayerHit",
+  "name": "HurtPlayer",
   "tags": [],
   "resourceType": "GMScript",
 }

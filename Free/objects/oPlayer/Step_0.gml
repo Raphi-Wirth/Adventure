@@ -11,7 +11,7 @@ keyInteract = keyboard_check_pressed(vk_space);
 polygon = polygon_from_instance(id);
 
 
-
+show_debug_message(vsp);
 move = keyRight - keyLeft;
 if(!global.gamePaused){
 	if(inAttackSwingCooldown){
@@ -20,10 +20,6 @@ if(!global.gamePaused){
 	if(attackSwingTimer == attackSwingCooldownTime){
 		inAttackSwingCooldown = 0;
 		attackSwingTimer = 0;
-	}
-
-	if(invulnerable == 1){
-		Invulnerable();
 	}
 
 	var healthPickup = instance_place(x+hsp,y+vsp,oHealthPickup)
@@ -44,7 +40,6 @@ if(!global.gamePaused){
 	
 		case PLAYERSTATE.WALL_GRAB: PlayerState_Wall_Grab(); break;
 	
-	
 		case PLAYERSTATE.IN_AIR: PlayerState_In_Air(); break;
 	
 		case PLAYERSTATE.AIR_ATTACK: PlayerState_Air_Attack(); break;
@@ -63,5 +58,13 @@ if(!global.gamePaused){
 		
 		case PLAYERSTATE.JUMP_SQUAT: PlayerState_Jump_Squat(); break;
 	}
+	
+	invulnerable = max(invulnerable-1,0);
+	flash = max(flash-0.05,0);
 }
+
+
+
+
+depth = -bbox_bottom;
 
