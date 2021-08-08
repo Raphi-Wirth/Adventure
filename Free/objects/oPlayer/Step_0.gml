@@ -11,7 +11,6 @@ keyInteract = keyboard_check_pressed(vk_space);
 polygon = polygon_from_instance(id);
 
 
-show_debug_message(vsp);
 move = keyRight - keyLeft;
 if(!global.gamePaused){
 	if(inAttackSwingCooldown){
@@ -57,6 +56,8 @@ if(!global.gamePaused){
 		case PLAYERSTATE.TRANSITION: PlayerState_Transition(); break;
 		
 		case PLAYERSTATE.JUMP_SQUAT: PlayerState_Jump_Squat(); break;
+		
+		case PLAYERSTATE.ACT: PlayerState_Act(); break;
 	}
 	
 	invulnerable = max(invulnerable-1,0);

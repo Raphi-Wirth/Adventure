@@ -3,7 +3,6 @@
 if(instance_exists(oPlayer)) and (position_meeting(oPlayer.x, oPlayer.y, id)){
 	if(!instance_exists(oTransition) and oPlayer.state != PLAYERSTATE.DEAD){
 		global.targetRoom = targetRoom;
-		show_debug_message(global.targetRoom);
 		global.targetX = targetX;
 		global.targetY = targetY;
 		global.targetDirection = oPlayer.image_xscale;

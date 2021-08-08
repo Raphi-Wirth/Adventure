@@ -6,6 +6,12 @@ function PlayerState_In_Air(){
 	Gravity();
 	PlayerHorizontalMovement();
 	PlayerCollision();
+		
+	if(touchingFloor){
+		state = PLAYERSTATE.FREE;
+		return;
+	}
+	
 	
 	if(!touchingFloor and keyJump and doubleJmp == 0 and hasDoubleJump){
 		jumpDirection = move;
@@ -19,10 +25,7 @@ function PlayerState_In_Air(){
 		heightJumped = -vsp;
 	}
 	
-	
-	if(touchingFloor){
-		state = PLAYERSTATE.FREE;
-	}
+
 	
 	if(keyDash and canDash and hasDash){
 		canDash = 0;

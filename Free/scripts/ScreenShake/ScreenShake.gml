@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 ///@arg Magnitude
-///@Arg Frames
+///@arg Frames
 function ScreenShake(){
 	with (global.iCamera) {
 		if(argument0 > shakeRemain){

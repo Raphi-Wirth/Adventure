@@ -3,7 +3,7 @@
 ///@arg x
 ///@arg y
 ///@arg [Items] array of items to drop
-///@arg Fragment speed
+///@arg FragmentSpeed
 ///@arg DirectionHit
 function DropItems(){
 	var min_angle = 0

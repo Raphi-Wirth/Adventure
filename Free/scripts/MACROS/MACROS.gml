@@ -41,6 +41,16 @@ part_type_direction(_wallGrab, 88, 92, 0,0);
 
 global.ptWallGrab = _wallGrab;
 
+var _jumpLand = part_type_create();
+
+part_type_shape(_jumpLand, pt_shape_cloud);
+part_type_life(_jumpLand,15,40);
+part_type_size(_jumpLand,1,2,0,0.05);
+part_type_speed(_jumpLand,-2,2,0,0);
+part_type_direction(_jumpLand, 180, 180, 0,0);
+
+global.ptJumpLand = _jumpLand;
+
 #endregion
 
 #region EnemyBehaviour

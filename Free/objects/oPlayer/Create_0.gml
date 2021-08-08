@@ -1,32 +1,38 @@
 /// @description Insert description here
 // You can write your code in this editor
 collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
+
+//Unlockables
 hasSword = 0;
 hasDash = 0;
 hasWallGrab = 0;
 hasDoubleJump = 0;
+
+//Stats
 attackSwingCooldownTime = 10;
-attackSwingTimer = 0;
-inAttackSwingCooldown = 0;
 playerHP = 5;
 maxHP = playerHP;
+hitStun = 15;
+
+//Healthbar
 healthbar_width = 400;
 healthbar_height = 40;
 healthbar_x = RESOLUTION_W/16;
 healthbar_y = RESOLUTION_H/16;
 
-hspCarrySpeed = 0;
+
 instance_create_layer(x,y, "Instances" ,oParticleSystem);
 
-
+//Intrinsic variables
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed
+hspCarrySpeed = 0;
 walksp = 2;					//Walk speed
 playerFriction = 1;
+attackSwingTimer = 0;
+inAttackSwingCooldown = 0;
 maxSpeed = 10;
 doubleJmp = 0				//Double jump used
-flipRight = 0				//Flipping Right
-flipLeft = 0				//Flipping Left
 grv = 1;					//Speed of gravity
 wallJumpDirection = 0;		//Which wall is currently being held
 dashSpeed = maxSpeed*2;		//Horizontal speed while dashing
@@ -46,7 +52,7 @@ invulnerable = 0;
 flashColour = c_white;
 flashShader = shWhiteFlash;
 animationEndScript = -1;
-hitStun = 15;
+canMoveWhileAct = 0;
 
 state = PLAYERSTATE.FREE;
 lastState = state;
@@ -82,7 +88,8 @@ enum PLAYERSTATE
 	AIR_DOWN_ATTACK,
 	LOCKED,
 	TRANSITION,
-	JUMP_SQUAT
+	JUMP_SQUAT,
+	ACT
 }
 
 
