@@ -9,6 +9,7 @@ function PlayerState_In_Air(){
 		
 	if(touchingFloor){
 		state = PLAYERSTATE.FREE;
+		PlayerActOutAnimation(sPlayerHitGround, -1, 1);
 		return;
 	}
 	

@@ -11,7 +11,8 @@ function PlayerState_Jump_Squat(){
 		sprite_index = sJump;
 		image_speed = 1;
 		image_index = 0;
-
+		doubleJmp = 0;
+		canDash = 1;
 		savedJumpIndex = 0;
 		vsp = -30;
 		heightJumped = -vsp;

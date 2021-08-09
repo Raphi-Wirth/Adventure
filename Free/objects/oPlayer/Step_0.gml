@@ -64,7 +64,9 @@ if(!global.gamePaused){
 	flash = max(flash-0.05,0);
 }
 
-
+if(y<0 or y>room_height){
+	state = PLAYERSTATE.DEAD;
+}
 
 
 depth = -bbox_bottom;

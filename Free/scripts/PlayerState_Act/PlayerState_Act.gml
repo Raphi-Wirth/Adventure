@@ -9,15 +9,22 @@ function PlayerState_Act(){
 	if(canMoveWhileAct == 1){
 		PlayerHorizontalMovement();
 		Gravity();
+		if(touchingFloor and keyJump and (!(touchingRWall and wallJumpDirection) or !(touchingLWall and wallJumpDirection)))
+		{
+			state = PLAYERSTATE.JUMP_SQUAT;
+		}
 	}
-	show_debug_message(animation_end());
+	PlayerCollision();
 	if(animation_end()){
 		if(animationEndScript != undefined and animationEndScript != -1){
 			script_execute(animationEndScript);
 			animationEndScript = -1;
 		}
-		state = PLAYERSTATE.FREE;
+		if(state == PLAYERSTATE.ACT){
+			state = PLAYERSTATE.FREE;
+		}
+
 		canMoveWhileAct = 0;
 	}
-	PlayerCollision();
+
 }
