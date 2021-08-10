@@ -3,7 +3,7 @@
 function PlayerCollision(){
 	var _collision = false;
 	var _entityList = ds_list_create();
-	
+	touchingRoof = false;
 	//Horizontal Tiles
 	if(tilemap_get_at_pixel(collisionMap, x + hsp, y)){
 		x -= x mod TILE_SIZE;
@@ -50,12 +50,14 @@ function PlayerCollision(){
 	
 	
 	
-	if(tilemap_get_at_pixel(collisionMap, x, y + vsp)){
+	if(tilemap_get_at_pixel(collisionMap, x, y + vsp) or tilemap_get_at_pixel(collisionMap, x, y - 100 + vsp)){
 		y -= y mod TILE_SIZE;
 		if(sign(vsp) == 1){
 			y+= TILE_SIZE - 1;
 		}
 		else{
+			y+= TILE_SIZE + 1;
+			touchingRoof = true;
 		}
 		vsp = 0;
 		_collision = true;
@@ -95,7 +97,6 @@ function PlayerCollision(){
 		}
 	}
 	touchingFloor = tilemap_get_at_pixel(collisionMap, x, y+1);
-	touchingRoof = tilemap_get_at_pixel(collisionMap, x, y-1);
 	touchingRWall = tilemap_get_at_pixel(collisionMap, x+1, y);
 	touchingLWall = tilemap_get_at_pixel(collisionMap, x-1, y);
 	ds_list_destroy(_entityList);

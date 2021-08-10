@@ -10,6 +10,7 @@ function PlayerAerialMovement(){
 	}
 	if(touchingRoof){
 		inJump = 0;
+		show_debug_message("Touched Roof");
 	}
 	if(heightJumped >= 64*2 and inJump){
 		if(!keyHoldJump){

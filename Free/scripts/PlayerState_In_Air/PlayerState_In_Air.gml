@@ -6,13 +6,13 @@ function PlayerState_In_Air(){
 	Gravity();
 	PlayerHorizontalMovement();
 	PlayerCollision();
-		
+	show_debug_message(hsp);
+	show_debug_message(vsp);
 	if(touchingFloor){
 		state = PLAYERSTATE.FREE;
 		PlayerActOutAnimation(sPlayerHitGround, -1, 1);
 		return;
 	}
-	
 	
 	if(!touchingFloor and keyJump and doubleJmp == 0 and hasDoubleJump){
 		jumpDirection = move;
