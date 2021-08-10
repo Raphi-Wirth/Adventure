@@ -1,13 +1,12 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-//@arg Message
-//@arg Background
-//@arg [Responses]
+///@arg Message
+///@arg Background
+///@arg [Responses]
 
 
 function NewTextBox(){
-	show_debug_message("Being called");
 	var _obj;
 	if (instance_exists(oText)){
 		_obj = oTextQueued;

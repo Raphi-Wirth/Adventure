@@ -140,6 +140,7 @@
     {"id":{"name":"oTutorialGuy","path":"objects/oTutorialGuy/oTutorialGuy.yy",},"order":4,},
     {"id":{"name":"CreateParticle","path":"scripts/CreateParticle/CreateParticle.yy",},"order":12,},
     {"id":{"name":"oTransition","path":"objects/oTransition/oTransition.yy",},"order":16,},
+    {"id":{"name":"MultipleTextboxes","path":"scripts/MultipleTextboxes/MultipleTextboxes.yy",},"order":18,},
     {"id":{"name":"sAttackSlashHB","path":"sprites/sAttackSlashHB/sAttackSlashHB.yy",},"order":7,},
     {"id":{"name":"sh_blend_light","path":"shaders/sh_blend_light/sh_blend_light.yy",},"order":0,},
     {"id":{"name":"cross_product","path":"scripts/cross_product/cross_product.yy",},"order":0,},
