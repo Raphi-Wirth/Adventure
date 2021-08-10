@@ -23,6 +23,7 @@ healthbar_y = RESOLUTION_H/16;
 
 instance_create_layer(x,y, "Instances" ,oParticleSystem);
 
+
 //Intrinsic variables
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed

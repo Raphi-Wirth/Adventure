@@ -47,8 +47,9 @@ function PlayerState_Free(){
 			ScriptExecuteArray(activate.entityActivateScript, activate.entityActivateArgs);
 			if(activate.entityNPC){
 				with(activate){
-					direction = point_direction(x,y,other.x,other.y);
-					image_index = CARDINAL_DIR;
+					if(x-other.x != 0){
+						image_xscale = -sign(x-other.x);
+					};
 				}
 			}
 		}
