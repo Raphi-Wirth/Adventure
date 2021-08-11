@@ -20,4 +20,5 @@ function PlayerState_Jump_Squat(){
 		state = PLAYERSTATE.IN_AIR;
 	}
 	PlayerCollision();
+	PlayerDash();
 }

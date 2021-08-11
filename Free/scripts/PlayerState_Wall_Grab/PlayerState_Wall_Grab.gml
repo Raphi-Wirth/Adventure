@@ -43,7 +43,15 @@ function PlayerState_Wall_Grab(){
 		}
 		
 	}
-	
+	if(!touchingRWall and !touchingLWall){
+		if(touchingFloor){
+			state = PLAYERSTATE.FREE;
+		}
+		else{
+			state = PLAYERSTATE.IN_AIR;
+			sprite_index = sFall;
+		}
+	}
 	if(touchingFloor and !collidingWall){
 		state = PLAYERSTATE.FREE;
 	}

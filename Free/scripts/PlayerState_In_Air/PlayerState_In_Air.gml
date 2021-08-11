@@ -6,8 +6,6 @@ function PlayerState_In_Air(){
 	Gravity();
 	PlayerHorizontalMovement();
 	PlayerCollision();
-	show_debug_message(hsp);
-	show_debug_message(vsp);
 	if(touchingFloor){
 		state = PLAYERSTATE.FREE;
 		PlayerActOutAnimation(sPlayerHitGround, -1, 1);
@@ -28,11 +26,8 @@ function PlayerState_In_Air(){
 	
 
 	
-	if(keyDash and canDash and hasDash){
-		canDash = 0;
-		dashDirection = move;
-		state = PLAYERSTATE.DASH;
-	}
+	PlayerDash();
+	
 	if(hasWallGrab and !inJump){
 		if(keyRight and !touchingFloor and touchingRWall){
 			state = PLAYERSTATE.WALL_GRAB;

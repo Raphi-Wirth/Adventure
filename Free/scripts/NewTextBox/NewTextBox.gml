@@ -4,6 +4,7 @@
 ///@arg Message
 ///@arg Background
 ///@arg [Responses]
+///@arg CharacterSprite
 
 
 function NewTextBox(){
@@ -46,6 +47,9 @@ function NewTextBox(){
 		else{
 			responses = [-1];
 			responseScripts = [-1];
+		}
+		if(argument_count > 3){
+			textboxCharSprite = argument[3];
 		}
 	}
 

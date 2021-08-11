@@ -39,6 +39,10 @@ with (oLightParent)
 				draw_sprite_ext(sLight, 0, x - _cx + 20, y - _sh - 20 - _cy, 0.5, 0.5, 0, c_red, _intensity);
 			}
 		}
+	case oLight:
+		with(oLight){
+			draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 3, 5, 0, c_white, random_range(0.75,0.85));
+		}
 	}
 }
 gpu_set_blendmode(bm_normal);

@@ -13,6 +13,7 @@ function PlayerState_Act(){
 		{
 			state = PLAYERSTATE.JUMP_SQUAT;
 		}
+		PlayerDash();
 	}
 	PlayerCollision();
 	if(animation_end()){

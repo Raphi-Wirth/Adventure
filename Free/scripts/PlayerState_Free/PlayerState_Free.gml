@@ -43,7 +43,6 @@ function PlayerState_Free(){
 
 		if(activate != noone){
 			//Activate that entities specifc scripts with its specific arguments
-			show_debug_message("Has script");
 			ScriptExecuteArray(activate.entityActivateScript, activate.entityActivateArgs);
 			if(activate.entityNPC){
 				with(activate){
@@ -70,11 +69,7 @@ function PlayerState_Free(){
 		state = PLAYERSTATE.JUMP_SQUAT;
 	}
 
-	if(keyDash and canDash and hasDash){
-		canDash = 0;
-		dashDirection = move;
-		state = PLAYERSTATE.DASH;
-	}
+	PlayerDash();
 
 
 

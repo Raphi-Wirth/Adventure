@@ -8,9 +8,9 @@ keyDown = keyboard_check(vk_down);
 keyUp = keyboard_check(vk_up);
 keyAttack = keyboard_check(ord("X"));
 keyInteract = keyboard_check_pressed(vk_space);
-polygon = polygon_from_instance(id);
 
-
+show_debug_message(hsp);
+show_debug_message(vsp);
 move = keyRight - keyLeft;
 if(!global.gamePaused){
 	if(inAttackSwingCooldown){
@@ -64,7 +64,7 @@ if(!global.gamePaused){
 	flash = max(flash-0.05,0);
 }
 
-if(y<0 or y>room_height){
+if(y>room_height){
 	state = PLAYERSTATE.DEAD;
 }
 

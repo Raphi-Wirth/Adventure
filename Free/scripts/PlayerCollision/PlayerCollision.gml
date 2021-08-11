@@ -3,16 +3,20 @@
 function PlayerCollision(){
 	var _collision = false;
 	var _entityList = ds_list_create();
-	touchingRoof = false;
 	//Horizontal Tiles
 	if(tilemap_get_at_pixel(collisionMap, x + hsp, y)){
-		x -= x mod TILE_SIZE;
+		while(!tilemap_get_at_pixel(collisionMap, x + sign(hsp), y)){
+			x+=sign(hsp);
+		}
+		hsp = 0;
+		/*x -= x mod TILE_SIZE;
 		if (sign(hsp) == 1){
 			x += TILE_SIZE -1;
 		}
 		else{
 		}
 		hsp = 0;
+		_collision = true*/
 		_collision = true;
 	}
 
@@ -50,16 +54,38 @@ function PlayerCollision(){
 	
 	
 	
-	if(tilemap_get_at_pixel(collisionMap, x, y + vsp) or tilemap_get_at_pixel(collisionMap, x, y - 100 + vsp)){
-		y -= y mod TILE_SIZE;
-		if(sign(vsp) == 1){
-			y+= TILE_SIZE - 1;
-		}
-		else{
-			y+= TILE_SIZE + 1;
-			touchingRoof = true;
+	if(tilemap_get_at_pixel(collisionMap, x, y + vsp)){
+		while(!tilemap_get_at_pixel(collisionMap, x, y + sign(vsp))){
+			y+=sign(vsp);
 		}
 		vsp = 0;
+		/*x -= x mod TILE_SIZE;
+		if (sign(hsp) == 1){
+			x += TILE_SIZE -1;
+		}
+		else{
+		}
+		hsp = 0;
+		_collision = true*/
+		_collision = true;
+	}
+	
+	if(tilemap_get_at_pixel(collisionMap, x, y - 100 + vsp)){
+		while(!tilemap_get_at_pixel(collisionMap, x, y - 100 + sign(vsp))){
+			y+=sign(vsp);
+		}
+		if(sign(vsp) <= 0){
+			vsp = 0;
+			touchingRoof = true;
+		}
+		/*x -= x mod TILE_SIZE;
+		if (sign(hsp) == 1){
+			x += TILE_SIZE -1;
+		}
+		else{
+		}
+		hsp = 0;
+		_collision = true*/
 		_collision = true;
 	}
 
