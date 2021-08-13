@@ -76,7 +76,7 @@ function PlayerCollision(){
 		}
 		if(sign(vsp) <= 0){
 			vsp = 0;
-			touchingRoof = true;
+			inJump = 0;
 		}
 		/*x -= x mod TILE_SIZE;
 		if (sign(hsp) == 1){

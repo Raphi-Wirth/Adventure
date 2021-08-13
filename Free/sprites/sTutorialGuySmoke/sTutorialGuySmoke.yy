@@ -149,8 +149,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "NPCs",
-    "path": "folders/Sprites/NPCs.yy",
+    "name": "TutorialGuy",
+    "path": "folders/Sprites/NPCs/TutorialGuy.yy",
   },
   "resourceVersion": "1.0",
   "name": "sTutorialGuySmoke",

@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if !surface_exists(surf)
-    {
+{
     var _cw = camera_get_view_width(view_camera[0]);
     var _ch = camera_get_view_height(view_camera[0]);
     surf = surface_create(_cw, _ch);
@@ -10,9 +10,7 @@ if !surface_exists(surf)
     draw_set_alpha(0);
     draw_rectangle(0, 0, _cw, _cw, false);
     surface_reset_target();
-    }
-else
-{
+}
 if (surface_exists(surf)) {
 var _cw = camera_get_view_width(view_camera[0]);
 var _ch = camera_get_view_height(view_camera[0]);
@@ -36,7 +34,7 @@ with (oLightParent)
 		with(oTutorialGuy){
 			if(sprite_index == sTutorialGuySmoke and image_index >= 5 and image_index <=10){
 				var _intensity = 1 - abs(7.5 - image_index)/2.5
-				draw_sprite_ext(sLight, 0, x - _cx + 20, y - _sh - 20 - _cy, 0.5, 0.5, 0, c_red, _intensity);
+				draw_sprite_ext(sLight, 0, x - _cx + 20*sign(image_xscale), y - _sh - 20 - _cy, 0.5, 0.5, 0, c_red, _intensity);
 			}
 		}
 	case oLight:
@@ -46,8 +44,7 @@ with (oLightParent)
 	}
 }
 gpu_set_blendmode(bm_normal);
-draw_set_alpha(1);
 surface_reset_target();
 draw_surface(surf, _cx, _cy);
-}
+draw_set_alpha(1);
 }

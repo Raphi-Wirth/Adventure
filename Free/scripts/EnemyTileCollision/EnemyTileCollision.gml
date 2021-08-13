@@ -28,5 +28,9 @@ function EnemyTileCollision(){
 		_collision = true;
 	}
 	y += vsp;
+
+	
+	enemyTouchingWall = tilemap_get_at_pixel(collisionMap, x + hsp, y);
+	enemyFallOffLedge = !tilemap_get_at_pixel(collisionMap, x + hsp, y+1);
 	return _collision;
 }

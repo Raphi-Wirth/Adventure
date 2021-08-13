@@ -51,6 +51,9 @@ function NewTextBox(){
 		if(argument_count > 3){
 			textboxCharSprite = argument[3];
 		}
+		else{
+			textboxCharSprite = -1;
+		}
 	}
 
 	with(oPlayer){

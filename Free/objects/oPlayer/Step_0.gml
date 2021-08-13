@@ -9,8 +9,7 @@ keyUp = keyboard_check(vk_up);
 keyAttack = keyboard_check(ord("X"));
 keyInteract = keyboard_check_pressed(vk_space);
 
-show_debug_message(hsp);
-show_debug_message(vsp);
+
 move = keyRight - keyLeft;
 if(!global.gamePaused){
 	if(inAttackSwingCooldown){

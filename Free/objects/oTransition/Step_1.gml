@@ -24,14 +24,13 @@ if(instance_exists(oPlayer)){
 		}
 	}
 	else { //leading == IN
-		percent = max(0, percent - TRANSITION_SPEED);	
+		percent = max(0, percent - TRANSITION_SPEED);
 		//If screen is fully revealed, destroy this object
 		oPlayer.hsp = 0;
 		oPlayer.sprite_index = sIdle;
 		if(percent <= 0){
 			with (oPlayer) {
 				state = PLAYERSTATE.FREE;
-				
 			}
 			instance_destroy()
 		}

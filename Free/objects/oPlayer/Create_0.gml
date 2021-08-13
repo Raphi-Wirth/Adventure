@@ -3,10 +3,10 @@
 collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
 
 //Unlockables
-hasSword = 1;
-hasDash = 1;
-hasWallGrab = 1;
-hasDoubleJump = 1;
+hasSword = 0;
+hasDash = 0;
+hasWallGrab = 0;
+hasDoubleJump = 0;
 
 //Stats
 attackSwingCooldownTime = 10;
