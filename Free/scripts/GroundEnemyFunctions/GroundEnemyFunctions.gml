@@ -32,51 +32,46 @@ function GroundEnemyWander(){
 
 
 	//Check for aggro
-	/*if(++aggroCheck >= aggroCheckDuration){
+	if(++aggroCheck >= aggroCheckDuration){
 		aggroCheck = 0;
 		if(instance_exists(oPlayer) and point_distance(x,y,oPlayer.x,oPlayer.y) <= enemyAggroRadius){
 			state = ENEMYSTATE.CHASE;
 			target = oPlayer;
 		}
-	}*/
+	}
 }
-/*
-function FlyingIcecreamChase(){
+
+function GroundEnemyChase(){
 	sprite_index = sprMove;
-	
+	Gravity();
+	image_speed = 1;
 	if(instance_exists(target)){
 		xTo = target.x;
-		yTo = target.y - target.sprite_height/2;
-		var _distanceToGo = point_distance(x,y,xTo,yTo);
-		image_speed = 1;
-		dir = point_direction(x,y,xTo,yTo);
-		if(_distanceToGo > enemySpeed){
-			hsp = lengthdir_x(enemySpeed, dir);
-			vsp = lengthdir_y(enemySpeed , dir);
-		}
-		else{
-			hsp = lengthdir_x(enemySpeed, dir);
-			vsp = lengthdir_y(enemySpeed, dir);
-		}
+		var _distanceToGo = xTo - x;
+		var _speedThisFrame = enemySpeed;
+		if(abs(_distanceToGo) < enemySpeed) _speedThisFrame = abs(_distanceToGo);
+		hsp = _speedThisFrame * sign(_distanceToGo);
+		if(hsp != 0) image_xscale = sign(hsp);
+		hsp = sign(_distanceToGo)*_speedThisFrame;
 		if(hsp != 0){
 			image_xscale = sign(hsp);
 		}
 		//Collide and move
 		EnemyTileCollision();
 	}
-	if(instance_exists(target) and point_distance(x,y,target.x,target.y) <= enemyAttackRadius){
+	/*if(instance_exists(target) and point_distance(x,y,target.x,target.y) <= enemyAttackRadius){
 		state = ENEMYSTATE.ATTACK;
 		sprite_index = sprAttack;
 		image_index = 0;
 		image_speed = 1;
-	}
+	}*/
 	if(instance_exists(target) and point_distance(x,y,target.x,target.y) >= enemyDeAggroRadius){
 		stateTarget = ENEMYSTATE.WANDER;
 		stateWaitDuration = 15;
 		state = ENEMYSTATE.WAIT;
 	}
 }
-
+/*
 function FlyingIcecreamAttack(){
 	var _spd = enemySpeed;
 	

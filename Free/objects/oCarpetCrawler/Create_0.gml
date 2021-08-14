@@ -18,8 +18,8 @@ sprIdle = sCarpetCrawlerIdle;
 
 
 enemyScript[ENEMYSTATE.WANDER] = GroundEnemyWander;
-enemyScript[ENEMYSTATE.CHASE] = FlyingIcecreamChase;
-enemyScript[ENEMYSTATE.ATTACK] = FlyingIcecreamAttack;
-enemyScript[ENEMYSTATE.HURT] = FlyingIcecreamHurt;
-enemyScript[ENEMYSTATE.DIE] = FlyingIcecreamDie;
+enemyScript[ENEMYSTATE.CHASE] = GroundEnemyChase;
+enemyScript[ENEMYSTATE.ATTACK] = -1;
+enemyScript[ENEMYSTATE.HURT] = -1;
+enemyScript[ENEMYSTATE.DIE] = -1;
 
