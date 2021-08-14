@@ -24,28 +24,52 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"bad420d3-5f43-4282-add4-3139395e747f","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bad420d3-5f43-4282-add4-3139395e747f","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"dfd49601-bd1b-4a6a-8ca9-46bfe630a48f","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"bad420d3-5f43-4282-add4-3139395e747f","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e14f6dfd-c3d5-41ba-8372-66da070afb75","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e14f6dfd-c3d5-41ba-8372-66da070afb75","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"dfd49601-bd1b-4a6a-8ca9-46bfe630a48f","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"e14f6dfd-c3d5-41ba-8372-66da070afb75","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"498655f8-5846-4974-9cba-45e755aac353","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"498655f8-5846-4974-9cba-45e755aac353","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"d1a61294-d1c1-40f4-92c3-bf02d228f476","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"498655f8-5846-4974-9cba-45e755aac353","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"83283b02-12ac-409e-be61-844ed7dbdfbd","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"83283b02-12ac-409e-be61-844ed7dbdfbd","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"d1a61294-d1c1-40f4-92c3-bf02d228f476","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"83283b02-12ac-409e-be61-844ed7dbdfbd","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"553f8239-9de5-4e80-af18-13742be70a0f","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"553f8239-9de5-4e80-af18-13742be70a0f","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"d1a61294-d1c1-40f4-92c3-bf02d228f476","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"553f8239-9de5-4e80-af18-13742be70a0f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"7f5b4867-1d14-4c99-9803-c1c6805e6ca6","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"7f5b4867-1d14-4c99-9803-c1c6805e6ca6","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"d1a61294-d1c1-40f4-92c3-bf02d228f476","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"7f5b4867-1d14-4c99-9803-c1c6805e6ca6","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d63b3c24-3b26-49a6-bf4a-b51110a03854","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d63b3c24-3b26-49a6-bf4a-b51110a03854","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"d1a61294-d1c1-40f4-92c3-bf02d228f476","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"d63b3c24-3b26-49a6-bf4a-b51110a03854","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d8e474c7-62c6-40da-ad19-846b3f4889d9","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d8e474c7-62c6-40da-ad19-846b3f4889d9","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"d1a61294-d1c1-40f4-92c3-bf02d228f476","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"d8e474c7-62c6-40da-ad19-846b3f4889d9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"593ed065-0393-470d-bb22-59317b1873c9","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"593ed065-0393-470d-bb22-59317b1873c9","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"d1a61294-d1c1-40f4-92c3-bf02d228f476","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"593ed065-0393-470d-bb22-59317b1873c9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"5cb1d266-bd06-4907-bda5-059736f2f718","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"5cb1d266-bd06-4907-bda5-059736f2f718","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"LayerId":{"name":"d1a61294-d1c1-40f4-92c3-bf02d228f476","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","name":"5cb1d266-bd06-4907-bda5-059736f2f718","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sTutorialGuyTextAnimation","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 1.0,
+    "playbackSpeed": 8.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 2.0,
+    "length": 8.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9cbf6af9-6b15-4f97-8870-d0c2a8f318c9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bad420d3-5f43-4282-add4-3139395e747f","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"8ab1a107-51b4-4160-af54-c8b9d92b3fdd","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e14f6dfd-c3d5-41ba-8372-66da070afb75","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"7e30ba12-bb37-489f-b35c-ba4d24edfd42","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"498655f8-5846-4974-9cba-45e755aac353","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"739de6ca-c457-4dd5-a1d0-75da9448cc2d","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"83283b02-12ac-409e-be61-844ed7dbdfbd","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"76a7e668-e535-454c-afa7-a94accd61101","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"553f8239-9de5-4e80-af18-13742be70a0f","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a079dc60-f0a1-4f68-8fe5-7c2114e7f13e","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7f5b4867-1d14-4c99-9803-c1c6805e6ca6","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"22ca607f-25d5-46b3-8993-fddd28f9f54a","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d63b3c24-3b26-49a6-bf4a-b51110a03854","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"17c77dde-7551-4786-90bf-de4498eea597","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d8e474c7-62c6-40da-ad19-846b3f4889d9","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"ac2ec689-5cb9-46cb-b0b1-ef6aad1ed3cb","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"593ed065-0393-470d-bb22-59317b1873c9","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"4b129951-6d62-48c3-a5d9-496dc77cdd9c","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5cb1d266-bd06-4907-bda5-059736f2f718","path":"sprites/sTutorialGuyTextAnimation/sTutorialGuyTextAnimation.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -69,7 +93,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"dfd49601-bd1b-4a6a-8ca9-46bfe630a48f","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d1a61294-d1c1-40f4-92c3-bf02d228f476","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

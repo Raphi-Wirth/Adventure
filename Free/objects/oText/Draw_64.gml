@@ -6,7 +6,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 draw_set_color(c_black);
 var _print = string_copy(message,1,textProgress);
-
+var _messageLength = string_length(message);
 
 if(responses[0] != -1 and textProgress >= string_length(message)){
 	for (var i = 0; i<array_length_1d(responses); i++) {
@@ -39,5 +39,13 @@ if(textboxCharSprite != -1){
 		image_blend,
 		image_alpha
 	)
-	image_speed = 0.05;
+	if(textProgress >= _messageLength and animation_end()){
+		image_speed = 0;
+		image_index = 0;
+	}
+	else{
+		image_speed = 0.15;
+			
+	}
+
 }

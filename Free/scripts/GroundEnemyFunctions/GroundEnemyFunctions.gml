@@ -13,19 +13,19 @@ function GroundEnemyWander(){
 		if(++wait >= waitDuration){
 			wait = 0;
 			timePassed = 0;
-			xTo = x + irandom_range(-1,1)*enemyWanderDistance;
+			xTo = xstart + irandom_range(-1,1)*random(enemyWanderDistance);
 		}
 	}
 	else{
 		timePassed ++;
 		var _distanceToGo = xTo - x;
 		var _speedThisFrame = enemySpeed;
-		if(abs(_distanceToGo) < enemySpeed) _speedThisFrame = _distanceToGo;
-		hsp = enemySpeed * sign(_distanceToGo);
+		if(abs(_distanceToGo) < enemySpeed) _speedThisFrame = abs(_distanceToGo);
+		hsp = _speedThisFrame * sign(_distanceToGo);
 		if(hsp != 0) image_xscale = sign(hsp);
 	}
 	if(enemyFallOffLedge or enemyTouchingWall){
-		xTo = x - sign(hsp)*enemyWanderDistance;
+		xTo = xstart - sign(hsp)*random(enemyWanderDistance);
 		hsp = 0;
 	}
 	var _collided = EnemyTileCollision();

@@ -33,6 +33,7 @@ playerFriction = 1;
 attackSwingTimer = 0;
 inAttackSwingCooldown = 0;
 maxSpeed = 10;
+maxFallSpeed = 30;
 doubleJmp = 0				//Double jump used
 grv = 1;					//Speed of gravity
 wallJumpDirection = 0;		//Which wall is currently being held
