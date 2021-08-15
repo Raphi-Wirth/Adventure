@@ -67,7 +67,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 105,
-    "yorigin": 181,
+    "yorigin": 188,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sIdle","path":"sprites/sIdle/sIdle.yy",},

@@ -3,7 +3,7 @@
 #macro RESOLUTION_W 1920
 #macro RESOLUTION_H 1080
 #macro CARDINAL_DIR round(direction/180)
-#macro ROOM_START rTutorialR1
+#macro ROOM_START rTutorialTestR1
 #macro TILE_SIZE 32
 
 #macro TRANSITION_SPEED 0.035

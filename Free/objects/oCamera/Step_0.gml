@@ -23,7 +23,6 @@ else{
 x = clamp(x, view_w_half, room_width - view_w_half);
 y = clamp(y,view_h_half, room_height - view_h_half);
 
-
 //Screenshake
 x += random_range(-shakeRemain, shakeRemain);
 y += random_range(-shakeRemain, shakeRemain);
@@ -36,7 +35,11 @@ if (layer_exists("Mountains")){
 	layer_x("Mountains",x/1.5);
 	layer_y("Mountains", y/1.1-400);
 }
+
 if (layer_exists("Forest")){
 	layer_x("Forest", x/3 - 600);
-	layer_y("Forest", y/1.2-600);
+}
+
+if(layer_exists("Foreground")){
+	layer_x("Foreground", x/5);
 }

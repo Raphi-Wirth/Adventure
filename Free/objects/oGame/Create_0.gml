@@ -2,6 +2,11 @@
 // You can write your code in this editor
 randomize();
 
+
+
+global.gameSaveSlot = 0;
+
+
 global.gamePaused = false;
 global.textSpeed = 0.5;
 global.targetRoom = -1;

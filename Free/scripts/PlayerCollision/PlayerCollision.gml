@@ -96,6 +96,7 @@ function PlayerCollision(){
 	while(_entityCount > 0){
 		var _entityCheck = _entityList[| 0];
 		if(_entityCheck.entityCollision == true){
+
 			//Move as close as we can
 			if(sign(vsp) == -1){
 				_snapY = _entityCheck.bbox_bottom + 1;

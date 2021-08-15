@@ -3,15 +3,13 @@
 collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
 
 //Unlockables
-hasSword = 0;
-hasDash = 0;
-hasWallGrab = 0;
-hasDoubleJump = 0;
+hasSword = 1;
+hasDash = 1;
+hasWallGrab = 1;
+hasDoubleJump = 1;
 
 //Stats
 attackSwingCooldownTime = 10;
-playerHP = 5;
-maxHP = playerHP;
 hitStun = 15;
 
 //Healthbar
@@ -48,7 +46,7 @@ initDashDirection = 0		//Put explanation here later
 dashDirection = 1			//Initial dash direction
 canDash = 1;				//Checks if player can dash
 jumpDirection = 1;			//Initial Jump Direction
-wallGrabFallSpeed = 1;	    //Speed at which falling when holding wall 
+wallGrabFallSpeed = 2;	    //Speed at which falling when holding wall 
 flash = 0;
 invulnerable = 0;
 flashColour = c_white;

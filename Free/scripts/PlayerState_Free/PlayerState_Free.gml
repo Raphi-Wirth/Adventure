@@ -12,9 +12,9 @@ function PlayerState_Free(){
 		//2. If there is nothing, or there is something with no script - do nothing
 		//3. Otherwise, activate script
 		//4. If the thing we activate is an NPC, make it face towards us
-		var _activateX = lengthdir_x(40, direction) + x;
-		var _activateY = lengthdir_y(40, direction) + y;
-		var _activateSize = 40;
+		var _activateX = x + 60*image_xscale;
+		var _activateY = y - 60;
+		var _activateSize = 60;
 		var _activateList = ds_list_create();
 		activate = noone;
 		

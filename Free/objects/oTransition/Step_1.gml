@@ -5,7 +5,6 @@ if(instance_exists(oPlayer)){
 		if(state != PLAYERSTATE.DEAD) state = PLAYERSTATE.TRANSITION;
 		if(other.leading == OUT){
 			if(!touchingFloor and vsp != 0){
-				hsp = 0;
 				sprite_index = sFall;
 				Gravity();
 			}
