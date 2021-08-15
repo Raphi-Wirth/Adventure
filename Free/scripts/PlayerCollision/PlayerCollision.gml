@@ -102,7 +102,7 @@ function PlayerCollision(){
 				_snapY = _entityCheck.bbox_bottom + 1;
 			}
 			else{
-				_snapY = _entityCheck.bbox_top- 1;
+				_snapY = _entityCheck.bbox_top - 1;
 			}
 			y = _snapY;
 			vsp = 0;

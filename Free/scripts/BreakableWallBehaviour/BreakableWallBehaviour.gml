@@ -3,7 +3,7 @@
 function BreakableWallBehaviour(){
 	hp--;
 	rumble = 15;
-	DropItems(x, y, array_create(10, oFragPlant), 5, 0);
+	DropItems(x, y, array_create(10, oFragRock), 5, 0);
 	if(hp == 0){
 		instance_destroy();
 	}
