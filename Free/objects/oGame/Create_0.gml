@@ -18,6 +18,13 @@ global.playerMaxHP = 10;
 global.playerHP = global.playerMaxHP
 global.iLifted = noone;
 
+//Unlockables
+global.hasSword = 1;
+global.hasDash = 0;
+global.hasWallGrab = 0;
+global.hasDoubleJump = 0;
+
+
 global.lightIntensity = 1;
 global.lightRange = 1;
 

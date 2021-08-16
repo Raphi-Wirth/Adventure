@@ -3,10 +3,10 @@
 collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
 
 //Unlockables
-hasSword = 1;
-hasDash = 1;
-hasWallGrab = 1;
-hasDoubleJump = 1;
+hasSword = global.hasSword;
+hasDash = global.hasDash;
+hasWallGrab = global.hasWallGrab;
+hasDoubleJump = global.hasDoubleJump;
 
 //Stats
 attackSwingCooldownTime = 10;
