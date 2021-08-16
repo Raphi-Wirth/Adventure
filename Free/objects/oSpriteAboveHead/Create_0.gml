@@ -4,4 +4,6 @@ duration = 0;
 timer = 0;
 target = 0;
 sprite = 0;
-imageAlphaDecrease = 0;
+imageAlpha = 0;
+fadeDistance = 0;
+fading = false;
