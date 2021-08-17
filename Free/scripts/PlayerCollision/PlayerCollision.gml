@@ -8,7 +8,8 @@ function PlayerCollision(){
 	
 	
 	//Horizontal Tiles
-	//A
+	
+	//Check horizontal points around feet
 	if(tilemap_get_at_pixel(collisionMap, x + hsp + spriteWidth, y)){
 		x -= (x + spriteWidth) mod TILE_SIZE;
 		if (sign(hsp) == 1){
@@ -30,9 +31,34 @@ function PlayerCollision(){
 		hsp = 0;
 		_collision = true;
 	}
+	
+	
+	//Check horizontal points around head
+	if(tilemap_get_at_pixel(collisionMap, x + hsp + spriteWidth, y - spriteHeight)){
+		x -= (x + spriteWidth) mod TILE_SIZE;
+		if (sign(hsp) == 1){
+			x += TILE_SIZE -1;
+		}
+		else{
+		}
+		hsp = 0;
+		_collision = true;
+	}
+	
+	if(tilemap_get_at_pixel(collisionMap, x + hsp - spriteWidth, y - spriteHeight)){
+		x -= (x - spriteWidth) mod TILE_SIZE;
+		if (sign(hsp) == 1){
+			x += TILE_SIZE -1;
+		}
+		else{
+		}
+		hsp = 0;
+		_collision = true;
+	}
+	
 
-	//Horizontal Entities
-	var _entityCount = instance_position_list(x + hsp, y, pEntity, _entityList, false);
+	//Horizontal Entities around feet
+	var _entityCount = instance_position_list(x + spriteWidth + hsp, y, pEntity, _entityList, false);
 	var _snapX;
 	
 	while(_entityCount > 0){
@@ -40,10 +66,77 @@ function PlayerCollision(){
 		if(_entityCheck.entityCollision == true){
 			//Move as close as we can
 			if(sign(hsp) == -1){
-				_snapX = _entityCheck.bbox_right + 1;
+				_snapX = _entityCheck.bbox_right + spriteWidth + 1;
 			}
 			else{
-				_snapX = _entityCheck.bbox_left - 1;
+				_snapX = _entityCheck.bbox_left - spriteWidth +  1;
+			}
+			x = _snapX;
+			hsp = 0;
+			_collision = true;
+			_entityCount = 0;
+		}
+		ds_list_delete(_entityList, 0);
+		_entityCount--;
+	}
+	
+	var _entityCount = instance_position_list(x - spriteWidth + hsp, y, pEntity, _entityList, false);
+	var _snapX;
+	
+	while(_entityCount > 0){
+		var _entityCheck = _entityList[| 0];
+		if(_entityCheck.entityCollision == true){
+			//Move as close as we can
+			if(sign(hsp) == -1){
+				_snapX = _entityCheck.bbox_right - spriteWidth + 1;
+			}
+			else{
+				_snapX = _entityCheck.bbox_left + spriteWidth - 1;
+			}
+			x = _snapX;
+			hsp = 0;
+			_collision = true;
+			_entityCount = 0;
+		}
+		ds_list_delete(_entityList, 0);
+		_entityCount--;
+	}
+	
+	//Horizontal entities around head
+	var _entityCount = instance_position_list(x + spriteWidth + hsp, y - spriteHeight, pEntity, _entityList, false);
+	var _snapX;
+	
+	while(_entityCount > 0){
+		var _entityCheck = _entityList[| 0];
+		if(_entityCheck.entityCollision == true){
+			//Move as close as we can
+			if(sign(hsp) == -1){
+				_snapX = _entityCheck.bbox_right + spriteWidth + 1;
+			}
+			else{
+				_snapX = _entityCheck.bbox_left - spriteWidth +  1;
+			}
+			x = _snapX;
+			hsp = 0;
+			_collision = true;
+			_entityCount = 0;
+		}
+		ds_list_delete(_entityList, 0);
+		_entityCount--;
+	}
+	
+	var _entityCount = instance_position_list(x - spriteWidth + hsp, y - spriteHeight, pEntity, _entityList, false);
+	var _snapX;
+	
+	while(_entityCount > 0){
+		var _entityCheck = _entityList[| 0];
+		if(_entityCheck.entityCollision == true){
+			//Move as close as we can
+			if(sign(hsp) == -1){
+				_snapX = _entityCheck.bbox_right - spriteWidth + 1;
+			}
+			else{
+				_snapX = _entityCheck.bbox_left + spriteWidth - 1;
 			}
 			x = _snapX;
 			hsp = 0;

@@ -21,7 +21,7 @@ global.iLifted = noone;
 //Unlockables
 global.hasSword = 1;
 global.hasDash = 1;
-global.hasWallGrab = 1;
+global.hasWallGrab = 0;
 global.hasDoubleJump = 1;
 
 
