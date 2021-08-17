@@ -3,7 +3,7 @@
 randomize();
 
 
-
+show_debug_message("Game being made");
 global.gameSaveSlot = 0;
 
 
@@ -30,4 +30,4 @@ global.lightRange = 1;
 
 
 surface_resize(application_surface, RESOLUTION_W, RESOLUTION_H);
-room_goto(ROOM_START);
+//room_goto(ROOM_START);

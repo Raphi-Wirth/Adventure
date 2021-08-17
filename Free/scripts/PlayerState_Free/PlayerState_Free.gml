@@ -79,7 +79,7 @@ function PlayerState_Free(){
 	//Listed in order of priority within if statements.
 
 	
-
+	image_alpha = 1;
 	image_angle = 0;
 	if(hsp == 0 and move==0)
 	{	
