@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerDash(){
-	if(keyDash and canDash and hasDash){
+	if(keyDash and canDash and global.hasDash){
 		canDash = 0;
 		dashDirection = move;
 		state = PLAYERSTATE.DASH;

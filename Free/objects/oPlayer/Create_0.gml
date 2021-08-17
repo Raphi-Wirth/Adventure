@@ -2,14 +2,9 @@
 // You can write your code in this editor
 collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
 
-//Unlockables
-hasSword = global.hasSword;
-hasDash = global.hasDash;
-hasWallGrab = global.hasWallGrab;
-hasDoubleJump = global.hasDoubleJump;
 
 //Stats
-attackSwingCooldownTime = 10;
+attackSwingCooldownTime = 30;
 hitStun = 15;
 
 //Healthbar

@@ -10,6 +10,7 @@ function DisplaySprite(_sprite, _duration, _target, _fadeDistance){
 			x = _target.x;
 			y = _target.y - sprite_height - 100;
 			depth = -500;
+			return id;
 		}
 	}
 }

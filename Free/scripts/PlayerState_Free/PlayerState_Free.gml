@@ -12,17 +12,17 @@ function PlayerState_Free(){
 		//2. If there is nothing, or there is something with no script - do nothing
 		//3. Otherwise, activate script
 		//4. If the thing we activate is an NPC, make it face towards us
-		var _activateX = x + 60*image_xscale;
+		var _activateX = x;
 		var _activateY = y - 60;
-		var _activateSize = 60;
+		var _activateSize = 150;
 		var _activateList = ds_list_create();
 		activate = noone;
 		
 		var _entitiesFound = collision_rectangle_list(
 			_activateX - _activateSize,
-			_activateY - _activateSize,
+			_activateY - _activateSize/2,
 			_activateX + _activateSize,
-			_activateY + _activateSize,
+			_activateY + _activateSize/2,
 			pEntity,
 			false,
 			true,
@@ -98,7 +98,7 @@ function PlayerState_Free(){
 		image_xscale = sign(hsp);
 	}
 
-	if(keyAttack and touchingFloor and !inAttackSwingCooldown and hasSword){
+	if(keyAttack and touchingFloor and !inAttackSwingCooldown and global.hasSword){
 		state = PLAYERSTATE.GROUND_ATTACK;
 		if(keyUp){
 			state = PLAYERSTATE.GROUND_UP_ATTACK;

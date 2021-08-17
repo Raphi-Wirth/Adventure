@@ -8,6 +8,9 @@ function PlayerAerialMovement(){
 	if(move!=0 and (sprite_index == sFall or sprite_index == sJump)){
 		image_xscale = move;
 	}
+	if(touchingRoof){
+		inJump = 0;
+	}
 	if(heightJumped >= 64*2 and inJump){
 		if(!keyHoldJump){
 			inJump = 0;

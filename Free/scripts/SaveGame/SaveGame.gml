@@ -8,10 +8,10 @@ function SaveGame(){
 	_map[? "playerMaxHP"] = global.playerMaxHP;
 	_map[? "targetX"] = global.targetX;
 	_map[? "targetY"] = global.targetY;
-	_map[? "hasSword"] = global.hasSword;
-	_map[? "hasDash"] = global.hasDash;
-	_map[? "hasDoubleJump"] = global.hasDoubleJump;
-	_map[? "hasWallGrab"] = global.hasWallGrab;
+	_map[? "global.hasSword"] = global.global.hasSword;
+	_map[? "global.hasDash"] = global.global.hasDash;
+	_map[? "global.hasDoubleJump"] = global.global.hasDoubleJump;
+	_map[? "global.hasWallGrab"] = global.global.hasWallGrab;
 	
 	/*var _questMap = ds_map_create();
 	ds_map_copy(_questMap, global.questStatus);

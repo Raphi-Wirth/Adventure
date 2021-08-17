@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oWall",
+    "path": "objects/oWall/oWall.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Room Assets",
-    "path": "folders/Objects/Room Assets.yy",
+    "name": "Walls",
+    "path": "folders/Objects/Room Assets/Walls.yy",
   },
   "resourceVersion": "1.0",
   "name": "oCobblestoneFloor",

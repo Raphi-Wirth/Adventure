@@ -22,7 +22,7 @@ function PlayerState_Wall_Grab(){
 		sprite_index = sJump;
 	}
 
-	if(hasDash){
+	if(global.hasDash){
 		if(keyDash and image_xscale == 1 and keyLeft){
 			dashDirection = image_xscale;
 			state = PLAYERSTATE.DASH;
