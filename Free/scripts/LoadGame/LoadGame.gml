@@ -12,7 +12,10 @@ function LoadGame(_slot){
 		global.playerMaxHP = _json[? "playerMaxHP"];
 		global.targetX = _json[? "targetX"];
 		global.targetY = _json[? "targetY"];
-		
+		global.hasSword =  _json[? "global.hasSword"];
+		global.hasDash = _json[? "global.hasDash"];
+		global.hasDoubleJump = _json[? "global.hasDoubleJump"];
+		global.hasWallGrab = _json[? "global.hasWallGrab"];
 		//Room
 		RoomTransition(TRANS_TYPE.SLIDE, _json[? "room"]);
 		ds_map_destroy(_json);
@@ -20,8 +23,7 @@ function LoadGame(_slot){
 		return true;
 	}
 	else{
-		show_debug_message("No save file");
-		return false;
+		RoomTransition(TRANS_TYPE.SLIDE, rTutorialTestR1);
 	}
 }
 

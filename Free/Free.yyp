@@ -7,6 +7,7 @@
     {"id":{"name":"sWalk","path":"sprites/sWalk/sWalk.yy",},"order":1,},
     {"id":{"name":"sEnemyAttackSlashHB","path":"sprites/sEnemyAttackSlashHB/sEnemyAttackSlashHB.yy",},"order":6,},
     {"id":{"name":"DisplaySprite","path":"scripts/DisplaySprite/DisplaySprite.yy",},"order":22,},
+    {"id":{"name":"fMenu","path":"fonts/fMenu/fMenu.yy",},"order":1,},
     {"id":{"name":"sGrassTS","path":"sprites/sGrassTS/sGrassTS.yy",},"order":1,},
     {"id":{"name":"oMovingPlatform","path":"objects/oMovingPlatform/oMovingPlatform.yy",},"order":7,},
     {"id":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"order":0,},
