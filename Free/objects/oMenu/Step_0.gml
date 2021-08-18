@@ -4,14 +4,31 @@
 //Item ease in
 menu_x += (menu_x_target - menu_x) /menu_speed;
 
+//Check if there is a save file 
+var _file = "save" + string(global.gameSaveSlot) + ".sav";
+var _gameExists = 0;
+if(file_exists(_file)){
+	_gameExists = 1;
+}
+
 //Keyboard controls
 if(menu_control){
 	if(keyboard_check_pressed(vk_up)){
 		menu_cursor ++;
+		if(_gameExists == 0){
+			if(menu_cursor == 1){
+				menu_cursor = 2;
+			}
+		}
 		if(menu_cursor >= menu_items) menu_cursor = 0;
 	}
 	if(keyboard_check_pressed(vk_down)){
 		menu_cursor --;
+		if(_gameExists == 0){
+			if(menu_cursor == 1){
+				menu_cursor = 0;
+			}
+		}
 		if(menu_cursor < 0) menu_cursor = menu_items -1;
 	}
 	if(keyboard_check_pressed(vk_enter)){
@@ -20,6 +37,7 @@ if(menu_control){
 		menu_control = false;
 	}
 }
+
 
 if(menu_x > gui_width+150 and menu_committed != -1 and transitionHappening == 0){
 	transitionHappening = 1;

@@ -4,7 +4,7 @@ randomize();
 
 
 show_debug_message("Game being made");
-global.gameSaveSlot = 0;
+global.gameSaveSlot = 1;
 
 
 global.gamePaused = false;
