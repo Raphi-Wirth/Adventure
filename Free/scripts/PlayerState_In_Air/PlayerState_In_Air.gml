@@ -6,14 +6,13 @@ function PlayerState_In_Air(){
 	Gravity();
 	PlayerHorizontalMovement();
 	PlayerCollision();
-		
 	if(touchingFloor){
 		state = PLAYERSTATE.FREE;
+		PlayerActOutAnimation(sPlayerHitGround, -1, 1);
 		return;
 	}
 	
-	
-	if(!touchingFloor and keyJump and doubleJmp == 0 and hasDoubleJump){
+	if(!touchingFloor and keyJump and doubleJmp == 0 and global.hasDoubleJump){
 		jumpDirection = move;
 		doubleJmp = 1;
 		part_particles_create(global.partSystem, x, y+5, global.ptJump, 1);
@@ -27,12 +26,9 @@ function PlayerState_In_Air(){
 	
 
 	
-	if(keyDash and canDash and hasDash){
-		canDash = 0;
-		dashDirection = move;
-		state = PLAYERSTATE.DASH;
-	}
-	if(hasWallGrab and !inJump){
+	PlayerDash();
+	
+	if(global.hasWallGrab and !inJump){
 		if(keyRight and !touchingFloor and touchingRWall){
 			state = PLAYERSTATE.WALL_GRAB;
 		}
@@ -44,7 +40,7 @@ function PlayerState_In_Air(){
 	
 
 	
-	if(keyAttack and !inAttackSwingCooldown and hasSword){
+	if(keyAttack and !inAttackSwingCooldown and global.hasSword){
 		savedJumpIndex = image_index;
 		state = PLAYERSTATE.AIR_ATTACK;
 		if(keyDown){

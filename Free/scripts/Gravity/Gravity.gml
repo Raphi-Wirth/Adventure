@@ -2,4 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Gravity(){
 	vsp += grv;
+	if(vsp>30){
+		vsp = 30;
+	}
 }

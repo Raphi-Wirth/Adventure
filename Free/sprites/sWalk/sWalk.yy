@@ -87,7 +87,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 96,
-    "yorigin": 183,
+    "yorigin": 188,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWalk","path":"sprites/sWalk/sWalk.yy",},

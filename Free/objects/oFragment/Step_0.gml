@@ -22,7 +22,12 @@ if(!global.gamePaused){
 	Gravity();
 	vsp = min(maxFallSpeed, vsp);
 	x += lengthdir_x(speed, direction);
-	if (tilemap_get_at_pixel(collisionMap, x, y+2) > 0) vsp = 0;
+	if (tilemap_get_at_pixel(collisionMap, x, y+vsp) > 0){
+		while(!tilemap_get_at_pixel(collisionMap, x, y+sign(vsp))){
+			y += sign(vsp);
+		}
+		vsp = 0;
+	}
 	if (tilemap_get_at_pixel(collisionMap, x-2, y) > 0 or tilemap_get_at_pixel(collisionMap,x+2,y)> 0) speed = 0;
 	y += vsp;
 	speed = max(speed - fric, 0);

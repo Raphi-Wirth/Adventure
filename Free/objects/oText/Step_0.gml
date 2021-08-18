@@ -22,7 +22,6 @@ if (responseSelected < _min) {
 }
 
 
-
 if(oPlayer.keyInteract){
 	var _messageLength = string_length(message);
 	if(textProgress >= _messageLength){

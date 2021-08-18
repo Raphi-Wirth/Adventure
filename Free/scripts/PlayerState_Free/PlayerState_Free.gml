@@ -12,17 +12,17 @@ function PlayerState_Free(){
 		//2. If there is nothing, or there is something with no script - do nothing
 		//3. Otherwise, activate script
 		//4. If the thing we activate is an NPC, make it face towards us
-		var _activateX = lengthdir_x(40, direction) + x;
-		var _activateY = lengthdir_y(40, direction) + y;
-		var _activateSize = 40;
+		var _activateX = x;
+		var _activateY = y - 60;
+		var _activateSize = 150;
 		var _activateList = ds_list_create();
 		activate = noone;
 		
 		var _entitiesFound = collision_rectangle_list(
 			_activateX - _activateSize,
-			_activateY - _activateSize,
+			_activateY - _activateSize/2,
 			_activateX + _activateSize,
-			_activateY + _activateSize,
+			_activateY + _activateSize/2,
 			pEntity,
 			false,
 			true,
@@ -43,12 +43,12 @@ function PlayerState_Free(){
 
 		if(activate != noone){
 			//Activate that entities specifc scripts with its specific arguments
-			show_debug_message("Has script");
 			ScriptExecuteArray(activate.entityActivateScript, activate.entityActivateArgs);
 			if(activate.entityNPC){
 				with(activate){
-					direction = point_direction(x,y,other.x,other.y);
-					image_index = CARDINAL_DIR;
+					if(x-other.x != 0){
+						image_xscale = -sign(x-other.x);
+					};
 				}
 			}
 		}
@@ -69,11 +69,7 @@ function PlayerState_Free(){
 		state = PLAYERSTATE.JUMP_SQUAT;
 	}
 
-	if(keyDash and canDash and hasDash){
-		canDash = 0;
-		dashDirection = move;
-		state = PLAYERSTATE.DASH;
-	}
+	PlayerDash();
 
 
 
@@ -83,7 +79,7 @@ function PlayerState_Free(){
 	//Listed in order of priority within if statements.
 
 	
-
+	image_alpha = 1;
 	image_angle = 0;
 	if(hsp == 0 and move==0)
 	{	
@@ -102,7 +98,7 @@ function PlayerState_Free(){
 		image_xscale = sign(hsp);
 	}
 
-	if(keyAttack and touchingFloor and !inAttackSwingCooldown and hasSword){
+	if(keyAttack and touchingFloor and !inAttackSwingCooldown and global.hasSword){
 		state = PLAYERSTATE.GROUND_ATTACK;
 		if(keyUp){
 			state = PLAYERSTATE.GROUND_UP_ATTACK;

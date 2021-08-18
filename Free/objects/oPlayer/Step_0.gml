@@ -8,7 +8,6 @@ keyDown = keyboard_check(vk_down);
 keyUp = keyboard_check(vk_up);
 keyAttack = keyboard_check(ord("X"));
 keyInteract = keyboard_check_pressed(vk_space);
-polygon = polygon_from_instance(id);
 
 
 move = keyRight - keyLeft;
@@ -64,7 +63,9 @@ if(!global.gamePaused){
 	flash = max(flash-0.05,0);
 }
 
-
+if(y>room_height){
+	state = PLAYERSTATE.DEAD;
+}
 
 
 depth = -bbox_bottom;

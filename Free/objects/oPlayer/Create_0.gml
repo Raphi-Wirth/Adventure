@@ -2,16 +2,9 @@
 // You can write your code in this editor
 collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
 
-//Unlockables
-hasSword = 0;
-hasDash = 0;
-hasWallGrab = 0;
-hasDoubleJump = 0;
 
 //Stats
-attackSwingCooldownTime = 10;
-playerHP = 5;
-maxHP = playerHP;
+attackSwingCooldownTime = 15;
 hitStun = 15;
 
 //Healthbar
@@ -23,6 +16,7 @@ healthbar_y = RESOLUTION_H/16;
 
 instance_create_layer(x,y, "Instances" ,oParticleSystem);
 
+
 //Intrinsic variables
 vsp = 0						//Vertical Speed
 hsp = 0						//Horizontal Speed
@@ -32,6 +26,7 @@ playerFriction = 1;
 attackSwingTimer = 0;
 inAttackSwingCooldown = 0;
 maxSpeed = 10;
+maxFallSpeed = 30;
 doubleJmp = 0				//Double jump used
 grv = 1;					//Speed of gravity
 wallJumpDirection = 0;		//Which wall is currently being held
@@ -46,7 +41,7 @@ initDashDirection = 0		//Put explanation here later
 dashDirection = 1			//Initial dash direction
 canDash = 1;				//Checks if player can dash
 jumpDirection = 1;			//Initial Jump Direction
-wallGrabFallSpeed = 1;	    //Speed at which falling when holding wall 
+wallGrabFallSpeed = 2;	    //Speed at which falling when holding wall 
 flash = 0;
 invulnerable = 0;
 flashColour = c_white;

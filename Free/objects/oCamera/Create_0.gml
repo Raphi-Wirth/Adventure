@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 camera = view_camera[0];
+collisionMap = layer_tilemap_get_id(layer_get_id("TilesMain"));
 follow = oPlayer;
 view_w_half = camera_get_view_width(camera) * 0.5;
 view_h_half = camera_get_view_height(camera) * 0.5;

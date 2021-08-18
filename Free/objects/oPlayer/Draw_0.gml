@@ -19,7 +19,7 @@ else{
 	image_angle,
 	image_blend,
 	image_alpha
-)
+	)
 
 	if(shader_current() != -1) shader_reset();
 }

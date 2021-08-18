@@ -22,7 +22,7 @@ function PlayerState_Wall_Grab(){
 		sprite_index = sJump;
 	}
 
-	if(hasDash){
+	if(global.hasDash){
 		if(keyDash and image_xscale == 1 and keyLeft){
 			dashDirection = image_xscale;
 			state = PLAYERSTATE.DASH;
@@ -43,7 +43,15 @@ function PlayerState_Wall_Grab(){
 		}
 		
 	}
-	
+	if(!touchingRWall and !touchingLWall){
+		if(touchingFloor){
+			state = PLAYERSTATE.FREE;
+		}
+		else{
+			state = PLAYERSTATE.IN_AIR;
+			sprite_index = sFall;
+		}
+	}
 	if(touchingFloor and !collidingWall){
 		state = PLAYERSTATE.FREE;
 	}

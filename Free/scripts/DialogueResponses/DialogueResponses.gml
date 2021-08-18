@@ -15,6 +15,8 @@ function DialogueResponses(){
 		case "No": break;
 		
 		case "ForestExplanation": NewTextBox("Pollen count is really high this time of year.",0); break;
+		
+		case "TutorialJumpExplanation": NewTextBox("I don't get paid enough for this...",0); break
 	
 	}
 	

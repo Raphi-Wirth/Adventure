@@ -1,12 +1,11 @@
 /// @description Cause room transition
 // You can write your code in this editor
-if(instance_exists(oPlayer)) and (position_meeting(oPlayer.x, oPlayer.y, id)){
+if(instance_exists(oPlayer)) and (position_meeting(oPlayer.x + oPlayer.image_xscale*10, oPlayer.y, id)){
 	if(!instance_exists(oTransition) and oPlayer.state != PLAYERSTATE.DEAD){
 		global.targetRoom = targetRoom;
 		global.targetX = targetX;
 		global.targetY = targetY;
 		global.targetDirection = oPlayer.image_xscale;
-		global.playerHP = oPlayer.playerHP;
 		with (oPlayer) {
 			state = PLAYERSTATE.TRANSITION;
 		}

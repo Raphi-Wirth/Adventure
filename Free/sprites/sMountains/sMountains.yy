@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Outside",
-    "path": "folders/Sprites/Outside.yy",
+    "path": "folders/Sprites/Rooms/Outside.yy",
   },
   "resourceVersion": "1.0",
   "name": "sMountains",
