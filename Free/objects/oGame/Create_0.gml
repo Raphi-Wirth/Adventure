@@ -20,9 +20,9 @@ global.iLifted = noone;
 
 //Unlockables
 global.hasSword = 1;
-global.hasDash = 1;
+global.hasDash = 0;
 global.hasWallGrab = 0;
-global.hasDoubleJump = 1;
+global.hasDoubleJump = 0;
 
 
 global.lightIntensity = 1;

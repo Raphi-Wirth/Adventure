@@ -23,7 +23,7 @@ if(menu_control){
 }
 
 
-if(menu_x > gui_width+150 and menu_committed != -1 and transitionHappening == 0){
+if(menu_x > gui_width+250 and menu_committed != -1 and transitionHappening == 0){
 	switch (menu_committed){
 		case "Play":
 			for (var i = 0; i < array_length(continueMenuText); i++){
@@ -39,5 +39,6 @@ if(menu_x > gui_width+150 and menu_committed != -1 and transitionHappening == 0)
 		case "Save 1": global.gameSaveSlot = 0; LoadGame(0); instance_destroy(); break;
 		case "Save 2": global.gameSaveSlot = 1;LoadGame(1); instance_destroy(); break;
 		case "Save 3": global.gameSaveSlot = 2; LoadGame(2); instance_destroy(); break;
+		case "New Game": global.gameSaveSlot = 0; DeleteGame(0); LoadGame(0); instance_destroy(); break;
 	}
 }

@@ -23,5 +23,5 @@ menu[0] = "Quit";
 menu_items = array_length_1d(menu);
 menu_cursor = 1;
 
-continueMenuText = ["Save 3", "Save 2", "Save 1"];
+continueMenuText = ["Save 3", "Save 2", "Save 1","New Game"];
 mainMenuText = ["Quit", "Play"];
