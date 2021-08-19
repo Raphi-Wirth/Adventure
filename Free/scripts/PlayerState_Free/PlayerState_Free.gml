@@ -61,6 +61,9 @@ function PlayerState_Free(){
 	}
 	else if(!touchingFloor){
 		state = PLAYERSTATE.IN_AIR;
+		sprite_index = sJump;
+		image_index = 4;
+		return;
 	}
 
 	//Jump if on floor and not touching a wall

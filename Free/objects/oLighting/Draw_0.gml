@@ -27,7 +27,7 @@ with (oLightParent)
 	var _sh = sprite_height / 2;
 	switch(object_index){
 	case oPlayer:
-		draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, global.lightRange, global.lightRange, 0, c_white, global.lightIntensity);            
+		draw_sprite_ext(sLight, 0, x - _cx, y - sprite_get_height(sIdle)/2 - _cy, global.lightRange, global.lightRange, 0, c_white, global.lightIntensity);            
 		break;
 	
 	case oTutorialGuy:

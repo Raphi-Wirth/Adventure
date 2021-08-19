@@ -12,13 +12,12 @@ function CalcAttack(){
 				ds_list_add(hitByAttack, hitID);
 				with (hitID){
 					if(object_is_ancestor(object_index,pEnemy)){
-						
 						HurtEnemy(id, 1, other.id, 100);
 						var _knockDirection = point_direction(x,y,other.x, other.y);
 						
 						//Calculate knockback based on mask_index (move type)
 						switch (other.mask_index) {
-							case sAerial_Down_SlashHB:
+							case sAerial_Down_AttackHB:
 								other.hsp = lengthdir_x(10, _knockDirection);
 								other.vsp = min(-20, vsp - 10);
 						}

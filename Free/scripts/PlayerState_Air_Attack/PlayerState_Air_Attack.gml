@@ -23,6 +23,7 @@ function PlayerState_Air_Attack(){
 		inAttackSwingCooldown = 1;
 		state = PLAYERSTATE.FREE;
 	}
+	
 	if(animation_end()){
 		inAttackSwingCooldown = 1;
 		sprite_index = sFall;

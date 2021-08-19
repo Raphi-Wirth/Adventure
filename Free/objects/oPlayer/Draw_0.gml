@@ -20,6 +20,6 @@ else{
 	image_blend,
 	image_alpha
 	)
-
+	
 	if(shader_current() != -1) shader_reset();
 }

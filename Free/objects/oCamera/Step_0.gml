@@ -3,7 +3,7 @@
 
 if(instance_exists(follow)){
 	xTo = follow.x;
-	yTo = follow.y -  follow.sprite_height/2;
+	yTo = follow.y - sprite_get_height(sIdle)/2;
 
 
 	if(abs((xTo-x)/10) > 0.05){
@@ -16,7 +16,7 @@ if(instance_exists(follow)){
 		y += (yTo-y)/10;
 	}
 	else{
-		y = follow.y - follow.sprite_height/2;
+		y = follow.y - sprite_get_height(sIdle)/2;
 	}
 
 

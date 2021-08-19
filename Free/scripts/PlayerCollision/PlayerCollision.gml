@@ -31,7 +31,28 @@ function PlayerCollision(){
 		hsp = 0;
 		_collision = true;
 	}
+	//Check around torso
+	if(tilemap_get_at_pixel(collisionMap, x + hsp + spriteWidth, y - spriteHeight/2)){
+		x -= (x + spriteWidth) mod TILE_SIZE;
+		if (sign(hsp) == 1){
+			x += TILE_SIZE -1;
+		}
+		else{
+		}
+		hsp = 0;
+		_collision = true;
+	}
 	
+	if(tilemap_get_at_pixel(collisionMap, x + hsp - spriteWidth, y - spriteHeight/2)){
+		x -= (x - spriteWidth) mod TILE_SIZE;
+		if (sign(hsp) == 1){
+			x += TILE_SIZE -1;
+		}
+		else{
+		}
+		hsp = 0;
+		_collision = true;
+	}
 	
 	//Check horizontal points around head
 	if(tilemap_get_at_pixel(collisionMap, x + hsp + spriteWidth, y - spriteHeight)){
@@ -55,7 +76,6 @@ function PlayerCollision(){
 		hsp = 0;
 		_collision = true;
 	}
-	
 
 	//Horizontal Entities around feet
 	var _entityCount = instance_position_list(x + spriteWidth + hsp, y, pEntity, _entityList, false);
