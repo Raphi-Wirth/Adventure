@@ -1,7 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 lerpProgress += (1 - lerpProgress) / 50;
-textProgress += global.textSpeed;
+if(abs(x1 - x1Target) <= x1Target/4){
+	textProgress += min(global.textSpeed*string_length(message)/2, global.textSpeed*12);
+}
 
 x1 = lerp(x1, x1Target, lerpProgress);
 x2 = lerp(x2, x2Target, lerpProgress);

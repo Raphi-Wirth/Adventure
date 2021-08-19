@@ -8,7 +8,7 @@ global.gameSaveSlot = 1;
 
 
 global.gamePaused = false;
-global.textSpeed = 0.5;
+global.textSpeed = 0.05;
 global.targetRoom = -1;
 global.targetX = -1;
 global.targetY = -1;
