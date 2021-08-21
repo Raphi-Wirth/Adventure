@@ -31,7 +31,8 @@ function NewTextBox(){
 			background = argument[1];
 		}
 		else{
-			background = 1;
+			background = -1;
+			
 		}
 		
 		

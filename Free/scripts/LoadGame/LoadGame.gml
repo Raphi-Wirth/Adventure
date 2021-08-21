@@ -23,6 +23,8 @@ function LoadGame(_slot){
 		return true;
 	}
 	else{
+		global.targetX = -1;
+		global.targetY = -1;
 		RoomTransition(TRANS_TYPE.SLIDE, rTutorialTestR1);
 	}
 }

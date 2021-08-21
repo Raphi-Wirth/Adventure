@@ -1,10 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 x1 = RESOLUTION_W/2;
-y1 = RESOLUTION_H - 300;
+y1 = 300;
 x2 = RESOLUTION_W/2;
-y2 = RESOLUTION_H-51;
-
+y2 = 51;
+hAlign = fa_left;
+vAlign = fa_top;
 x1Target = 300;
 x2Target = RESOLUTION_W-300;
 

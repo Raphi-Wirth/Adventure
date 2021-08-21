@@ -26,22 +26,27 @@ with (oLightParent)
 	var _sw = sprite_width / 2;
 	var _sh = sprite_height / 2;
 	switch(object_index){
-	case oPlayer:
-		draw_sprite_ext(sLight, 0, x - _cx, y - sprite_get_height(sIdle)/2 - _cy, global.lightRange, global.lightRange, 0, c_white, global.lightIntensity);            
-		break;
+		case oPlayer:
+			draw_sprite_ext(sLight, 0, x - _cx, y - sprite_get_height(sIdle)/2 - _cy, global.lightRange, global.lightRange, 0, c_white, global.lightIntensity);            
+			break;
 	
-	case oTutorialGuy:
-		with(oTutorialGuy){
-			if(sprite_index == sTutorialGuySmoke and image_index >= 5 and image_index <=10){
-				var _intensity = 1 - abs(7.5 - image_index)/2.5
-				draw_sprite_ext(sLight, 0, x - _cx + 20*sign(image_xscale), y - _sh - 20 - _cy, 0.5, 0.5, 0, c_red, _intensity);
+		case oTutorialGuy:
+			with(oTutorialGuy){
+				if(sprite_index == sTutorialGuySmoke and image_index >= 5 and image_index <=10){
+					var _intensity = 1 - abs(7.5 - image_index)/2.5
+					draw_sprite_ext(sLight, 0, x - _cx + 20*sign(image_xscale), y - _sh - 20 - _cy, 0.5, 0.5, 0, c_red, _intensity);
+				}
 			}
-		}
-	case oLight:
-		with(oLight){
-			draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 3, 5, 0, c_white, random_range(0.75,0.85));
-		}
+		case oLight:
+			with(oLight){
+				draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 3, 5, 0, c_white, random_range(0.75,0.85));
+			}
+		case oUpgrade:
+			with(oUpgrade){
+				draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 3, 5, 0, c_white, 1);
+			}
 	}
+
 }
 gpu_set_blendmode(bm_normal);
 surface_reset_target();

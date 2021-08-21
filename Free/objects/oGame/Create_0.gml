@@ -1,7 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(instance_count(oGame)>1){
+	instance_destroy();
+}
 randomize();
-
 
 show_debug_message("Game being made");
 global.gameSaveSlot = 1;
@@ -30,4 +32,4 @@ global.lightRange = 1;
 
 
 surface_resize(application_surface, RESOLUTION_W, RESOLUTION_H);
-//room_goto(ROOM_START);
+room_goto(ROOM_START);

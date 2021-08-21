@@ -14,6 +14,8 @@ menu_itemHeight = font_get_size(fText);
 menu_committed = -1;
 menu_control = true;
 transitionHappening = 0;
+hAlign = fa_right;
+vAlign = fa_bottom;
 
 maxSaveSlots = 3;
 
@@ -22,6 +24,8 @@ menu[0] = "Quit";
 
 menu_items = array_length_1d(menu);
 menu_cursor = 1;
+
+menu_top = menu_y - ((menu_itemHeight *3.5) * menu_items);
 
 continueMenuText = ["Save 3", "Save 2", "Save 1","New Game"];
 mainMenuText = ["Quit", "Play"];
