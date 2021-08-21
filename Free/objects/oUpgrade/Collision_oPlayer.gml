@@ -10,6 +10,7 @@ switch(upgradeType){
 				hAlign = fa_center;
 				vAlign = fa_center;
 			}
-		}break
+		}
+		break;
 }
 instance_destroy();

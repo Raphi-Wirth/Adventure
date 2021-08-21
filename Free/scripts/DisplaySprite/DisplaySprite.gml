@@ -8,7 +8,7 @@ function DisplaySprite(_sprite, _duration, _target, _fadeDistance){
 			sprite = _sprite;
 			fadeDistance = _fadeDistance;
 			x = _target.x;
-			y = _target.y - sprite_height - 100;
+			y = _target.y - _target.sprite_height;
 			depth = -500;
 			return id;
 		}

@@ -43,7 +43,7 @@ with (oLightParent)
 			}
 		case oUpgrade:
 			with(oUpgrade){
-				draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 3, 5, 0, c_white, 1);
+				draw_sprite_ext(sLight, 0, x - _cx, y - _sh + z - _cy, 3, 5, 0, c_white, 1 - abs(z/20));
 			}
 	}
 
