@@ -3,6 +3,7 @@
 
 ///@arg Message
 ///@arg Background
+///@arg Placement
 ///@arg [Responses]
 ///@arg CharacterSprite
 
@@ -54,6 +55,12 @@ function NewTextBox(){
 		}
 		else{
 			textboxCharSprite = -1;
+		}
+		if(argument_count > 4){
+			if(argument_count == "Top"){
+				y1 = 151
+				y2 = 351;
+			}
 		}
 	}
 

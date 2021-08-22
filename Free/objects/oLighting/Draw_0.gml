@@ -39,7 +39,9 @@ with (oLightParent)
 			}
 		case oLight:
 			with(oLight){
-				draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 3, 5, 0, c_white, random_range(0.75,0.85));
+				image_xscale = 5;
+				image_yscale = 5;
+				draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 3, 5, 0, c_red, random_range(0.75,0.9));
 			}
 		case oUpgrade:
 			with(oUpgrade){

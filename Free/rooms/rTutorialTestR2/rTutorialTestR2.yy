@@ -18,10 +18,6 @@
   "layers": [
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oLighting","path":"objects/oLighting/oLighting.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1116.0,"y":2606.0,"resourceVersion":"1.0","name":"inst_1C9AB0F7","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[
-            {"propertyId":{"name":"upgradeType","path":"objects/oUpgrade/oUpgrade.yy",},"objectId":{"name":"oUpgrade","path":"objects/oUpgrade/oUpgrade.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-            {"propertyId":{"name":"sprite","path":"objects/oUpgrade/oUpgrade.yy",},"objectId":{"name":"oUpgrade","path":"objects/oUpgrade/oUpgrade.yy",},"value":"sPlant","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"oUpgrade","path":"objects/oUpgrade/oUpgrade.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2016.0,"y":1664.0,"resourceVersion":"1.0","name":"inst_6532901A","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Lighting","tags":[],"resourceType":"GMRInstanceLayer",},
     {"spriteId":{"name":"sCobblestoneFloor","path":"sprites/sCobblestoneFloor/sCobblestoneFloor.yy",},"colour":4294967295,"x":0,"y":2620,"htiled":true,"vtiled":false,"hspeed":0.0,"vspeed":0.0,"stretch":false,"animationFPS":30.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":false,"depth":75,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Foreground","tags":[],"resourceType":"GMRBackgroundLayer",},
     {"tilesetId":{"name":"Collision","path":"tilesets/Collision/Collision.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":94,"SerialiseHeight":63,"TileSerialiseData":[
@@ -143,7 +139,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oCobblestoneFloor","path":"objects/oCobblestoneFloor/oCobblestoneFloor.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":-180.0,"scaleX":0.994,"scaleY":1.21333337,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3227.0,"y":650.0,"resourceVersion":"1.0","name":"inst_5DA18374","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"collisionArgs","path":"objects/oTrigger/oTrigger.yy",},"objectId":{"name":"oTrigger","path":"objects/oTrigger/oTrigger.yy",},"value":"[sDoubleJumpSign, 300, id]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"oTrigger","path":"objects/oTrigger/oTrigger.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":7.46426,"scaleY":7.34375,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1182.41687,"y":1120.0,"resourceVersion":"1.0","name":"inst_6996C148","tags":[],"resourceType":"GMRInstance",},
+          ],"isDnd":false,"objectId":{"name":"oTrigger","path":"objects/oTrigger/oTrigger.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":7.46426,"scaleY":5.84375,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1183.99988,"y":1376.0,"resourceVersion":"1.0","name":"inst_6996C148","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"targetRoom","path":"objects/oRoomExit/oRoomExit.yy",},"objectId":{"name":"oRoomExit","path":"objects/oRoomExit/oRoomExit.yy",},"value":"rTutorialTestR3","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"targetX","path":"objects/oRoomExit/oRoomExit.yy",},"objectId":{"name":"oRoomExit","path":"objects/oRoomExit/oRoomExit.yy",},"value":"248","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
@@ -177,7 +173,6 @@
     {"name":"inst_5DA18374","path":"rooms/rTutorialTestR2/rTutorialTestR2.yy",},
     {"name":"inst_6996C148","path":"rooms/rTutorialTestR2/rTutorialTestR2.yy",},
     {"name":"inst_5E311900","path":"rooms/rTutorialTestR2/rTutorialTestR2.yy",},
-    {"name":"inst_6532901A","path":"rooms/rTutorialTestR2/rTutorialTestR2.yy",},
   ],
   "inheritCreationOrder": true,
   "sequenceId": null,

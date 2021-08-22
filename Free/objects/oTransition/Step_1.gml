@@ -8,7 +8,7 @@ if(instance_exists(oPlayer)){
 				sprite_index = sFall;
 				Gravity();
 			}
-			else{
+			else if(other.playerMoves == true){
 				sprite_index = sWalk;
 				image_speed = 1;
 				hsp = maxSpeed * sign(image_xscale);

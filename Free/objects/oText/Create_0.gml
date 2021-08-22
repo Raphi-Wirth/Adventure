@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 x1 = RESOLUTION_W/2;
-y1 = 300;
+y1 = 150;
 x2 = RESOLUTION_W/2;
-y2 = 51;
+y2 = 400;
 hAlign = fa_left;
 vAlign = fa_top;
 x1Target = 300;

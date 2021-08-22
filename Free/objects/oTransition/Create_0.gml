@@ -14,3 +14,4 @@ height = RESOLUTION_H;
 heightHalf = height*0.5 + 50;
 percent = 0;
 leading = OUT;
+playerMoves = true;

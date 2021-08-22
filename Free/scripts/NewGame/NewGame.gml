@@ -7,8 +7,8 @@ function NewGame(){
 	global.targetX = 488;
 	global.targetY = 2544
 	global.hasSword =  1;
-	global.hasDash = 1;
-	global.hasDoubleJump = 1;
+	global.hasDash = 0;
+	global.hasDoubleJump = 0;
 	global.hasWallGrab = 0;
 	RoomTransition(TRANS_TYPE.SLIDE, rTutorialTestR1);
 }

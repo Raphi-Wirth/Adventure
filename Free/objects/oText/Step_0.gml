@@ -34,7 +34,6 @@ if(oPlayer.keyInteract){
 				DialogueResponses(other.responseScripts[other.responseSelected]);
 			}
 		}
-		instance_destroy();
 		if(instance_exists(oTextQueued)){
 			//Reduce the ticket number of all queued text boxes by one
 			with (oTextQueued){
@@ -43,9 +42,11 @@ if(oPlayer.keyInteract){
 		}
 		else{
 			with(oPlayer){
+				image_speed = 1;
 				state = lastState;
 			}
 		}
+		instance_destroy();
 	}
 	else{
 		if(textProgress>2){

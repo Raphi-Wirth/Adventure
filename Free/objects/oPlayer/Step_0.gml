@@ -12,8 +12,6 @@ keyInteract = keyboard_check_pressed(vk_space);
 
 move = keyRight - keyLeft;
 if(!global.gamePaused){
-	show_debug_message(string(sprite_index));
-	show_debug_message(image_index);
 	if(inAttackSwingCooldown){
 		attackSwingTimer += 1;
 	}

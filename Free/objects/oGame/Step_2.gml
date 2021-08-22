@@ -3,11 +3,7 @@
 if (keyboard_check_pressed(vk_escape) and instance_exists(oPlayer)) {
 	global.gamePaused = !global.gamePaused;
 	if(global.gamePaused){
-		if(!instance_exists(oMenu)){
-			with(instance_create_layer(x,y,"Instances", oMenu)){
-				PauseMenu();
-			}
-		}
+		instance_create_layer(x,y,"Instances", oPauseMenu);
 		with (all) {
 			gamePausedImageSpeed = image_speed;
 			image_speed = 0;
@@ -15,8 +11,8 @@ if (keyboard_check_pressed(vk_escape) and instance_exists(oPlayer)) {
 
 	}
 	else{
-		if(instance_exists(oMenu)){
-			instance_destroy(oMenu);
+		if(instance_exists(oPauseMenu)){
+			instance_destroy(oPauseMenu);
 		}
 		with (all) {
 			image_speed = gamePausedImageSpeed;
