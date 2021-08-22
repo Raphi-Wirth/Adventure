@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sTorch",
+    "path": "sprites/sTorch/sTorch.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -24,11 +27,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Room Assets",
+    "path": "folders/Objects/Room Assets.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oLight",
+  "name": "oTorch",
   "tags": [],
   "resourceType": "GMObject",
 }

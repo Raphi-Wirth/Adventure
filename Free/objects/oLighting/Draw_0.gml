@@ -37,11 +37,9 @@ with (oLightParent)
 					draw_sprite_ext(sLight, 0, x - _cx + 20*sign(image_xscale), y - _sh - 20 - _cy, 0.5, 0.5, 0, c_red, _intensity);
 				}
 			}
-		case oLight:
-			with(oLight){
-				image_xscale = 5;
-				image_yscale = 5;
-				draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 3, 5, 0, c_red, random_range(0.75,0.9));
+		case oTorch:
+			with(oTorch){
+				draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 5, 5, 0, c_red, random_range(0.75,0.9));
 			}
 		case oUpgrade:
 			with(oUpgrade){
