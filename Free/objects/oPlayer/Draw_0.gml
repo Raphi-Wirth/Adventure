@@ -9,16 +9,14 @@ else{
 		uFlash = shader_get_uniform(flashShader, "flash");
 		shader_set_uniform_f(uFlash, flash);
 	}
-	draw_sprite_ext(
-		sprite_index,
-		image_index,
-		floor(x),
-		floor(y),
-		image_xscale,
-		image_yscale,
-		image_angle,
-		image_blend,
-		image_alpha
-	)
+	if(state == PLAYERSTATE.GROUND_ATTACK and bottomSprite != -1){
+		show_debug_message("Before swap: " + string(bottomSpriteImageIndex)); 
+		draw_sprite_ext(bottomSprite, (bottomSpriteImageIndex + image_index) mod image_number, x,y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+		draw_sprite_ext(sprite_index, image_index, x,y-50, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+	}
+	else{
+		draw_sprite_ext(sprite_index, image_index, x,y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+	}
+
 	if(shader_current() != -1) shader_reset();
 }

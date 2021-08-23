@@ -49,6 +49,12 @@ flashShader = shWhiteFlash;
 animationEndScript = -1;
 canMoveWhileAct = 0;
 
+topSprite = -1;
+bottomSprite = -1;
+topSpriteImageIndex = 0;
+bottomSpriteImageIndex = 0;
+
+
 state = PLAYERSTATE.FREE;
 lastState = state;
 hitByAttack = ds_list_create();
@@ -72,21 +78,18 @@ enum PLAYERSTATE
 {
 	FREE,
 	GROUND_ATTACK,
-	GROUND_UP_ATTACK,
 	DASH,
 	WALL_GRAB,
 	IN_AIR,
 	AIR_ATTACK,
-	AIR_UP_ATTACK,
 	HIT,
 	DEAD,
-	AIR_DOWN_ATTACK,
 	LOCKED,
 	TRANSITION,
 	JUMP_SQUAT,
 	ACT
 }
 
-if(image_xscale = 0){
+if(image_xscale == 0){
 	image_xscale = 1;
 }

@@ -32,23 +32,17 @@ if(!global.gamePaused){
 	
 		case PLAYERSTATE.DASH: PlayerState_Dash(dashDirection); break;
 		
-		case PLAYERSTATE.GROUND_ATTACK: PlayerState_Ground_Attack(); break;
-	
-		case PLAYERSTATE.GROUND_UP_ATTACK: PlayerState_Ground_Up_Attack(); break;
+		case PLAYERSTATE.GROUND_ATTACK: PlayerState_Ground_Attack(attackSprite, attackSpriteHitBox); break;
 	
 		case PLAYERSTATE.WALL_GRAB: PlayerState_Wall_Grab(); break;
 	
 		case PLAYERSTATE.IN_AIR: PlayerState_In_Air(); break;
 	
-		case PLAYERSTATE.AIR_ATTACK: PlayerState_Air_Attack(); break;
+		case PLAYERSTATE.AIR_ATTACK: PlayerState_Air_Attack(attackSprite, attackSpriteHitBox); break;
 	
 		case PLAYERSTATE.HIT: PlayerState_Hit(); break;
 	
 		case PLAYERSTATE.DEAD: PlayerState_Dead(); break;
-	
-		case PLAYERSTATE.AIR_DOWN_ATTACK: PlayerState_Aerial_Down_Slash(); break;
-	
-		case PLAYERSTATE.AIR_UP_ATTACK: PlayerState_Aerial_Up_Attack(); break;
 		
 		case PLAYERSTATE.LOCKED: PlayerState_Locked(); break;
 		
@@ -68,5 +62,4 @@ if(y>room_height){
 }
 
 
-depth = -bbox_bottom;
 
