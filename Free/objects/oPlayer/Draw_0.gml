@@ -10,8 +10,7 @@ else{
 		shader_set_uniform_f(uFlash, flash);
 	}
 	if(state == PLAYERSTATE.GROUND_ATTACK and bottomSprite != -1){
-		show_debug_message("Before swap: " + string(bottomSpriteImageIndex)); 
-		draw_sprite_ext(bottomSprite, (bottomSpriteImageIndex + image_index) mod image_number, x,y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+		draw_sprite_ext(bottomSprite, bottomSpriteImageIndex, x,y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 		draw_sprite_ext(sprite_index, image_index, x,y-50, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 	}
 	else{

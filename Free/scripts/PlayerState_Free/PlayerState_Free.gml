@@ -99,10 +99,6 @@ function PlayerState_Free(){
 	else if(move == 0 and hsp != 0){
 		image_xscale = sign(hsp);
 	}
-	if(bottomSpriteImageIndex != 0){
-		image_index = bottomSpriteImageIndex;
-		bottomSpriteImageIndex = 0;
-	}
 	if(keyAttack and touchingFloor and !inAttackSwingCooldown and global.hasSword){
 		bottomSpriteImageIndex = image_index;
 		state = PLAYERSTATE.GROUND_ATTACK;

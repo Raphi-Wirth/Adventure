@@ -17,15 +17,24 @@ function PlayerState_Ground_Attack(){
 	if(hsp != 0){
 		bottomSprite = sPlayerLegsWalk;
 		image_xscale = sign(hsp);
+		bottomSpriteImageIndex += 0.2;
+		if(bottomSpriteImageIndex >= image_number){
+			bottomSpriteImageIndex = 0;
+		}
 	}
 	else{
-		bottomSpriteImageIndex = 0;
-		bottomSprite = sPlayerLegsIdle;
+		if(bottomSprite != sPlayerLegsIdle){
+			bottomSpriteImageIndex = 0;
+			bottomSprite = sPlayerLegsIdle;
+		}
+		bottomSpriteImageIndex += 0.125;
+		if(bottomSpriteImageIndex >= image_number){
+			bottomSpriteImageIndex = 0;
+		}
 	}
 
 	
 	if(animation_end(sprite_index)){
-		bottomSpriteImageIndex = (bottomSpriteImageIndex + sprite_get_number(bottomSprite)) mod image_number;
 		bottomSprite = -1;
 		if(abs(hsp) > 0){
 			sprite_index = sWalk;
