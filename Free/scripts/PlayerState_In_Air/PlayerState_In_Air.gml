@@ -49,11 +49,15 @@ function PlayerState_In_Air(){
 	if(keyAttack and !inAttackSwingCooldown and global.hasSword){
 		savedJumpIndex = image_index;
 		state = PLAYERSTATE.AIR_ATTACK;
+		attackSprite = sAerial_Attack_Slash;
+		attackSpriteHitBox = sAttackSlashHB;
 		if(keyDown){
-			state = PLAYERSTATE.AIR_DOWN_ATTACK;
+			attackSprite = sAerial_Down_Slash;
+			attackSpriteHitBox = sAerial_Down_SlashHB;
 		}
 		else if(keyUp){
-			state = PLAYERSTATE.AIR_UP_ATTACK;
+			attackSprite = sGround_Up_Attack_Slash;
+			attackSpriteHitBox = sGround_Up_Attack_SlashHB;
 		}
 	}
 

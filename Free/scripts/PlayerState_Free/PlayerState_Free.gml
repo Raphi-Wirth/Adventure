@@ -80,7 +80,6 @@ function PlayerState_Free(){
 
 
 	//Listed in order of priority within if statements.
-
 	
 	image_alpha = 1;
 	image_angle = 0;
@@ -100,11 +99,14 @@ function PlayerState_Free(){
 	else if(move == 0 and hsp != 0){
 		image_xscale = sign(hsp);
 	}
-
 	if(keyAttack and touchingFloor and !inAttackSwingCooldown and global.hasSword){
+		bottomSpriteImageIndex = image_index;
 		state = PLAYERSTATE.GROUND_ATTACK;
+		attackSprite = sGround_Attack_Slash;
+		attackSpriteHitBox = sAttackSlashHB;
 		if(keyUp){
-			state = PLAYERSTATE.GROUND_UP_ATTACK;
+			attackSprite = sGround_Up_Attack_Slash;
+			attackSpriteHitBox = sGround_Up_Attack_SlashHB;
 		}
 	}
 

@@ -5,14 +5,14 @@ function PlayerState_Air_Attack(){
 
 	//Start of the attack
 
-	if (sprite_index != sAerial_Attack_Slash)
+	if (sprite_index != argument0)
 	{
-		sprite_index = sAerial_Attack_Slash;
+		sprite_index = argument0;
 		image_index = 0;
 		ds_list_clear(hitByAttack);
 	}
 	
-	CalcAttack(sAttackSlashHB);
+	CalcAttack(argument1);
 	PlayerAerialMovement();
 	PlayerHorizontalMovement();
 	Gravity();

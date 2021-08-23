@@ -4,11 +4,12 @@ if(instance_exists(oPlayer)){
 	with(oPlayer) {
 		if(state != PLAYERSTATE.DEAD) state = PLAYERSTATE.TRANSITION;
 		if(other.leading == OUT){
-			if(!touchingFloor and vsp != 0){
+			if(!touchingFloor and (x>0 and x<room_width)){
 				sprite_index = sFall;
 				Gravity();
 			}
 			else if(other.playerMoves == true){
+				vsp = 0;
 				sprite_index = sWalk;
 				image_speed = 1;
 				hsp = maxSpeed * sign(image_xscale);
