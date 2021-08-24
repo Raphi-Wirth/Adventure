@@ -44,6 +44,7 @@ global.ptWallGrab = _wallGrab;
 var _jumpLandLeft = part_type_create();
 
 part_type_shape(_jumpLandLeft, pt_shape_explosion);
+part_type_alpha1(_jumpLandLeft, 0.5)
 part_type_life(_jumpLandLeft,50,75);
 part_type_size(_jumpLandLeft,0.35,0.5,-0.005,0);
 part_type_speed(_jumpLandLeft,0.5,2.5,-0.025,0);
@@ -54,6 +55,7 @@ global.ptJumpLandLeft = _jumpLandLeft;
 var _jumpLandRight = part_type_create();
 
 part_type_shape(_jumpLandRight, pt_shape_explosion);
+part_type_alpha1(_jumpLandRight, 0.5)
 part_type_life(_jumpLandRight,50,75);
 part_type_size(_jumpLandRight,0.35,0.5,-0.005,0);
 part_type_speed(_jumpLandRight,0.5,2.5,-0.025,0);

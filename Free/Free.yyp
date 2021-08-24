@@ -47,7 +47,6 @@
     {"id":{"name":"oFullScreen","path":"objects/oFullScreen/oFullScreen.yy",},"order":2,},
     {"id":{"name":"sLava","path":"sprites/sLava/sLava.yy",},"order":7,},
     {"id":{"name":"sBreakableFloor","path":"sprites/sBreakableFloor/sBreakableFloor.yy",},"order":1,},
-    {"id":{"name":"PlayerState_Attack_Combo","path":"scripts/PlayerState_Attack_Combo/PlayerState_Attack_Combo.yy",},"order":4,},
     {"id":{"name":"oFragRock","path":"objects/oFragRock/oFragRock.yy",},"order":2,},
     {"id":{"name":"sPlant","path":"sprites/sPlant/sPlant.yy",},"order":15,},
     {"id":{"name":"oLava","path":"objects/oLava/oLava.yy",},"order":5,},

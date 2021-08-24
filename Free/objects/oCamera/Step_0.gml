@@ -33,7 +33,7 @@ if(instance_exists(follow)){
 
 	if (layer_exists("Mountains")){
 		layer_x("Mountains",x/1.5);
-		layer_y("Mountains", y/1.1-200);
+		layer_y("Mountains", room_height - 500 - (room_height - y)/1.2);
 	}
 
 	if (layer_exists("Forest")){

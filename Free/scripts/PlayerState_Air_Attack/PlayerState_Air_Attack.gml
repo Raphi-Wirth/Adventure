@@ -20,6 +20,7 @@ function PlayerState_Air_Attack(){
 	
 	
 	if(touchingFloor){
+		HitGroundDust();
 		inAttackSwingCooldown = 1;
 		state = PLAYERSTATE.FREE;
 	}
