@@ -103,7 +103,7 @@ function PlayerState_Free(){
 		bottomSpriteImageIndex = image_index;
 		state = PLAYERSTATE.GROUND_ATTACK;
 		attackSprite = sGround_Attack_Slash;
-		attackSpriteHitBox = sAttackSlashHB;
+		attackSpriteHitBox = sGround_Attack_SlashHB;
 		if(keyUp){
 			attackSprite = sGround_Up_Attack_Slash;
 			attackSpriteHitBox = sGround_Up_Attack_SlashHB;

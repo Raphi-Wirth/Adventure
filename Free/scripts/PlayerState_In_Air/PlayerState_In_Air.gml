@@ -50,7 +50,7 @@ function PlayerState_In_Air(){
 		savedJumpIndex = image_index;
 		state = PLAYERSTATE.AIR_ATTACK;
 		attackSprite = sAerial_Attack_Slash;
-		attackSpriteHitBox = sAttackSlashHB;
+		attackSpriteHitBox = sGround_Attack_SlashHB;
 		if(keyDown){
 			attackSprite = sAerial_Down_Slash;
 			attackSpriteHitBox = sAerial_Down_SlashHB;
