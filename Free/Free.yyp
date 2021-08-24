@@ -121,6 +121,7 @@
     {"id":{"name":"sBasementR1","path":"sprites/sBasementR1/sBasementR1.yy",},"order":0,},
     {"id":{"name":"EnemyTileCollision","path":"scripts/EnemyTileCollision/EnemyTileCollision.yy",},"order":17,},
     {"id":{"name":"sTutorialGuyTextAnimationLookAway","path":"sprites/sTutorialGuyTextAnimationLookAway/sTutorialGuyTextAnimationLookAway.yy",},"order":2,},
+    {"id":{"name":"HitGroundDust","path":"scripts/HitGroundDust/HitGroundDust.yy",},"order":27,},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},"order":10,},
     {"id":{"name":"sTrigger","path":"sprites/sTrigger/sTrigger.yy",},"order":18,},
     {"id":{"name":"rTutorialR4","path":"rooms/rTutorialR4/rTutorialR4.yy",},"order":3,},

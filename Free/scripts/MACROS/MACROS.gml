@@ -41,15 +41,25 @@ part_type_direction(_wallGrab, 88, 92, 0,0);
 
 global.ptWallGrab = _wallGrab;
 
-var _jumpLand = part_type_create();
+var _jumpLandLeft = part_type_create();
 
-part_type_shape(_jumpLand, pt_shape_cloud);
-part_type_life(_jumpLand,15,40);
-part_type_size(_jumpLand,1,2,0,0.05);
-part_type_speed(_jumpLand,-2,2,0,0);
-part_type_direction(_jumpLand, 180, 180, 0,0);
+part_type_shape(_jumpLandLeft, pt_shape_explosion);
+part_type_life(_jumpLandLeft,50,75);
+part_type_size(_jumpLandLeft,0.35,0.5,-0.005,0);
+part_type_speed(_jumpLandLeft,0.5,2.5,-0.025,0);
+part_type_direction(_jumpLandLeft, 145, 160, 1,0);
 
-global.ptJumpLand = _jumpLand;
+global.ptJumpLandLeft = _jumpLandLeft;
+
+var _jumpLandRight = part_type_create();
+
+part_type_shape(_jumpLandRight, pt_shape_explosion);
+part_type_life(_jumpLandRight,50,75);
+part_type_size(_jumpLandRight,0.35,0.5,-0.005,0);
+part_type_speed(_jumpLandRight,0.5,2.5,-0.025,0);
+part_type_direction(_jumpLandRight, 20, 35, -1,0);
+
+global.ptJumpLandRight = _jumpLandRight;
 
 #endregion
 

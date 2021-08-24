@@ -13,7 +13,7 @@ function PlayerState_In_Air(){
 	PlayerHorizontalMovement();
 	PlayerCollision();
 	if(touchingFloor){
-		state = PLAYERSTATE.FREE;
+		HitGroundDust();
 		PlayerActOutAnimation(sPlayerHitGround, -1, 1);
 		return;
 	}

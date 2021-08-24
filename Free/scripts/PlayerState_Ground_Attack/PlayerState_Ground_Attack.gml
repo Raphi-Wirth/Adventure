@@ -27,7 +27,7 @@ function PlayerState_Ground_Attack(){
 			bottomSpriteImageIndex = 0;
 			bottomSprite = sPlayerLegsIdle;
 		}
-		bottomSpriteImageIndex += 0.125;
+		bottomSpriteImageIndex += 0.133;
 		if(bottomSpriteImageIndex >= image_number){
 			bottomSpriteImageIndex = 0;
 		}
