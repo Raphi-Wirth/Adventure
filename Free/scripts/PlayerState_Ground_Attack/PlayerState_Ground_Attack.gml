@@ -16,7 +16,6 @@ function PlayerState_Ground_Attack(){
 	PlayerCollision();
 	if(hsp != 0){
 		bottomSprite = sPlayerLegsWalk;
-		image_xscale = sign(hsp);
 		bottomSpriteImageIndex += 0.2;
 		if(bottomSpriteImageIndex >= image_number){
 			bottomSpriteImageIndex = 0;
@@ -43,7 +42,6 @@ function PlayerState_Ground_Attack(){
 		else{
 			sprite_index = sIdle;
 		}
-		show_debug_message("After animation end: " + string(bottomSpriteImageIndex));
 		inAttackSwingCooldown = 1;
 		state = PLAYERSTATE.FREE;
 	}

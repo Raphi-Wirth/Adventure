@@ -13,20 +13,23 @@ function CalcAttack(){
 				with (hitID){
 					if(object_is_ancestor(object_index,pEnemy)){
 						HurtEnemy(id, 1, other.id, 100);
-						var _knockDirection = point_direction(x,y,other.x, other.y);
-						
-						//Calculate knockback based on mask_index (move type)
-						switch (other.mask_index) {
-							case sAerial_Down_AttackHB:
-								other.hsp = lengthdir_x(10, _knockDirection);
-								other.vsp = min(-20, vsp - 10);
-						}
-						
-						
+
 					}
 					else if(entityHitScript != -1){
 						script_execute(entityHitScript);
 					}
+					var _knockDirection = point_direction(x,y,other.x, other.y);
+					//Calculate knockback based on mask_index (move type)
+					switch (argument0) {
+						case sAerial_Down_SlashHB:
+							other.hsp = lengthdir_x(10, _knockDirection);
+							other.vsp = min(-20, vsp - 10);
+							break;
+						case sGround_Attack_SlashHB:
+							show_debug_message("Hello there");
+							other.hsp = 15*sign(other.x-x);
+							break;
+					}	
 				}
 			}
 		}

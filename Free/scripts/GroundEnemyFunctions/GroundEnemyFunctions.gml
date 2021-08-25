@@ -113,8 +113,9 @@ function FlyingIcecreamAttack(){
 		state = ENEMYSTATE.WAIT;
 	}
 }
-	
-function FlyingIcecreamHurt(){
+*/	
+
+function GroundEnemyHurt(){
 	sprite_index = sprHurt;
 	var _distanceToGo = point_distance(x,y,xTo,yTo);
 	if (_distanceToGo > enemyKnockbackSpeed){
@@ -144,14 +145,14 @@ function FlyingIcecreamHurt(){
 	}
 }
 
-function FlyingIcecreamDie(){
+function GroundEnemyDie(){
 	sprite_index = sprDie;
 	image_speed = 1;
 	var _distanceToGo = point_distance(x,y,xTo,yTo);
-	if (_distanceToGo > enemySpeed){
+	if (_distanceToGo > enemyKnockbackSpeed){
 		dir = point_direction(x,y,xTo,yTo);
-		hsp = lengthdir_x(enemySpeed, dir);
-		vsp = lengthdir_y(enemySpeed, dir);
+		hsp = lengthdir_x(enemyKnockbackSpeed, dir);
+		vsp = lengthdir_y(enemyKnockbackSpeed, dir);
 		if(hsp != 0){
 			image_xscale = -sign(hsp);
 		}

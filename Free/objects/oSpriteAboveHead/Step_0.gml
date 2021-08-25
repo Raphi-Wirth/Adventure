@@ -15,7 +15,6 @@ if(duration != 0){
 else if(!fading){
 	imageAlpha = min(imageAlpha + 1/50, 1)
 	if(abs(point_distance(x,y,oPlayer.x,oPlayer.y))>=fadeDistance*1.5 and imageAlpha >= 1){
-		show_debug_message(fadeDistance);
 		fading = true;
 	}
 }

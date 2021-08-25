@@ -13,6 +13,8 @@ enemyFallOffLedge = 0;
 //Enemy Sprites
 sprMove = sCarpetCrawlerCrawl;
 sprIdle = sCarpetCrawlerIdle;
+sprDie = sCarpetCrawlerIdle;
+sprHurt = sCarpetCrawlerIdle;
 
 
 
@@ -20,6 +22,6 @@ sprIdle = sCarpetCrawlerIdle;
 enemyScript[ENEMYSTATE.WANDER] = GroundEnemyWander;
 enemyScript[ENEMYSTATE.CHASE] = GroundEnemyChase;
 enemyScript[ENEMYSTATE.ATTACK] = -1;
-enemyScript[ENEMYSTATE.HURT] = -1;
-enemyScript[ENEMYSTATE.DIE] = -1;
+enemyScript[ENEMYSTATE.HURT] = GroundEnemyHurt;
+enemyScript[ENEMYSTATE.DIE] = GroundEnemyDie;
 

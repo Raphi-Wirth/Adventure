@@ -5,7 +5,7 @@ function NewGame(){
 	global.playerHP = 5;
 	global.playerMaxHP = 5;
 	global.targetX = 488;
-	global.targetY = 2544
+	global.targetY = 2687
 	global.hasSword =  1;
 	global.hasDash = 0;
 	global.hasDoubleJump = 0;
