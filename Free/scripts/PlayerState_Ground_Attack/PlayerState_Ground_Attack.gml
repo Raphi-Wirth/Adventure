@@ -6,6 +6,7 @@ function PlayerState_Ground_Attack(){
 	//Start of the attack
 	if (sprite_index != argument0)
 	{
+		inAttackSwingCooldown = 1;
 		sprite_index = argument0;
 		image_index = 0;
 		ds_list_clear(hitByAttack);
@@ -43,7 +44,6 @@ function PlayerState_Ground_Attack(){
 		else{
 			sprite_index = sIdle;
 		}
-		inAttackSwingCooldown = 1;
 		state = PLAYERSTATE.FREE;
 	}
 }

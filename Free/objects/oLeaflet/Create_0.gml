@@ -12,18 +12,19 @@ enemyFallOffLedge = 0;
 
 //Enemy Sprites
 sprMove = sLeafletWalk;
+sprChase = sLeafletChase;
 sprIdle = sLeafletIdle;
 sprDie = sLeafletIdle;
 sprHurt = sLeafletIdle;
-sprAttack = sLeafletIdle;
+sprAttack = sLeafletChase;
 
 
 
 
-enemyScript[ENEMYSTATE.WANDER] = GroundEnemyWander;
-enemyScript[ENEMYSTATE.CHASE] = GroundEnemyChase;
-enemyScript[ENEMYSTATE.ATTACK] = GroundEnemyAttack;
-enemyScript[ENEMYSTATE.HURT] = GroundEnemyHurt;
+enemyScript[ENEMYSTATE.WANDER] = LeafletWander;
+enemyScript[ENEMYSTATE.CHASE] = LeafletChase;
+enemyScript[ENEMYSTATE.ATTACK] = -1;
+enemyScript[ENEMYSTATE.HURT] = LeafletHurt;
 enemyScript[ENEMYSTATE.DIE] = instance_destroy;
 
 

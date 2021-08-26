@@ -4,7 +4,7 @@ collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
 
 
 //Stats
-attackSwingCooldownTime = 15;
+attackSwingCooldownTime = 25;
 hitStun = 15;
 
 //Healthbar

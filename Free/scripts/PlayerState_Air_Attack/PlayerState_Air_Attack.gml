@@ -7,6 +7,7 @@ function PlayerState_Air_Attack(){
 
 	if (sprite_index != argument0)
 	{
+		inAttackSwingCooldown = 1;
 		sprite_index = argument0;
 		image_index = 0;
 		ds_list_clear(hitByAttack);
@@ -27,7 +28,6 @@ function PlayerState_Air_Attack(){
 	}
 	
 	if(animation_end()){
-		inAttackSwingCooldown = 1;
 		sprite_index = sFall;
 		state = PLAYERSTATE.IN_AIR;
 	}
