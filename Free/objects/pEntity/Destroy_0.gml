@@ -10,3 +10,6 @@ if (entityFragmentCount > 0){
 	}
 	DropItems(x,y,fragmentArray, entityFragmentSpeed, dirHit);
 }
+if(entityDestroySound != -1){
+	audio_play_sound(entityDestroySound, 1001, false);
+}

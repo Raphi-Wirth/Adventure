@@ -10,6 +10,7 @@ function PlayerState_Air_Attack(){
 		sprite_index = argument0;
 		image_index = 0;
 		ds_list_clear(hitByAttack);
+		audio_play_sound(mSwordSlash, 1000, false);
 	}
 	
 	CalcAttack(argument1);
