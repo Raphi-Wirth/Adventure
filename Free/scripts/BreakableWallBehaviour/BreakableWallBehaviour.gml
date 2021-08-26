@@ -4,6 +4,7 @@ function BreakableWallBehaviour(){
 	hp--;
 	rumble = 15;
 	DropItems(x, y, array_create(10, oFragRock), 5, 0);
+	audio_play_sound(mRockWallHit, 1000, false);
 	if(hp == 0){
 		instance_destroy();
 	}
