@@ -14,7 +14,7 @@ function PlayerState_Ground_Attack(){
 	PlayerHorizontalMovement();
 	Gravity();
 	PlayerCollision();
-	if(hsp != 0){
+	if(hsp != 0 and move != 0){
 		bottomSprite = sPlayerLegsWalk;
 		bottomSpriteImageIndex += 0.2;
 		if(bottomSpriteImageIndex >= image_number){

@@ -39,7 +39,7 @@ with (oLightParent)
 			}
 		case oTorch:
 			with(oTorch){
-				draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, 5, 5, 0, c_red, random_range(0.75,0.9));
+				draw_sprite_ext(sLight, 0, x - _cx, y - _sh - _cy, global.torchRange, global.torchRange, 0, c_red, global.torchIntensity);
 			}
 		case oUpgrade:
 			with(oUpgrade){

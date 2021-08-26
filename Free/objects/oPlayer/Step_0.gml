@@ -8,9 +8,6 @@ keyDown = keyboard_check(vk_down);
 keyUp = keyboard_check(vk_up);
 keyAttack = keyboard_check(ord("X"));
 keyInteract = keyboard_check_pressed(vk_space);
-
-show_debug_message(hsp);
-
 move = keyRight - keyLeft;
 if(!global.gamePaused){
 	if(inAttackSwingCooldown){
@@ -61,6 +58,6 @@ if(!global.gamePaused){
 if(y>room_height){
 	state = PLAYERSTATE.DEAD;
 }
-
+depth = -bbox_bottom;
 
 

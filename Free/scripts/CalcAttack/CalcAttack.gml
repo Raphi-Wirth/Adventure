@@ -13,23 +13,24 @@ function CalcAttack(){
 				with (hitID){
 					if(object_is_ancestor(object_index,pEnemy)){
 						HurtEnemy(id, 1, other.id, 100);
-
 					}
-					else if(entityHitScript != -1){
+					if((object_is_ancestor(object_index, pEntity) and entityCollision == true)
+					or object_is_ancestor(object_index, pEnemy)){
+						var _knockDirection = point_direction(x,y,other.x, other.y);
+						//Calculate knockback based on mask_index (move type)
+						switch (argument0) {
+							case sAerial_Down_SlashHB:
+								other.hsp = lengthdir_x(10, _knockDirection);
+								other.vsp = max(-25, other.vsp - 60);
+								break;
+							case sGround_Attack_SlashHB:
+								other.hsp = 13*sign(other.x-x);
+								break;
+						}	
+					}
+					if(entityHitScript != -1){
 						script_execute(entityHitScript);
 					}
-					var _knockDirection = point_direction(x,y,other.x, other.y);
-					//Calculate knockback based on mask_index (move type)
-					switch (argument0) {
-						case sAerial_Down_SlashHB:
-							other.hsp = lengthdir_x(10, _knockDirection);
-							other.vsp = min(-20, vsp - 10);
-							break;
-						case sGround_Attack_SlashHB:
-							show_debug_message("Hello there");
-							other.hsp = 15*sign(other.x-x);
-							break;
-					}	
 				}
 			}
 		}

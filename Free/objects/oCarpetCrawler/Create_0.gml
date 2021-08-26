@@ -21,7 +21,7 @@ sprHurt = sCarpetCrawlerIdle;
 
 enemyScript[ENEMYSTATE.WANDER] = GroundEnemyWander;
 enemyScript[ENEMYSTATE.CHASE] = GroundEnemyChase;
-enemyScript[ENEMYSTATE.ATTACK] = -1;
+enemyScript[ENEMYSTATE.ATTACK] = GroundEnemyAttack;
 enemyScript[ENEMYSTATE.HURT] = GroundEnemyHurt;
 enemyScript[ENEMYSTATE.DIE] = GroundEnemyDie;
 

@@ -19,6 +19,8 @@ global.iCamera = instance_create_layer(0,0, layer, oCamera);
 global.playerMaxHP = 10;
 global.playerHP = global.playerMaxHP
 global.iLifted = noone;
+global.torchRange = 5;
+global.torchIntensity = 0.8;
 
 //Unlockables
 global.hasSword = 1;
