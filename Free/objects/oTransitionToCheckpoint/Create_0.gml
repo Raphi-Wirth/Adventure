@@ -7,4 +7,4 @@ heightHalf = height*0.5 + 50;
 percent = 0;
 leading = OUT;
 playerMoves = false;
-type = TRANS_TYPE.SLIDE;
+type = TRANS_TYPE.FADE;

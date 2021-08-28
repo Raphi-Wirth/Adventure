@@ -9,17 +9,22 @@ if(instance_exists(oPlayer)){
 		if(percent >= 1){
 			oPlayer.x = global.targetX;
 			oPlayer.y = global.targetY;
-
+			oPlayer.sprite_index = sIdle;
+			if(global.targetDirection != 0){
+				oPlayer.image_xscale = global.targetDirection;
+			}
+			oPlayer.invulnerable = 0;
+			global.iCamera.x = oPlayer.x;
+			global.iCamera.y = oPlayer.y;
 			leading = IN;
 		}
 	}
 	else { //leading == IN
 		percent = max(0, percent - TRANSITION_SPEED);
 		//If screen is fully revealed, destroy this object
-		oPlayer.sprite_index = sIdle;
 		if(percent <= 0){
 			with (oPlayer) {
-				state = PLAYERSTATE.FREE; 
+				state = PLAYERSTATE.FREE;
 			}
 			instance_destroy()
 		}

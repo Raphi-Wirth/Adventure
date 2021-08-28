@@ -7,7 +7,6 @@ function LeafletWander(){
 	Gravity();
 	//At destination or taken too long
 	if(x==xTo){
-		show_debug_message("Enemy at target");
 		hsp = 0;
 		//End move animation
 		sprite_index = sprIdle;
@@ -20,8 +19,6 @@ function LeafletWander(){
 		}
 	}
 	else{
-		show_debug_message("X: " + string(x));
-		show_debug_message("xTo: " + string(xTo));
 		timePassed ++;
 		var _distanceToGo = xTo - x;
 		var _speedThisFrame = enemySpeed;
