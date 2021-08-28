@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sSmallBrick",
-    "path": "sprites/sSmallBrick/sSmallBrick.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

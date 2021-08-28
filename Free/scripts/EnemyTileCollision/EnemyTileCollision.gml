@@ -2,7 +2,6 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function EnemyTileCollision(){
 	var _collision = false;
-
 	//Horizontal Tiles
 	if(tilemap_get_at_pixel(collisionMap, x + hsp, y)){
 		x -= x mod TILE_SIZE;

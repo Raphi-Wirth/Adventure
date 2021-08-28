@@ -4,7 +4,7 @@ collisionMap = layer_tilemap_get_id(layer_get_id("Collision"));
 
 
 //Stats
-attackSwingCooldownTime = 25;
+attackSwingCooldownTime = 30;
 hitStun = 15;
 
 //Healthbar
@@ -33,8 +33,6 @@ wallJumpDirection = 0;		//Which wall is currently being held
 dashSpeed = maxSpeed*2;		//Horizontal speed while dashing
 heightJumped = 0;
 maxJumpHeight = 32*14;
-jumpHeight = 35;
-jumpSpeed = 20;
 savedJumpIndex = 0;
 inJump = 0;
 initDashDirection = 0		//Put explanation here later

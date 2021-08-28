@@ -29,8 +29,8 @@
     {"propertyId":{"name":"entityCollision","path":"objects/pEntity/pEntity.yy",},"objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Objects/Entities.yy",
+    "name": "Assets",
+    "path": "folders/Objects/Entities/Assets.yy",
   },
   "resourceVersion": "1.0",
   "name": "oSignPost",

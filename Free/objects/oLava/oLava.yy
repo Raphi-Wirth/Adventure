@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sLava",
-    "path": "sprites/sLava/sLava.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
