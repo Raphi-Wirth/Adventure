@@ -1,5 +1,8 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 function GroundEnemyWander(){
+	show_debug_message(xTo);
 	sprite_index = sprMove;
 	image_speed = 1;
 	Gravity();
@@ -42,13 +45,13 @@ function GroundEnemyWander(){
 }
 
 function GroundEnemyChase(){
-	sprite_index = sprMove;
+	sprite_index = sprChase;
 	Gravity();
 	image_speed = 1;
 	if(instance_exists(target)){
 		xTo = target.x;
 		var _distanceToGo = xTo - x;
-		var _speedThisFrame = enemySpeed;
+		var _speedThisFrame = 2*enemySpeed;
 		if(abs(_distanceToGo) < enemySpeed) _speedThisFrame = abs(_distanceToGo);
 		hsp = _speedThisFrame * sign(_distanceToGo);
 		if(hsp != 0) image_xscale = sign(hsp);
@@ -59,11 +62,8 @@ function GroundEnemyChase(){
 		//Collide and move
 		EnemyTileCollision();
 	}
-	if(instance_exists(target) and point_distance(x,y,target.x,target.y) <= enemyAttackRadius){
+	if(instance_exists(oPlayer) and abs(oPlayer.x - x) <= enemyAttackRadius){
 		state = ENEMYSTATE.ATTACK;
-		sprite_index = sprAttack;
-		image_index = 0;
-		image_speed = 1;
 	}
 	if(instance_exists(target) and point_distance(x,y,target.x,target.y) >= enemyDeAggroRadius){
 		stateTarget = ENEMYSTATE.WANDER;
@@ -72,36 +72,6 @@ function GroundEnemyChase(){
 	}
 }
 
-function GroundEnemyAttack(){
-	sprite_index = sprMove;
-	Gravity();
-	image_speed = 1;
-	if(instance_exists(target)){
-		xTo = target.x;
-		var _distanceToGo = xTo - x;
-		var _speedThisFrame = 2*enemySpeed;
-		if(abs(_distanceToGo) < 2*enemySpeed) _speedThisFrame = abs(_distanceToGo);
-		hsp = _speedThisFrame * sign(_distanceToGo);
-		if(hsp != 0) image_xscale = sign(hsp);
-		hsp = sign(_distanceToGo)*_speedThisFrame;
-		if(hsp != 0){
-			image_xscale = sign(hsp);
-		}
-		//Collide and move
-		EnemyTileCollision();
-	}
-	if(instance_exists(target) and point_distance(x,y,target.x,target.y) <= enemyAttackRadius){
-		state = ENEMYSTATE.ATTACK;
-		sprite_index = sprAttack;
-		image_index = 0;
-		image_speed = 1;
-	}
-	if(instance_exists(target) and point_distance(x,y,target.x,target.y) >= enemyDeAggroRadius){
-		stateTarget = ENEMYSTATE.WANDER;
-		stateWaitDuration = 15;
-		state = ENEMYSTATE.WAIT;
-	}
-}
 
 function GroundEnemyHurt(){
 	sprite_index = sprHurt;
@@ -130,17 +100,5 @@ function GroundEnemyHurt(){
 		else{
 			state = ENEMYSTATE.CHASE;
 		}
-	}
-}
- 
-function GroundEnemyDie(){
-	mask_index = sNoHitBox;
-	sprite_index = sprDie;
-	image_speed = 1;
-	Gravity()
-	EnemyTileCollision();
-	image_alpha = max(image_alpha - 0.025, 0);
-	if(image_alpha <= 0){
-		instance_destroy();
 	}
 }

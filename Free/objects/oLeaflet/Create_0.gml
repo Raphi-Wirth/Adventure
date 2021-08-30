@@ -21,10 +21,10 @@ sprAttack = sLeafletChase;
 
 
 
-enemyScript[ENEMYSTATE.WANDER] = LeafletWander;
-enemyScript[ENEMYSTATE.CHASE] = LeafletChase;
+enemyScript[ENEMYSTATE.WANDER] = GroundEnemyWander;
+enemyScript[ENEMYSTATE.CHASE] = GroundEnemyChase;
 enemyScript[ENEMYSTATE.ATTACK] = -1;
-enemyScript[ENEMYSTATE.HURT] = LeafletHurt;
+enemyScript[ENEMYSTATE.HURT] = GroundEnemyHurt;
 enemyScript[ENEMYSTATE.DIE] = instance_destroy;
 
 

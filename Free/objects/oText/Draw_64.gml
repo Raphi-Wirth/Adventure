@@ -27,9 +27,9 @@ if(responses[0] != -1 and textProgress >= string_length(message)){
 	}
 }
 
-draw_text_transformed(x1+25, y1+25, _print, 2,2,0);
+draw_text_transformed(RESOLUTION_W/2, y1+25, _print, 2,2,0);
 draw_set_color(c_white);
-draw_text_transformed(x1+25, y1+20, _print, 2,2,0);
+draw_text_transformed(RESOLUTION_W/2, y1+20, _print, 2,2,0);
 if(textboxCharSprite != -1){
 	draw_rectangle_color(x2-300, y1 - 100, x2 + 8 , y1 + 207, c_red, c_green, c_blue, c_orange, false);
 	draw_sprite_ext(
@@ -53,4 +53,11 @@ if(textboxCharSprite != -1){
 	else{
 		image_speed = 0.15;
 	}
+}
+if(timer>300){
+	draw_set_halign(fa_center);
+	draw_set_color(c_white);
+	draw_set_alpha(1/2*sin(timer*2*pi/60)+0.5);
+	draw_text_transformed(RESOLUTION_W/2, RESOLUTION_H - 100, "Press space to continue", 2,2,0);
+	draw_set_alpha(1);
 }

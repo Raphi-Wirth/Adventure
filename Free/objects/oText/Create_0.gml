@@ -4,11 +4,11 @@ x1 = RESOLUTION_W/2;
 y1 = 150;
 x2 = RESOLUTION_W/2;
 y2 = 400;
-hAlign = fa_left;
+hAlign = fa_center;
 vAlign = fa_top;
 x1Target = 300;
 x2Target = RESOLUTION_W-300;
-
+timer = 0;
 lerpProgress = 0;
 textProgress = 0;
 

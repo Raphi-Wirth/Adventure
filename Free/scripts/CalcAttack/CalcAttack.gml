@@ -22,6 +22,9 @@ function CalcAttack(){
 							case sAerial_Down_SlashHB:
 								other.hsp = lengthdir_x(10, _knockDirection);
 								other.vsp = max(-25, other.vsp - 60);
+								other.inJump = 0;
+								other.doubleJmp = 1;
+								other.canDash = 1;
 								break;
 							case sGround_Attack_SlashHB:
 								other.hsp = 13*sign(other.x-x);
@@ -49,13 +52,6 @@ function HurtEnemy(_enemy, _damage, _source, _knockback){
 			if(enemyHP <= 0){
 				state = ENEMYSTATE.DIE;
 			}
-			else{
-				if (state != ENEMYSTATE.HURT){
-					statePrevious = state;
-				}
-				state = ENEMYSTATE.HURT;
-			}
-			
 			imaged_index = 0;
 			if(_knockback != 0){
 				var _knockDirection = point_direction(x,y,(_source).x, (_source).y);
