@@ -15,6 +15,7 @@ sprMove = sCarpetCrawlerCrawl;
 sprIdle = sCarpetCrawlerIdle;
 sprDie = sCarpetCrawlerIdle;
 sprHurt = sCarpetCrawlerIdle;
+sprChase = sCarpetCrawlerCrawl;
 
 
 

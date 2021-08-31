@@ -23,7 +23,6 @@ enemyTouchingWall = 0;
 
 
 enemyScript[ENEMYSTATE.WANDER] = GroundEnemyWander;
-enemyScript[ENEMYSTATE.HURT] = GroundEnemyHurt;
 enemyScript[ENEMYSTATE.ATTACK] = RockoAttack;
 enemyScript[ENEMYSTATE.CHASE] = GroundEnemyChase;
 enemyScript[ENEMYSTATE.DIE] = instance_destroy;

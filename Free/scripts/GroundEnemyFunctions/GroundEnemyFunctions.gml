@@ -62,7 +62,7 @@ function GroundEnemyChase(){
 		//Collide and move
 		EnemyTileCollision();
 	}
-	if(instance_exists(oPlayer) and abs(oPlayer.x - x) <= enemyAttackRadius){
+	if(instance_exists(oPlayer) and abs(oPlayer.x - x) <= enemyAttackRadius and enemyScript[ENEMYSTATE.ATTACK] != -1){
 		state = ENEMYSTATE.ATTACK;
 	}
 	if(instance_exists(target) and point_distance(x,y,target.x,target.y) >= enemyDeAggroRadius){
@@ -75,6 +75,7 @@ function GroundEnemyChase(){
 
 function GroundEnemyHurt(){
 	sprite_index = sprHurt;
+	Gravity();
 	var _distanceToGo = point_distance(x,y,xTo,yTo);
 	if (_distanceToGo > enemyKnockbackSpeed){
 		image_speed = 1;
@@ -92,10 +93,12 @@ function GroundEnemyHurt(){
 		}
 	}
 	else{
+		show_debug_message("Enemy at final hurt point");
 		x = xTo;
 		y = yTo;
 		if(statePrevious != ENEMYSTATE.ATTACK){
 			state = statePrevious;
+			target = oPlayer;
 		}
 		else{
 			state = ENEMYSTATE.CHASE;

@@ -3,7 +3,6 @@
 function RockoAttack(){
 	if(sprite_index != sprAttack){
 		sprite_index = sprAttack;
-		show_debug_message("we in here?");
 		image_index = 0;
 		image_speed = 1;
 	}
@@ -31,7 +30,13 @@ function RockoAttack(){
 		}
 	}
 	if(animation_end()){
-		stateTarget = ENEMYSTATE.CHASE;
+		if(abs(point_distance(x,y,oPlayer.x,oPlayer.y)) >= enemyDeAggroRadius){
+			stateTarget = ENEMYSTATE.CHASE;
+		}
+		else{
+			stateTarget = ENEMYSTATE.ATTACK;
+		}
+
 		stateWaitDuration = 60;
 		state = ENEMYSTATE.WAIT;
 	}

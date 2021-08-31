@@ -1,3 +1,3 @@
-global.lightIntensity = 0.6;
-global.lightRange = 4;
-global.roomDarkness = 0.95;
+global.lightIntensity = 0.5;
+global.lightRange = 5;
+global.roomDarkness = 0.75;
