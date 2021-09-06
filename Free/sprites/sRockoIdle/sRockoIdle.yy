@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Rocko",
-    "path": "folders/Sprites/Enemies/Rocko.yy",
+    "path": "folders/Sprites/Enemies/Mobs/Rocko.yy",
   },
   "resourceVersion": "1.0",
   "name": "sRockoIdle",

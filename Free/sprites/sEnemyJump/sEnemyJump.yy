@@ -78,7 +78,7 @@
   "nineSlice": null,
   "parent": {
     "name": "GroundEnemy",
-    "path": "folders/Sprites/Enemies/GroundEnemy.yy",
+    "path": "folders/Sprites/Enemies/Mobs/GroundEnemy.yy",
   },
   "resourceVersion": "1.0",
   "name": "sEnemyJump",

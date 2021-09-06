@@ -3,11 +3,12 @@
 
 function GroundEnemyWander(){
 	show_debug_message(xTo);
+	show_debug_message(x);
 	sprite_index = sprMove;
 	image_speed = 1;
 	Gravity();
 	//At destination or taken too long
-	if(x==xTo){
+	if(x==xTo or timePassed >= 500){
 		hsp = 0;
 		//End move animation
 		sprite_index = sprIdle;
@@ -35,7 +36,7 @@ function GroundEnemyWander(){
 
 
 	//Check for aggro
-	if(++aggroCheck >= aggroCheckDuration){
+	if(++aggroCheck >= aggroCheckDuration and enemyScript[ENEMYSTATE.CHASE] != -1){
 		aggroCheck = 0;
 		if(instance_exists(oPlayer) and abs(oPlayer.x - x) <= enemyAggroRadius and abs(oPlayer.y - y) < 100){
 			state = ENEMYSTATE.CHASE;
@@ -77,6 +78,10 @@ function GroundEnemyHurt(){
 	sprite_index = sprHurt;
 	Gravity();
 	var _distanceToGo = point_distance(x,y,xTo,yTo);
+	if(enemyKnockbackSpeed == 0){
+		state = ENEMYSTATE.CHASE;
+		return;
+	}
 	if (_distanceToGo > enemyKnockbackSpeed){
 		image_speed = 1;
 		dir = point_direction(x,y,xTo,yTo);

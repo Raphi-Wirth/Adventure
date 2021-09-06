@@ -82,7 +82,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Carpet Crawler",
-    "path": "folders/Sprites/Enemies/Carpet Crawler.yy",
+    "path": "folders/Sprites/Enemies/Mobs/Carpet Crawler.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCarpetCrawlerCrawl",

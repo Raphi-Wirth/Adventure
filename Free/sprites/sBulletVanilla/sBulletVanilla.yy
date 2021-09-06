@@ -86,7 +86,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Flying Icecream",
-    "path": "folders/Sprites/Enemies/Flying Icecream.yy",
+    "path": "folders/Sprites/Enemies/Mobs/Flying Icecream.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBulletVanilla",

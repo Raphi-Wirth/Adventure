@@ -67,3 +67,29 @@ function HurtEnemy(_enemy, _damage, _source, _knockback){
 		}
 	}
 }
+
+function EnemyCalcAttack(){
+	mask_index = argument0;
+	var hitByAttackNow = ds_list_create();
+	var hits = instance_place_list(x, y, oPlayer, hitByAttackNow, false);
+	if (hits> 0){
+		for (var i = 0; i<hits; i++){
+			//If this instance has not yet been hit by this attack
+			var hitID = hitByAttackNow[| i]; 
+			if(ds_list_find_index(hitByAttack, hitID) == -1){
+				ds_list_add(hitByAttack, hitID);
+				with (hitID){
+					if(sign(x-other.x) == 1){
+						var _knockDirection = 0;
+					}
+					else{
+						var _knockDirection = 180;
+					}
+					HurtPlayer(_knockDirection, other.enemyAttackKnockback, other.enemyAttackDamage);
+				}
+			}
+		}
+	}
+	ds_list_destroy(hitByAttackNow);
+	mask_index = sprIdle;
+}

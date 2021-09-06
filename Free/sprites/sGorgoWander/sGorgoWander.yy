@@ -114,7 +114,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Gorgo",
-    "path": "folders/Sprites/Enemies/Gorgo.yy",
+    "path": "folders/Sprites/Enemies/Mobs/Gorgo.yy",
   },
   "resourceVersion": "1.0",
   "name": "sGorgoWander",

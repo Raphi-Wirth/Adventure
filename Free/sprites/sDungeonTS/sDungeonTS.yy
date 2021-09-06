@@ -25,8 +25,8 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"72245b83-3cb5-4867-afa2-5b0e35b297c0","path":"sprites/sDungeonTS/sDungeonTS.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"72245b83-3cb5-4867-afa2-5b0e35b297c0","path":"sprites/sDungeonTS/sDungeonTS.yy",},"LayerId":{"name":"2d935a8b-f6e8-4093-aadf-12dad99fdec9","path":"sprites/sDungeonTS/sDungeonTS.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"72245b83-3cb5-4867-afa2-5b0e35b297c0","path":"sprites/sDungeonTS/sDungeonTS.yy",},"LayerId":{"name":"67d45537-e655-4237-a5aa-25af5bed084e","path":"sprites/sDungeonTS/sDungeonTS.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"72245b83-3cb5-4867-afa2-5b0e35b297c0","path":"sprites/sDungeonTS/sDungeonTS.yy",},"LayerId":{"name":"2d935a8b-f6e8-4093-aadf-12dad99fdec9","path":"sprites/sDungeonTS/sDungeonTS.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sDungeonTS","path":"sprites/sDungeonTS/sDungeonTS.yy",},"resourceVersion":"1.0","name":"72245b83-3cb5-4867-afa2-5b0e35b297c0","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

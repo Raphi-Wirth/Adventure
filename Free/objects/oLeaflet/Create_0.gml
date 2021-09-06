@@ -6,6 +6,7 @@ event_inherited();
 waitDuration = 120;
 wait = 0;
 state = ENEMYSTATE.WANDER;
+statePrevious = ENEMYSTATE.WANDER;
 image_speed = 1;
 enemyTouchingWall = 0;
 enemyFallOffLedge = 0;

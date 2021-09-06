@@ -35,8 +35,8 @@
     {"propertyId":{"name":"enemyKnockbackSpeed","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"15","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Objects/Entities/Enemies.yy",
+    "name": "Mobs",
+    "path": "folders/Objects/Entities/Enemies/Mobs.yy",
   },
   "resourceVersion": "1.0",
   "name": "oCarpetCrawler",

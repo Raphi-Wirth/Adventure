@@ -122,7 +122,7 @@
   },
   "parent": {
     "name": "GroundEnemy",
-    "path": "folders/Sprites/Enemies/GroundEnemy.yy",
+    "path": "folders/Sprites/Enemies/Mobs/GroundEnemy.yy",
   },
   "resourceVersion": "1.0",
   "name": "sEnemy_Ground_Attack_Slash",

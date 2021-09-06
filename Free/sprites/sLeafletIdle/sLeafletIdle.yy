@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Leaflet",
-    "path": "folders/Sprites/Enemies/Leaflet.yy",
+    "path": "folders/Sprites/Enemies/Mobs/Leaflet.yy",
   },
   "resourceVersion": "1.0",
   "name": "sLeafletIdle",
