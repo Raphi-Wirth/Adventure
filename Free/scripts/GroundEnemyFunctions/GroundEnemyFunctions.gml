@@ -61,9 +61,12 @@ function GroundEnemyChase(){
 			image_xscale = sign(hsp);
 		}
 		//Collide and move
+		if(enemyFallOffLedge or enemyTouchingWall){
+			hsp = 0;
+		}
 		EnemyTileCollision();
 	}
-	if(instance_exists(oPlayer) and abs(oPlayer.x - x) <= enemyAttackRadius and enemyScript[ENEMYSTATE.ATTACK] != -1){
+	if(instance_exists(oPlayer) and abs(oPlayer.x - x) <= enemyAttackRadius and enemyScript[ENEMYSTATE.ATTACK] != -1 and !inAttackCooldown){
 		state = ENEMYSTATE.ATTACK;
 	}
 	if(instance_exists(target) and point_distance(x,y,target.x,target.y) >= enemyDeAggroRadius){
@@ -80,6 +83,7 @@ function GroundEnemyHurt(){
 	var _distanceToGo = point_distance(x,y,xTo,yTo);
 	if(enemyKnockbackSpeed == 0){
 		state = ENEMYSTATE.CHASE;
+		target = oPlayer;
 		return;
 	}
 	if (_distanceToGo > enemyKnockbackSpeed){

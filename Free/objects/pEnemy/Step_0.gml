@@ -5,4 +5,10 @@ if(!global.gamePaused){
 		script_execute(enemyScript[state]);
 	}
 }
-// You can write your code in this editor
+if(inAttackCooldown){
+	attackCooldownTimer++;
+	if(attackCooldownTimer >= enemyAttackCooldownTimer){
+		attackCooldownTimer = 0;
+		inAttackCooldown = 0;
+	}
+}

@@ -15,6 +15,8 @@ stateTarget = state;
 statePrevious = state;
 stateWait = 0;
 stateWaitDuration = 0;
+inAttackCooldown = 0;
+attackCooldownTimer = 0;
 
 
 //Enemy Stats
