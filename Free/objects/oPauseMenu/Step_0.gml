@@ -52,3 +52,9 @@ if(menu_committed != -1 and transitionHappening == 0){
 		case "Wall Grab": global.hasWallGrab = !global.hasWallGrab; menu_committed = 0; menu_control = true; break;
 	}
 }
+
+with(all){
+	if(image_speed != 0){
+		gamePausedImageSpeed = image_speed;
+	}
+}

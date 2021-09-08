@@ -15,7 +15,11 @@ if (keyboard_check_pressed(vk_escape) and instance_exists(oPlayer)) {
 			instance_destroy(oPauseMenu);
 		}
 		with (all) {
-			image_speed = gamePausedImageSpeed;
+			try {
+				image_speed = gamePausedImageSpeed;
+			}
+			catch(_exception){
+			}
 		}
 	}
 }

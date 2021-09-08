@@ -19,8 +19,8 @@ function RockFilledSmash(){
 	EnemyTileCollision();
 	EnemyCalcAttack(sRockFilledSmashHB);
 	if(animation_end()){
-		for(var i = -5; i < 5; i++){
-			instance_create_layer(oPlayer.x + 300*i, 0, "Instances",oRock)
+		for(var i = -4; i < 4; i++){
+			instance_create_layer(oPlayer.x + 400*i, 0, "Instances",oRock)
 		}
 		state = ENEMYSTATE.CHASE;
 	}

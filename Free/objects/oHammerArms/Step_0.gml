@@ -9,7 +9,7 @@ if(EnemyTileCollision() and !hasSpawnedRocks){
 			image_index = choose(0,1,2);
 			image_speed = 0;
 			grv = 0;
-			hsp = -other.savedHsp;
+			hsp = -other.savedHsp/1.25;
 		}
 	}
 	hsp = 0;
