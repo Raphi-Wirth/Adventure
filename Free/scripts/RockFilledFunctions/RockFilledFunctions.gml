@@ -19,6 +19,9 @@ function RockFilledSmash(){
 	EnemyTileCollision();
 	EnemyCalcAttack(sRockFilledSmashHB);
 	if(animation_end()){
+		for(var i = -5; i < 5; i++){
+			instance_create_layer(oPlayer.x + 300*i, 0, "Instances",oRock)
+		}
 		state = ENEMYSTATE.CHASE;
 	}
 }
@@ -33,7 +36,7 @@ function RockFilledChase(){
 	Gravity();
 	image_speed = 1;
 	if(instance_exists(target)){
-		xTo = target.x + sign(x-target.x)*300;
+		xTo = target.x + sign(x-target.x)*400;
 		var _distanceToGo = xTo - x;
 		var _speedThisFrame = 2*enemySpeed;
 		if(abs(_distanceToGo) < enemySpeed) _speedThisFrame = abs(_distanceToGo);
