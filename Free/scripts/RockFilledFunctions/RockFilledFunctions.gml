@@ -19,14 +19,19 @@ function RockFilledSmash(){
 	EnemyTileCollision();
 	EnemyCalcAttack(sRockFilledSmashHB);
 	if(animation_end()){
-		for(var i = -4; i < 4; i++){
-			instance_create_layer(oPlayer.x + 400*i, 0, "Instances",oRock)
-		}
 		state = ENEMYSTATE.CHASE;
 	}
 }
 
 function RockFilledChase(){
+
+	if(attackTimePassed >= attackTimeLimit){
+		attackTimePassed = 0;
+		state = ENEMYSTATE.ATTACK;
+		enemyScript[ENEMYSTATE.ATTACK] = RockFilledEarthshake;
+		sprAttack = sRockFilledSmash;
+		return;
+	}
 	if(round(x)==round(xTo)){
 		sprite_index = sprIdle;
 	}
@@ -37,6 +42,12 @@ function RockFilledChase(){
 	image_speed = 1;
 	if(instance_exists(target)){
 		xTo = target.x + sign(x-target.x)*400;
+		if(xTo <= 600){
+			xTo = 6000;
+		}
+		else if(xTo >= room_width-600){
+			xTo = room_width-600;
+		}
 		var _distanceToGo = xTo - x;
 		var _speedThisFrame = 2*enemySpeed;
 		if(abs(_distanceToGo) < enemySpeed) _speedThisFrame = abs(_distanceToGo);
@@ -52,7 +63,7 @@ function RockFilledChase(){
 		}
 		EnemyTileCollision();
 	}
-	if(instance_exists(oPlayer) and x==xTo and enemyScript[ENEMYSTATE.ATTACK] != -1){
+	if(instance_exists(oPlayer) and x==xTo and enemyScript[ENEMYSTATE.ATTACK] != -1 and !inAttackCooldown){
 		state = ENEMYSTATE.ATTACK;
 		enemyScript[ENEMYSTATE.ATTACK] = RockFilledSmash;
 	}
@@ -78,8 +89,9 @@ function RockFilledHammerThrow(){
 	Gravity();
 	EnemyTileCollision();
 	if(image_index == 8){
-		with(instance_create_layer(x,y-sprite_height/2,"Instances", oHammerArms)){
+		with(instance_create_layer(x,y-sprite_height/2 + 100,"Instances", oHammerArms)){
 			hsp = other.enemyProjectileSpeed*sign(oPlayer.x-other.x);
+			depth = other.depth-1;
 			image_xscale = sign(oPlayer.x-other.x);
 		}
 	}
@@ -115,6 +127,56 @@ function ChaseHammer(){
 		sprMove = sRockFilledMove;
 		instance_destroy(oHammerArms);
 		return;
+	}
+}
+
+function RockFilledEarthshake(){
+	xTo = room_width/2;
+	show_debug_message("Are we in here?");
+	if(abs(x-xTo)>10){
+		sprite_index = sprMove;
+		image_speed = 1.5;
+		var _distanceToGo = xTo - x;
+		var _speedThisFrame = 2*enemySpeed;
+		if(abs(_distanceToGo) < enemySpeed) _speedThisFrame = abs(_distanceToGo);
+		hsp = _speedThisFrame * sign(_distanceToGo);
+		if(hsp != 0) image_xscale = sign(hsp);
+		hsp = sign(_distanceToGo)*_speedThisFrame;
+		if(hsp != 0){
+			image_xscale = sign(hsp);
+		}
+		//Collide and move
+		if(enemyFallOffLedge or enemyTouchingWall){
+			hsp = 0;
+		}
+		EnemyTileCollision();
+	}
+	else{
+		if(sprite_index != sprAttack){
+			sprite_index = sprAttack;
+			hsp = 0;
+			vsp = 0;
+		}
+		EnemyCalcAttack(sRockFilledSmashHB);
+		EnemyTileCollision();
+		if(animation_end()){
+			_hitCount ++;
+			image_xscale = -image_xscale;
+			for(var i = -4; i < 4; i++){
+				instance_create_layer(oPlayer.x + 400*i, 0, "Instances",oRock)
+			}
+		}
+		if(_hitCount == 10){
+			_hitCount = 0;
+			stateTarget = ENEMYSTATE.CHASE;
+			stateWaitDuration = 100;
+			state = ENEMYSTATE.WAIT;
+			sprite_index = sRockFilledIdle;
+			image_xscale = 1;
+			image_speed = 1;
+			enemyScript[ENEMYSTATE.ATTACK] = RockFilledSmash;
+			return;
+		}
 	}
 }
 	

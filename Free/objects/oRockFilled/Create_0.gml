@@ -4,6 +4,10 @@
 // Inherit the parent event
 event_inherited();
 hitByAttack = ds_list_create();
+_hitCount = 0;
+lastAttack = RockFilledHammerThrow;
+attackTimePassed = 0;
+attackTimeLimit = 1500;
 enemyFallOffLedge = 0;
 enemyTouchingWall = 0;
 state = ENEMYSTATE.WANDER;

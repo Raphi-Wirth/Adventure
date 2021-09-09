@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 361,
-  "bbox_right": 623,
-  "bbox_top": 322,
-  "bbox_bottom": 805,
+  "bbox_left": 448,
+  "bbox_right": 546,
+  "bbox_top": 525,
+  "bbox_bottom": 800,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,21 +24,24 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9dd6dd80-5926-4f4a-849e-2722d9af09c1","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9dd6dd80-5926-4f4a-849e-2722d9af09c1","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"bc3bdf42-64b3-48e4-aa21-6e2257ca8909","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"9dd6dd80-5926-4f4a-849e-2722d9af09c1","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"58afbf93-bffc-4575-94eb-f58b3f0b6874","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"58afbf93-bffc-4575-94eb-f58b3f0b6874","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"bc3bdf42-64b3-48e4-aa21-6e2257ca8909","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"58afbf93-bffc-4575-94eb-f58b3f0b6874","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c7d98cf8-736e-4b9d-a116-15c745453ad6","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c7d98cf8-736e-4b9d-a116-15c745453ad6","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"bc3bdf42-64b3-48e4-aa21-6e2257ca8909","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"c7d98cf8-736e-4b9d-a116-15c745453ad6","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"28f05bc2-cb21-4bb4-8ba2-ea149a40e32f","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"28f05bc2-cb21-4bb4-8ba2-ea149a40e32f","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"bc3bdf42-64b3-48e4-aa21-6e2257ca8909","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"28f05bc2-cb21-4bb4-8ba2-ea149a40e32f","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"cb5148d7-e6e2-4f61-883d-6a2c2b5031e7","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cb5148d7-e6e2-4f61-883d-6a2c2b5031e7","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"bc3bdf42-64b3-48e4-aa21-6e2257ca8909","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"cb5148d7-e6e2-4f61-883d-6a2c2b5031e7","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"4797eb52-1c93-45fa-861a-7c7c9a7f9af8","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"4797eb52-1c93-45fa-861a-7c7c9a7f9af8","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"98db1762-3d5f-4dbb-9418-c8e7ec2026ce","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"4797eb52-1c93-45fa-861a-7c7c9a7f9af8","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"88691b88-bd14-4742-a818-1e8d09dd3bfa","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"88691b88-bd14-4742-a818-1e8d09dd3bfa","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"98db1762-3d5f-4dbb-9418-c8e7ec2026ce","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"88691b88-bd14-4742-a818-1e8d09dd3bfa","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"80d0f865-cced-445c-a14e-184bd39baeeb","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"80d0f865-cced-445c-a14e-184bd39baeeb","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"98db1762-3d5f-4dbb-9418-c8e7ec2026ce","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"80d0f865-cced-445c-a14e-184bd39baeeb","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"4c0ecf3c-73ec-4855-971c-4be8b94effac","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"4c0ecf3c-73ec-4855-971c-4be8b94effac","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"98db1762-3d5f-4dbb-9418-c8e7ec2026ce","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"4c0ecf3c-73ec-4855-971c-4be8b94effac","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"937c4e46-0fc8-4642-9596-a57c6bf594e0","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"937c4e46-0fc8-4642-9596-a57c6bf594e0","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"98db1762-3d5f-4dbb-9418-c8e7ec2026ce","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"937c4e46-0fc8-4642-9596-a57c6bf594e0","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"04dfe861-864a-4756-9d50-b20e612ae213","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"04dfe861-864a-4756-9d50-b20e612ae213","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"LayerId":{"name":"98db1762-3d5f-4dbb-9418-c8e7ec2026ce","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","name":"04dfe861-864a-4756-9d50-b20e612ae213","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sRockFilledArmlessMove","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},
@@ -48,16 +51,17 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 5.0,
+    "length": 6.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"4358f1cf-244a-4161-811d-19aea4d23aa6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9dd6dd80-5926-4f4a-849e-2722d9af09c1","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"9bc069bb-7f85-4e67-a822-c19ffe732be9","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"58afbf93-bffc-4575-94eb-f58b3f0b6874","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"8728f687-b2c6-4b47-8ef2-91820dcc6b65","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c7d98cf8-736e-4b9d-a116-15c745453ad6","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"39674120-5f61-493c-934d-3ca768140d6c","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"28f05bc2-cb21-4bb4-8ba2-ea149a40e32f","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"6e9bd261-2783-46f2-a850-18ab82fce2f1","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cb5148d7-e6e2-4f61-883d-6a2c2b5031e7","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c887ffb4-5d5c-43a2-bf1a-952c09aabc22","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4797eb52-1c93-45fa-861a-7c7c9a7f9af8","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"efd989ef-6b9e-469f-8cd5-646b5be41c3e","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"88691b88-bd14-4742-a818-1e8d09dd3bfa","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"9f599d14-1452-4414-827d-8924f0011ad1","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"80d0f865-cced-445c-a14e-184bd39baeeb","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"63aa17ab-044f-4f01-9c4a-048bf9fafb4c","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4c0ecf3c-73ec-4855-971c-4be8b94effac","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b926b51f-f97e-499a-b363-9bab65b8a57e","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"937c4e46-0fc8-4642-9596-a57c6bf594e0","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"081b829f-112d-49b2-a67e-34574a91e357","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"04dfe861-864a-4756-9d50-b20e612ae213","path":"sprites/sRockFilledArmlessMove/sRockFilledArmlessMove.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -81,7 +85,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bc3bdf42-64b3-48e4-aa21-6e2257ca8909","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"98db1762-3d5f-4dbb-9418-c8e7ec2026ce","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

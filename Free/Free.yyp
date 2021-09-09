@@ -13,6 +13,7 @@
     {"id":{"name":"sLeafletIdle","path":"sprites/sLeafletIdle/sLeafletIdle.yy",},"order":0,},
     {"id":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"order":0,},
     {"id":{"name":"FlyingIcecreamFunctions","path":"scripts/FlyingIcecreamFunctions/FlyingIcecreamFunctions.yy",},"order":3,},
+    {"id":{"name":"mRockFilledGrunt","path":"sounds/mRockFilledGrunt/mRockFilledGrunt.yy",},"order":7,},
     {"id":{"name":"oRoomExit","path":"objects/oRoomExit/oRoomExit.yy",},"order":12,},
     {"id":{"name":"oText","path":"objects/oText/oText.yy",},"order":0,},
     {"id":{"name":"oSuspiciousBush","path":"objects/oSuspiciousBush/oSuspiciousBush.yy",},"order":1,},
