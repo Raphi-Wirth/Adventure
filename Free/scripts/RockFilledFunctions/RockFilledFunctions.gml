@@ -18,8 +18,14 @@ function RockFilledSmash(){
 	}
 	EnemyTileCollision();
 	EnemyCalcAttack(sRockFilledSmashHB);
+	if(image_index == 11){
+		ScreenShake(15, 15);
+		audio_play_sound(mRockFilledAttackSmash, 1000, false);
+	}
 	if(animation_end()){
-		state = ENEMYSTATE.CHASE;
+		stateTarget = ENEMYSTATE.CHASE;
+		stateWaitDuration = 25;
+		state = ENEMYSTATE.WAIT;
 	}
 }
 
@@ -27,9 +33,11 @@ function RockFilledChase(){
 
 	if(attackTimePassed >= attackTimeLimit){
 		attackTimePassed = 0;
-		state = ENEMYSTATE.ATTACK;
+		stateTarget = ENEMYSTATE.ATTACK;
 		enemyScript[ENEMYSTATE.ATTACK] = RockFilledEarthshake;
 		sprAttack = sRockFilledSmash;
+		stateWaitDuration = 45;
+		state = ENEMYSTATE.WAIT;
 		return;
 	}
 	if(round(x)==round(xTo)){
@@ -63,7 +71,7 @@ function RockFilledChase(){
 		}
 		EnemyTileCollision();
 	}
-	if(instance_exists(oPlayer) and x==xTo and enemyScript[ENEMYSTATE.ATTACK] != -1 and !inAttackCooldown){
+	if(instance_exists(oPlayer) and x==xTo and enemyScript[ENEMYSTATE.ATTACK] != -1){
 		state = ENEMYSTATE.ATTACK;
 		enemyScript[ENEMYSTATE.ATTACK] = RockFilledSmash;
 	}
@@ -132,10 +140,9 @@ function ChaseHammer(){
 
 function RockFilledEarthshake(){
 	xTo = room_width/2;
-	show_debug_message("Are we in here?");
 	if(abs(x-xTo)>10){
 		sprite_index = sprMove;
-		image_speed = 1.5;
+		image_speed = 1;
 		var _distanceToGo = xTo - x;
 		var _speedThisFrame = 2*enemySpeed;
 		if(abs(_distanceToGo) < enemySpeed) _speedThisFrame = abs(_distanceToGo);
@@ -157,14 +164,21 @@ function RockFilledEarthshake(){
 			hsp = 0;
 			vsp = 0;
 		}
+		if(round(image_index) == 11){
+			audio_play_sound(mRockFilledAttackSmash, 1000, false);
+			ScreenShake(15, 80);
+		}	
 		EnemyCalcAttack(sRockFilledSmashHB);
 		EnemyTileCollision();
+		if(attackTimePassed mod 15 == 0){
+			instance_create_layer(random_range(0,room_width), 0 + random_range(0,150), "Instances",oRock)
+		}
+		if(attackTimePassed mod 45 == 0){
+			instance_create_layer(oPlayer.x, 0 + random_range(0,150), "Instances",oRock)
+		}
 		if(animation_end()){
 			_hitCount ++;
 			image_xscale = -image_xscale;
-			for(var i = -4; i < 4; i++){
-				instance_create_layer(oPlayer.x + 400*i, 0, "Instances",oRock)
-			}
 		}
 		if(_hitCount == 10){
 			_hitCount = 0;
@@ -175,6 +189,7 @@ function RockFilledEarthshake(){
 			image_xscale = 1;
 			image_speed = 1;
 			enemyScript[ENEMYSTATE.ATTACK] = RockFilledSmash;
+			attackTimePassed = 0;
 			return;
 		}
 	}

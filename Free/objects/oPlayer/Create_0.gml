@@ -46,6 +46,9 @@ flashColour = c_white;
 flashShader = shWhiteFlash;
 animationEndScript = -1;
 canMoveWhileAct = 0;
+attacksInARow = 0;
+gainHealthAfterAttacks = 3;
+
 
 topSprite = -1;
 bottomSprite = -1;

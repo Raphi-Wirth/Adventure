@@ -29,7 +29,16 @@ function CalcAttack(){
 							case sGround_Attack_SlashHB:
 								other.hsp = 13*sign(other.x-x);
 								break;
-						}	
+						}
+						with(other){
+							if(global.playerHP != global.playerMaxHP){
+								attacksInARow ++;
+								if(attacksInARow >= gainHealthAfterAttacks){
+									attacksInARow = 0;
+									PlayerGainsHealth(1);
+								}
+							}
+						}
 					}
 					if(entityHitScript != -1){
 						script_execute(entityHitScript);

@@ -56,8 +56,8 @@ function PlayerState_In_Air(){
 			attackSpriteHitBox = sAerial_Down_SlashHB;
 		}
 		else if(keyUp){
-			attackSprite = sGround_Up_Attack_Slash;
-			attackSpriteHitBox = sGround_Up_Attack_SlashHB;
+			attackSprite = sAerial_Up_Attack_Slash;
+			attackSpriteHitBox = sAerial_Up_Attack_SlashHB;
 		}
 	}
 

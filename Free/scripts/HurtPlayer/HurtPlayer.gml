@@ -13,6 +13,7 @@ function HurtPlayer(_direction, _force, _damage){
 				ScreenShake(5,10);
 				flash = 0.7
 				invulnerable = 60;
+				attacksInARow = 0;
 			}
 		}
 		else{

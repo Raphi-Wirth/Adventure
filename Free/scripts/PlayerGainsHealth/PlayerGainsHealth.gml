@@ -1,13 +1,12 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+///@arg Healing
 function PlayerGainsHealth(){
 	
 	var _healing = argument0;
-	var _originalHP = playerHP;
-	playerHP += _healing;
-	if (playerHP > maxHP) {
-		playerHP = maxHP;
+	var _originalHP = global.playerHP;
+	global.playerHP += _healing;
+	if (global.playerHP > global.playerMaxHP) {
+		global.playerHP = global.playerMaxHP;
 	}
-	show_debug_message("Received healing. Now on hp:");
-	show_debug_message(playerHP);
 }
